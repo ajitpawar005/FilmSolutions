@@ -144,9 +144,9 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <ol class="breadcrumb st_breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Gallery</a></li>
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Set - 1</a></li>
-                        <li class="breadcrumb-item ">Group - 1</li>
+                        <!-- <li class="breadcrumb-item"><a href="javascript:void(0)">Gallery</a></li> -->
+                        <li class="breadcrumb-item"><a href="viewporject.html">FS-DEMO_EXEC</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Images</a></li>
                         <li class="breadcrumb-item active">Sarvaya001.jpg</li>
 
                     </ol>
@@ -161,10 +161,20 @@
                         <ul>
                             <li><button title="Brush" class="img_toolbar"><i class="fa fa-paint-brush" aria-hidden="true"></i></button></li>
 
-                            <li><button title="Select Size" class="select_all"><i class="fa fa-scribd" aria-hidden="true"></i></button></li>
+                            <li class="brush_size">
+                                <div class="down-selectpic1">
+                                    <!-- <h4>Size</h4> -->
+                                    <select id="basic" class="selectpicker form-control" title="Size">
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+                </select>
+                                </div>
+                          
+                            </li>
                             <li>
                                
-                                        <div class="present colorPresent" title="Click to Choose Color">Click to Choose</div>
+                                        <div class="present colorSelect" title="Click to Choose Color">Click to Choose</div>
                                         <div class="panel colorPanel">
                                             <div class="colorBox" colorname="Black" colorcode="#000000" style="background-color: #000000 ;" title="Black"></div>
                                             <div class="colorBox" colorname="Green" colorcode="#00CC00" style="background-color: #00CC00 ;" title="Green"></div>
@@ -202,21 +212,7 @@
     </div>
 
 
-   <!-- <div class="drop">
-        
-        <div class="panel colorPanel">
-            <div class="smallBox" colorname="Black" colorcode="#000000" style="background-color: #000000 ;" title="Black"></div>
-            <div class="smallBox" colorname="Green" colorcode="#00CC00" style="background-color: #00CC00 ;" title="Green"></div>
-            <div class="smallBox" colorname="Yellow" colorcode="#FFCC00" style="background-color: #FFCC00 ;" title="Yellow"></div>
-            <div class="smallBox" colorname="Red" colorcode="#CC0000" style="background-color: #CC0000 ;" title="Red"></div>
-            <div class="smallBox" colorname="Purple" colorcode="#660066" style="background-color: #660066 ;" title="Purple"></div>
-            <div class="smallBox" colorname="Blue" colorcode="#0066FF" style="background-color: #0066FF ;" title="Blue"></div>
-            <div class="smallBox" colorname="Aqua" colorcode="#66CCCC" style="background-color: #66CCCC ;" title="Aqua"></div>
-            <div class="smallBox" colorname="Orange" colorcode="#FF6600" style="background-color: #FF6600 ;" title="Orange"></div>
-            <div class="smallBox" colorname="White" colorcode="#FFFFFF" style="background-color: #FFFFFF ;" title="White"></div>
-            <div class="smallBox" colorname="Gray " colorcode="#999999" style="background-color: #999999 ;" title="Gray "></div>
-        </div>
-    </div> -->
+
 
     <!-- Breadcrumb Container Section Html Start Here 27/03/2017 -->
 
@@ -524,7 +520,7 @@
                                             <div class="float menu-share" id="1">
                                                 <i class="fa fa-plus my-float"></i>
                                             </div>
-                                            <div class="soc ts1">
+                                            <div class="soc ts1"> -->
                                                 <!-- <a href="#" title="Reject"><i class="fa fa-times" aria-hidden="true"></i></a>
                               <a href="#" title="Approve"><i class="fa fa-check"></i></a>
                               <a href="#" title="Like It"> <i class="fa fa-thumbs-o-up"></i></a> -->
@@ -706,25 +702,6 @@
             })
         });
         $('.modal-dialog').draggable();
-
-
-        $(document).ready(function () {
-            var $mainButton = $(".tile .float"),
-                $zoommenu = $(".tile .soc");
-            $(document).on("click", ".tile .float", function () {
-                var id = ($(this).attr('id'));
-                $zoommenu = $(".ts" + id);
-                $(".soc").not($zoommenu).removeClass("pad");
-                $(this).html($(this).html() == '<i class="fa fa-times my-float"></i>' ? '<i class="fa fa-plus my-float"></i>' : '<i class="fa fa-times my-float"></i>');
-                $zoommenu.toggleClass("pad");
-            });
-        });
-
-        $(".img_toolbar").on("click", function () {
-            $(".float").html($(".float").html() == '<i class="fa fa-times my-float"></i>' ? '<i class="fa fa-plus my-float"></i>' : '<i class="fa fa-times my-float"></i>');
-            $(".soc").toggleClass("pad");
-        });
-
         $(function () {
             var Accordion = function (el, multiple) {
                 this.el = el || {};
@@ -763,88 +740,38 @@
             });
         });
 
-
-
-        $(document).on("click", ".imge", function () {
-
-            if (event.ctrlKey) {
-                $(this).addClass("selectborder");
-            }
-            else {
-                if ($(this).hasClass("selectborder")) {
-                    $(this).removeClass("selectborder");
-                }
-                else {
-                    $('.imge').removeClass("selectborder");
-                    $(this).addClass("selectborder");
-                }
-
-            }
-
-
-            var c = ($(".selectborder").length);
-            $("#sizee").text(c);
-        });
-
-
-        $(".select_all").click(function () {
-            $(".imge").addClass("selectborder");
-            var cc = ($(".selectborder").length);
-            $("#sizee").text(cc);
-        });
-
-
-        $(".select_alle").click(function () {
-            $(".imge").removeClass("selectborder");
-            var ccc = ($(".selectborder").length);
-            $("#sizee").text(ccc);
-        });
-
-
-        $(".button1").on("click", function () {
-            $("#info1").fadeToggle();
-        });
-
-
-
-        $(".closebtn").click(function () {
-            $("#info1").fadeToggle();
-        });
-
         $('select').selectpicker();
 
         $('.dropdown-toggle').dropdown();
 
-
-
-$('.colorPresent').on("click",function () {
-		$('.colorPanel').toggle();
-    });
+        $('.colorSelect').on("click",function () {
+		         $('.colorPanel').toggle();
+        });
     
-	$('.colorBox').on("hover",function () {
-		var colorName = $(this).attr('colorName');
-		var colorCode = $(this).attr('colorCode');
-		$('.colorPresent').text(colorName);
-		$('.colorPresent').css('background-color', colorCode);
-		if(colorName == "White"  || colorName == "Yellow"){
-			$('.colorPresent').css('color', 'black')
-		}else{ 
-			$('.colorPresent').css('color', 'white')
-		}			    
-	});
-	$('.colorBox').on("click",function () {
-		var colorName = $(this).attr('colorName');
-		var colorCode = $(this).attr('colorCode');
-        $('.colorPresent').css('background-color', colorCode);
-        $('.fa-paint-brush').css('color', colorCode);
-        if(colorName == "White"  || colorName == "Yellow"){
-			$('.colorPresent').css('color', 'black')
-		}else{ 
-			$('.colorPresent').css('color', 'white')
-		}	
-		$('.colorPanel').hide();
-		$('.colorPresent').text(colorName);
-	});
+	    $('.colorBox').on("hover",function () {
+            var colorName = $(this).attr('colorName');
+            var colorCode = $(this).attr('colorCode');
+            $('.colorSelect').text(colorName);
+            $('.colorSelect').css('background-color', colorCode);
+            if(colorName == "White"  || colorName == "Yellow"){
+                $('.colorSelect').css('color', 'black')
+            }else{ 
+                $('.colorSelect').css('color', 'white')
+            }			    
+        });
+        $('.colorBox').on("click",function () {
+            var colorName = $(this).attr('colorName');
+            var colorCode = $(this).attr('colorCode');
+            $('.colorSelect').css('background-color', colorCode);
+            $('.fa-paint-brush').css('color', colorCode);
+            if(colorName == "White"  || colorName == "Yellow"){
+                $('.colorSelect').css('color', 'black')
+            }else{ 
+                $('.colorSelect').css('color', 'white')
+            }	
+            $('.colorPanel').hide();
+            $('.colorSelect').text(colorName);
+        });
 
     </script>
 

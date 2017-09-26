@@ -1204,13 +1204,51 @@ color: #fff;
 display: block;
 padding: 4px !important;
 }
+/*Size Selection*/
+.down-selectpic1 {
+margin-right: 8px;
+}
 
+.down-selectpic1 .btn-group.bootstrap-select.form-control {
+background-color: transparent !important;
+}
+
+.down-selectpic1 button.btn.dropdown-toggle.btn-default{
+min-width: 100px !important;
+padding: 3px !important;
+margin-top: 4px !important;
+border: 1px solid #292929 !important;
+}
+
+
+/*Size Selection*/
+.down-selectpic1 {
+    margin-right: 8px;
+    }
+    
+    .down-selectpic1 .btn-group.bootstrap-select.form-control {
+    background-color: transparent !important;
+    }
+    
+    .down-selectpic1 button.btn.dropdown-toggle.btn-default{
+    min-width: 100px !important;
+    padding: 3px !important;
+    margin-top: 4px !important;
+    border: 1px solid #292929 !important;
+    }
+    
+    
+    .down-selectpic1 .bootstrap-select.btn-group .dropdown-menu {
+        min-width: 100% !important;
+    }
+
+/*Color Selection*/
 .present {
     width: 98px;
     height: 26px;
-    background-color: #CC0000;
+    background-color:transparent;
 
-    border: 1px solid #252525;;
+    border: 1px solid #fff;
     color: white;
     text-align: center;
     font-size: 12px;
