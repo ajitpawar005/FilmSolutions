@@ -1,0 +1,165 @@
+/* Header Css Start Here 27/03/2017 */
+
+
+/*@media only screen and (min-width:1px) and (max-width:767px)
+{
+	
+	
+.header-container-section .navbar-default .navbar-collapse
+{
+border-color:transparent;	
+}
+
+
+.header-container-section .navbar-default .navbar-collapse
+{
+box-shadow:none;	
+}
+
+
+.header-container-section .navbar-default .navbar-toggle .icon-bar
+{
+background-color:#9c3127;	
+}
+
+
+.header-container-section .navbar-collapse .nav .dropdown .dropdown-menu li a
+{
+color:#fff;	
+}
+
+
+.header-container-section .navbar .navbar-header .navbar-toggle
+{
+margin-top:20px;	
+}
+
+	
+}*/
+
+
+/* Header Css End Here 27/03/2017 */
+
+
+
+
+
+/* Login Page Css Start Here 27/03/2017 */
+
+
+@media only screen and (min-width:850px) and (max-width:900px)
+{
+	
+	
+.navbar-fixed-bottom	
+{
+position:relative !important;	
+}
+
+	
+}
+
+
+/*@media only screen and (min-width:1px) and (max-width:849px)
+{
+	
+	
+.navbar-fixed-bottom	
+{
+position:relative !important;	
+}
+
+.fixedbottom_container_section p
+{
+line-height:25px;
+padding:0px 15px;	
+}
+
+	
+}
+
+
+@media only screen and (min-width:1px) and (max-width:767px)
+{
+	
+	
+.loginpage_maincontainer_section
+{
+margin-top:15px;	
+}
+
+.loginpage_maincontainer_section .loginform_container_section
+{
+margin-top:15px;	
+}
+
+	
+}*/
+
+
+/* Login Page Css End Here 27/03/2017 */
+
+
+
+
+
+/* Select Project Page Css Start Here 27/03/2017 */
+
+
+/*@media only screen and (min-width:1px) and (max-width:767px)
+{
+	
+	
+.selectproject-maincontainer-section
+{
+margin-top:50px;
+margin-bottom:50px;
+}
+
+.loginpage_maincontainer_section .loginform_container_section
+{
+margin-top:15px;	
+}
+
+	
+}*/
+
+
+/* Select Project Page Css End Here 27/03/2017 */
+
+
+
+
+/* Galary Page Css Start Here 27/03/2017 */
+
+
+@media only screen and (min-width:1px) and (max-width:767px)
+{
+	
+	
+#page-content-wrapper .rightside_menu_panel
+{
+background-color:#333333;
+height:auto;	
+}
+
+#page-content-wrapper .rightside_menu_panel .rightside_menu_middlepanel ul li a
+{
+padding:0px 5px;	
+}
+
+.rightside_menu_panel
+{
+text-align:center;	
+}
+
+#page-content-wrapper .rightside_menu_panel .rightside_menu_rightpanel ul
+{
+float:none;	
+}
+
+
+}
+
+
+/* Galary Page Css End Here 27/03/2017 */

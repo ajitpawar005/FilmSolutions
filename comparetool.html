@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../jquery.simpleImageDiff.js"></script>
+    <link href="../css/jquery.simpleImageDiff.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div data-diff="1">
+        <img src="images/1.jpg" />
+        <img src="images/2.jpg" />
+        
+    </div>
+
+    <br><br>
+
+    
+    <script type="text/javascript">
+        $('[data-diff]').simpleImageDiff({
+            resize: false,
+            width: 800,
+            titles: {
+                before: 'before',
+                after: 'after'
+            },
+            maxWidth: 2000
+        });
+
+    </script>
+</body>

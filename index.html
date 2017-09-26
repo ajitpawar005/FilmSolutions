@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <link rel="icon" href="images/favicon-icon.png" type="image/png" sizes="16x16">
+        <title>Login | FS Project</title>
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/responsive.css" rel="stylesheet">
+        <!-- W.CSS -->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <![endif]-->
+    </head>
+    <body  >
+        <!-- Login Panel Html Start Here 25/03/2017 -->
+        <div class="login_div">
+            
+                <div  class="col-sm-4  loginform_container_section" >
+                    <div class="page-header">
+                        <h1>Login </h1>
+                    </div>
+                    <!-- <h1>Login</h1> -->
+                    <div class="login_data"   >
+                    <form name="login_form"  action="dashboard.html" >
+                        
+                        <div class="form-group ">
+                           <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+                            <input class="form-control" type="text" name="username" placeholder="User Name" required/>
+                           
+                            
+                        </div>
+                        <div class="form-group ">
+                           <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> -->
+                            <input class="form-control " type="password" name="password"   placeholder="Password" required/>
+                            
+                          
+                            
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox"/> Remember me</label>
+                        </div>
+                        <div>
+                            <input class="btn btn-danger btn-block "type="submit" 
+                        value="Log In">
+                        </div>
+                        <div class="contact-info">
+                            <p>For Any Assistance & Information, Please Contact:
+                            </p>
+                            <h6><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;Film Solutions, LLC ;</h6>
+                            <h6><i class="fa fa-phone"></i>&nbsp;(818) 588 3500</h6>
+                            <h6><i class="fa fa-at" aria-hidden="true"></i>&nbsp;info@filmsolutions.com</h6>
+                        </div>
+                    
+                    </form>
+                    </div>
+               
+            </div>
+        </div>
+        <!-- Login Panel Html End Here 25/03/2017 -->		
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+ 
+		<script>
+            $(document).ready(function() {
+                function setHeight() {
+                    windowHeight = $(window).innerHeight();
+                    $('.loginform_container_section,.login_div').css('height', windowHeight);
+                };
+                setHeight();
+            
+                $(window).resize(function() {
+                    setHeight();
+                });
+                });
+		</script>
+    </body>
+</html>
