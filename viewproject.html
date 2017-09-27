@@ -54,15 +54,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="select_option">
                             <select class="selectpicker" title="Select Project" data-live-search="true" onchange="window.location.href=this.options[this.selectedIndex].value">
-			 
-				
-				<option value="viewproject.html">FS_DEMO_EXEC</option>
-				
-			 
-			 
-				
-			 
-			</select>
+                            <option value="viewproject.html">FS_DEMO_EXEC</option>
+                        </select>
                         </li>
                         <li class="dropdown notifications-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Notification">
@@ -108,7 +101,7 @@
                                     <img src="images/got1.jpg" class="img-circle pro_img" alt="User Image">
 
                                     <p>
-                                        Alexander Pierce - Actor
+                                        John Pierce - Actor
                                         <small>ID:110101</small>
                                     </p>
                                 </li>
@@ -135,13 +128,7 @@
 
     <!-- Navbar Html End Here 27/03/2017 -->
 
-
-
-
-
     <!-- Breadcrumb Container Section Html Start Here 27/03/2017 -->
-
-
     <div class="breadcrumb_container_section bcs db_com">
         <div class="container-fluid">
             <div class="row">
@@ -178,12 +165,7 @@
         </div>
     </div>
 
-
     <!-- Breadcrumb Container Section Html Start Here 27/03/2017 -->
-
-
-
-
 
     <!-- Galley Page Container Html Start Here 25/03/2017 -->
 
@@ -486,21 +468,12 @@
                                                 <i class="fa fa-plus my-float"></i>
                                             </div>
                                             <div class="soc ts1">
-                                                <!-- <a href="#" title="Reject"><i class="fa fa-times" aria-hidden="true"></i></a>
-                              <a href="#" title="Approve"><i class="fa fa-check"></i></a>
-                              <a href="#" title="Like It"> <i class="fa fa-thumbs-o-up"></i></a> -->
-                              
-                                               <!-- <a href="#" title="Revert Action"><i class="fa fa-undo"></i></a>
-                                                <a href="#" title="Image Designation"><i class="fa fa-share-alt"></i></a>-->
                                                 <a href="retouch.html" title="Retouch Comment"><i class="fa fa-paint-brush"></i></a>
                                                 <button class="btn btn_image" title="Image Transaction"  data-toggle="modal" data-target="#imagetransreport">T</button>
                                                 <button class="btn btn_image" title="Image History"  data-toggle="modal" data-target="#imagehistory">H</button>
                                                 <button class="btn btn_image" title="Group/Solo"  data-toggle="modal" data-target="#imagesg">G</button>
                                                 <button class="btn btn_image" title="Image Captions"  data-toggle="modal" data-target="#imagecap"><i class="fa fa-comment-o"></i></button>
-                                                <!--<a href="#" title="Image Transaction">T</a>
-                                                <a href="#" title="Image History">H</a>
-                                                <a href="#">G</a>
-                                                <a href="#" title="Image Captions"><i class="fa fa-comment-o"></i></a> -->
+
                                                 <a href="#" title="Image Notes" class="button1" ><i class="fa fa-pencil-square-o"></i></a>
                                                 <a href="enlarge.html" title="Enlarge Image"><i class="fa fa-search-plus"></i></a>
                                             </div>
@@ -8295,29 +8268,8 @@
                 $("#panel").slideToggle("slow");
             });
         });
-   
 
-	/*$(document).on("click",".imge",function(event){
-        if (event.ctrlKey) 
-	    {
-		  $(this).addClass("selectborder");
-		}
-        else
-        {
-            if($(this).hasClass("selectborder"))
-            {
-            $(this).removeClass("selectborder");
-            }
-            else{
-              $(this).addClass("selectborder");
-            }
-        }
-        var c=($(".selectborder").length);
-	   $("#sizee").text(c);
-    });*/
-   
-   
-    $(document).on("click",".imge",function(){
+       $(document).on("click",".imge",function(){
 	  
         if (event.ctrlKey) 
 	    {
@@ -8337,37 +8289,37 @@
        
       
         var c=($(".selectborder").length);
-	   $("#sizee").text(c);
-    }); 
+	    $("#sizee").text(c);
+        }); 
 
 
-	$(".select_all").click(function(){
+	   $(".select_all").click(function(){
 		  $(".imge").addClass("selectborder");
           var cc=($(".selectborder").length);
 	      $("#sizee").text(cc);
-    });
+       });
    
 
-	$(".select_alle").click(function(){
-		  $(".imge").removeClass("selectborder");
-          var ccc=($(".selectborder").length);
-	   $("#sizee").text(ccc);
-    });
+        $(".select_alle").click(function(){
+            $(".imge").removeClass("selectborder");
+            var ccc=($(".selectborder").length);
+        $("#sizee").text(ccc);
+        });
 
 
-    $(".button1").on("click",function() {
-        $("#info1").fadeToggle();
-    });
+        $(".button1").on("click",function() {
+            $("#info1").fadeToggle();
+        });
 
     
     
-    $(".closebtn").click(function(){
-        $("#info1").fadeToggle();
-    });
- 
-    $('select').selectpicker();
+        $(".closebtn").click(function(){
+            $("#info1").fadeToggle();
+        });
+    
+        $('select').selectpicker();
 
-    $('.dropdown-toggle').dropdown();
+        $('.dropdown-toggle').dropdown();
 
     /*$("#cap_mod").on("mousedown",function() {
         $("#imagecap").hide();

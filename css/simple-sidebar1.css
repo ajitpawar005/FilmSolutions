@@ -399,7 +399,7 @@ max-height:320px !important;
 }
 
 .form-group.customfilter-selectbox-container .dropdown-menu{
-	background-color:#0c0c0c !important;
+	/*background-color:#0c0c0c !important;*/
 }
 /*.bootstrap-select.btn-group .dropdown-menu {
     min-width: 80%;

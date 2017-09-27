@@ -1244,7 +1244,7 @@ border: 1px solid #292929 !important;
 
 /*Color Selection*/
 .present {
-    width: 98px;
+    width: 100px;
     height: 26px;
     background-color:transparent;
 
@@ -1442,3 +1442,4 @@ height: 100%;
 }
 
 
+/*Compare Image*/

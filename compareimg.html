@@ -154,18 +154,11 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="db_com st_headicon">
                         <ul>
-                            <li><a title="I'M DONE" href="javascript:void(0)" data-toggle="modal" data-target="#imdone"><i class="fa fa-hand-paper-o" aria-hidden="true"></i></a></li>
-                            <li><a title="Select All" href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></li>
-                            <li><a title="Deselect All" href="javascript:void(0)"><i class="fa fa-window-close" aria-hidden="true"></i></a></li>
-                            <li><a title="Go To" href="javascript:void(0)" data-toggle="modal" data-target="#goto"><i class="fa fa-share" aria-hidden="true"></i></a></li>
-                            <li><a title="Make Cover" href="javascript:void(0)"><i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
-                            <li><a title="Email Selected Images" href="javascript:void(0)" data-toggle="modal" data-target="#email"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                            <li><a title="Download Selected Images" href="javascript:void(0)" data-toggle="modal" data-target="#fs_download"><i class="fa fa-download" aria-hidden="true"></i></a></li>
-                            <li><a title="compare Selected Images" href="javascript:void(0)"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
-                            <li><a title="Print Selected Images" href="javascript:void(0)" data-toggle="modal" data-target="#printtool"><i class="fa fa-print" aria-hidden="true"></i></a></li>
-                            <li><a title="Change View Settings" href="javascript:void(0)" data-toggle="modal" data-target="#fs_view"><i class="fa fa-desktop" aria-hidden="true"></i></a></li>
-                            <li><a title="Delete Selected Asset(s)" href="javascript:void(0)" data-toggle="modal" data-target="#fs_dele"><i class="fa fa-trash-o" aria-hidden="true"></i></a></li>
-
+                           
+                            <li>     
+                                <button class="close_img" class="btn btn-default btn-flat"><a href="viewproject.html" >Close</a></button>
+    
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -191,259 +184,258 @@
 
             <!-- Sidebar -->
             <div id="sidebar-wrapper" class="sidebar-wrapper">
-
-
-                <div class="sidebar-nav">
-                    <div class="form-group customfilter-selectbox-container">
-                        <select id="basic" class="selectpicker show-tick form-control" data-live-search="true" title="Custom Filter...">
-				
-				<optgroup label="Select a Filter">
-					<option>Show All</option>
-					<option>Locked Approved</option>
-				</optgroup>
-				
-				<optgroup label="General">
-					<option>Approved</option>
-					<option>Rejected</option>
-					<option>Solo</option>
-					<option>Group</option>
-					<option>Retouch Comment</option>
-					<option>Image notes</option>
-				</optgroup>
-				
-				<optgroup label="Tagging">
-					<option>Unpublished</option>
-					<option>Tagged/Unsubmitted-Tagger #1</option>
-					<option>Tagged/Unsubmitted-Tagger #2</option>
-					<option>Unpublished and Untagged-Tagger #1</option>
-					<option>Unpublishe and Untagged-Tagger #2</option>
-					<option>Hidden</option>
-					<option>Published</option>
-				</optgroup>
-				
-				<optgroup label="Tagging With">
-					<option>PriorityPix</option>
-					<option>Sensitive</option>
-					<option>Misc_Unknown</option>
-					<option>Background</option>
-					<option>Crew</option>
-					<option>Ensemble</option>
-					<option>Equipment</option>
-					<option>Ross Lynch</option>
-					<option>Laura marano</option>
-					<option>Calum Worthy</option>
-					<option>Raini Rodriguez</option>
-				</optgroup>
-				
-				<optgroup label="Excusive">
-					<option>All exclusive</option>
-				</optgroup> 
-				
-				</select>
-
-                        <!--<a href="#" class="advancesearch_button_section btn-block" >Advance Search</a>-->
-                    </div>
-                    <div class="tab_div">
-                        <ul class="tab_ul" role="tablist">
-                            <li role="presentation" class="active"><a href="#sb_menu" aria-controls="sb_menu" role="tab" data-toggle="tab"><i class="fa fa-th-large" aria-hidden="true"></i></a></li>
-                            <li role="presentation"><a href="#pinfo" aria-controls="pinfo" role="tab" data-toggle="tab" title="Project Info">
-            <i class="fa fa-info-circle" aria-hidden="true"></i>
-            </a>
-                            </li>
-                            <li><a href="javascript:void(0)" title="Advance Search" data-toggle="modal" data-target="#search"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="tab-content db_com">
-                        <div role="tabpanel" class="tab-pane active db_com side_dropdown" id="sb_menu">
-                            <ul class="accordion-menu">
-                                <li class="search_li" title="Advance Search" data-toggle="modal" data-target="#search">
-                                    <div class="dropdownlink"><i class="fa fa-search dp_i" aria-hidden="true"></i></div>
-                                </li>
-                                <li>
-                                    <div class="dropdownlink"><i class="fa fa-address-book-o dp_i" aria-hidden="true"></i><span>Albums</span>
-                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                    </div>
-                                    <ul class="submenuItems">
-                                        <li class="items">
-                                            <i class="fa fa-plus-square-o dp_i" data-toggle="modal" data-target="#AddAlbum" aria-hidden="true"></i>
-                                            <i class="fa fa-minus-square-o dp_i" data-toggle="modal" data-target="#DelAlbum" aria-hidden="true"></i>
-                                            <i class="fa fa-language dp_i" data-toggle="modal" data-target="#RnmAlbum" aria-hidden="true"></i>
-                                            <i class="fa fa-pencil-square-o dp_i" data-toggle="modal" data-target="#EdiAlbum" aria-hidden="true"></i>
-                                            <i class="fa fa-sort dp_i" data-toggle="modal" data-target="" aria-hidden="true"></i>
-                                            <i class="fa fa-trash-o dp_i" data-toggle="modal" data-target="" aria-hidden="true"></i>
-
-                                        </li>
-                                        <li>
-                                            <p>Album</p>
-                                        </li>
-                                        <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true">&nbsp;&nbsp;</i>MyAlbum</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <div class="dropdownlink"><i class="fa fa-picture-o dp_i" aria-hidden="true"></i><span>Image Info</span>
-                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                    </div>
-                                    <ul class="submenuItems">
-                                        <div class="img_infi">
-                                            <ul class="nav nav-tabs">
-                                                <li class="active img_data"><a data-toggle="tab" href="#home">Data</a></li>
-                                                <li class="img_note"><a data-toggle="tab" href="#menu1">Note</a></li>
-
+                    
+                    
+                                    <div class="sidebar-nav">
+                                        <!--<div class="form-group customfilter-selectbox-container">
+                                            <select id="basic" class="selectpicker show-tick form-control" data-live-search="true" title="Custom Filter...">
+                                    
+                                    <optgroup label="Select a Filter">
+                                        <option>Show All</option>
+                                        <option>Locked Approved</option>
+                                    </optgroup>
+                                    
+                                    <optgroup label="General">
+                                        <option>Approved</option>
+                                        <option>Rejected</option>
+                                        <option>Solo</option>
+                                        <option>Group</option>
+                                        <option>Retouch Comment</option>
+                                        <option>Image notes</option>
+                                    </optgroup>
+                                    
+                                    <optgroup label="Tagging">
+                                        <option>Unpublished</option>
+                                        <option>Tagged/Unsubmitted-Tagger #1</option>
+                                        <option>Tagged/Unsubmitted-Tagger #2</option>
+                                        <option>Unpublished and Untagged-Tagger #1</option>
+                                        <option>Unpublishe and Untagged-Tagger #2</option>
+                                        <option>Hidden</option>
+                                        <option>Published</option>
+                                    </optgroup>
+                                    
+                                    <optgroup label="Tagging With">
+                                        <option>PriorityPix</option>
+                                        <option>Sensitive</option>
+                                        <option>Misc_Unknown</option>
+                                        <option>Background</option>
+                                        <option>Crew</option>
+                                        <option>Ensemble</option>
+                                        <option>Equipment</option>
+                                        <option>Ross Lynch</option>
+                                        <option>Laura marano</option>
+                                        <option>Calum Worthy</option> 
+                                        <option>Raini Rodriguez</option>
+                                    </optgroup>
+                                    
+                                    <optgroup label="Excusive">
+                                        <option>All exclusive</option>
+                                    </optgroup> 
+                                    
+                                    </select> -->
+                    
+                                        <!--<a href="#" class="advancesearch_button_section btn-block" >Advance Search</a>-->
+                                        <!-- </div> -->
+                                        <div class="tab_divv">
+                                            <ul class="tab_ul" role="tablist">
+                                                <li role="presentation" class="active"><a href="#sb_menu" aria-controls="sb_menu" role="tab" data-toggle="tab"><i class="fa fa-th-large" aria-hidden="true"></i></a></li>
+                                                <li role="presentation"><a href="#pinfo" aria-controls="pinfo" role="tab" data-toggle="tab" title="Project Info">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                </a>
+                                                </li>
+                                                <!-- <li><a href="javascript:void(0)" title="Advance Search" data-toggle="modal" data-target="#search"><i class="fa fa-search" aria-hidden="true"></i></a></li> -->
                                             </ul>
-
-                                            <div class="tab-content">
-                                                <div id="home" class="tab-pane fade in active">
-                                                    <p>Released: 2011-11-22 17:33:27</p>
-                                                    <p>Batch: B23_01198-01303_D012</p>
-                                                    <p>Image: B23_01297.jpg</p>
-                                                    <p>Image Status: Locked</p>
-                                                    <p>Tagged with: Daniel Craig</p>
-                                                    <p> Approved By: Daniel Craig </p>
-                                                    <p> Rejected By: </p>
-                                                    <p> In General Albums: </p>
-                                                    <p>Final approved DC</p>
-                                                    <p>batch 2</p>
-                                                    <p>James Album</p>
-                                                    <p>Photographer:</p>
-                                                    <p>Caption: Bond (Daniel Craig) meets Q for the first time in the National
-                                                        Portrait Gallery.</p>
-                                                </div>
-                                                <div id="menu1" class="tab-pane fade">
-                                                    <div class="form-group">
-                                                        <textarea class="form-control" id="body" rows="3" placeholder="Write Note Here"></textarea>
-                                                    </div>
-                                                    <div class=" form-group db_com">
-                                                        <div class="radio down-input">
-                                                            <label>
-                                                <input type="radio" name="o1" value="">
-                                                <span class="cr"><i class="cr-icon fa fa-circle"></i></span>
-                                               Private Note
-                                                </label>
+                                        </div>
+                                        <div class="tab-content db_com">
+                                            <div role="tabpanel" class="tab-pane active db_com side_dropdown" id="sb_menu">
+                                                <ul class="accordion-menu side-menu">
+                                                    <!-- <li class="search_li" title="Advance Search" data-toggle="modal" data-target="#search">
+                                                        <div class="dropdownlink"><i class="fa fa-search dp_i" aria-hidden="true"></i></div>
+                                                    </li> -->
+                                                    <!-- <li>
+                                                        <div class="dropdownlink"><i class="fa fa-address-book-o dp_i" aria-hidden="true"></i><span>Albums</span>
+                                                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                                         </div>
-                                                        <div class="radio down-input">
-                                                            <label>
-                                                <input type="radio" name="o1" value="">
-                                                <span class="cr"><i class="cr-icon fa fa-circle"></i></span>
-                                               Public Note
-                                                </label>
+                                                        <ul class="submenuItems child_menu">
+                                                            <li class="items">
+                                                                <i class="fa fa-plus-square-o dp_i" title="Add Album" data-toggle="modal" data-target="#AddAlbum" aria-hidden="true"></i>
+                                                                <i class="fa fa-minus-square-o dp_i" title="Delete Album"  data-toggle="modal" data-target="#DelAlbum" aria-hidden="true"></i>
+                                                                <i class="fa fa-language dp_i" title="Rename Album"  data-toggle="modal" data-target="#RnmAlbum" aria-hidden="true"></i>
+                                                                <i class="fa fa-pencil-square-o dp_i" title="Edit Album Permissions"  data-toggle="modal" data-target="#EdiAlbum" aria-hidden="true"></i>
+                                                                <i class="fa fa-sort dp_i" title="Sort Images in Selected Album"  data-toggle="modal" data-target="" aria-hidden="true"></i>
+                                                                <i class="fa fa-trash-o dp_i" title="Drag Image to remove from Album"   data-toggle="modal" data-target="" aria-hidden="true"></i>
+                    
+                                                            </li>
+                                                            <li>
+                                                                <p>Album</p>
+                                                            </li>
+                                                            <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true">&nbsp;&nbsp;</i>MyAlbum</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <div class="dropdownlink"><i class="fa fa-picture-o dp_i" aria-hidden="true"></i><span>Image Info</span>
+                                                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                                         </div>
+                                                        <ul class="submenuItems child_menu">
+                                                            <div class="img_infi">
+                                                                <ul class="nav nav-tabs">
+                                                                    <li class="active img_data"><a data-toggle="tab" href="#home">Data</a></li>
+                                                                    <li class="img_note"><a data-toggle="tab" href="#menu1">Note</a></li>
+                    
+                                                                </ul>
+                    
+                                                                <div class="tab-content">
+                                                                    <div id="home" class="tab-pane fade in active">
+                                                                        <p>Released: 2011-11-22 17:33:27</p>
+                                                                        <p>Batch: B23_01198-01303_D012</p>
+                                                                        <p>Image: B23_01297.jpg</p>
+                                                                        <p>Image Status: Locked</p>
+                                                                        <p>Tagged with: Daniel Craig</p>
+                                                                        <p> Approved By: Daniel Craig </p>
+                                                                        <p> Rejected By: </p>
+                                                                        <p> In General Albums: </p>
+                                                                        <p>Final approved DC</p>
+                                                                        <p>batch 2</p>
+                                                                        <p>James Album</p>
+                                                                        <p>Photographer:</p>
+                                                                        <p>Caption: Bond (Daniel Craig) meets Q for the first time in the National
+                                                                            Portrait Gallery.</p>
+                                                                    </div>
+                                                                    <div id="menu1" class="tab-pane fade">
+                                                                        <div class="form-group">
+                                                                            <textarea class="form-control" id="body" rows="3" placeholder="Write Note Here"></textarea>
+                                                                        </div>
+                                                                        <div class=" form-group db_com">
+                                                                            <div class="radio down-input">
+                                                                                <label>
+                                                                    <input type="radio" name="o1" value="">
+                                                                    <span class="cr"><i class="cr-icon fa fa-circle"></i></span>
+                                                                   Private Note
+                                                                    </label>
+                                                                            </div>
+                                                                            <div class="radio down-input">
+                                                                                <label>
+                                                                    <input type="radio" name="o1" value="">
+                                                                    <span class="cr"><i class="cr-icon fa fa-circle"></i></span>
+                                                                   Public Note
+                                                                    </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group save_note">
+                                                                            <button class="btn btn-block">Save Note</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <div class="dropdownlink"><i class="fa fa-users dp_i" aria-hidden="true"></i><span>Administration</span>
+                                                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                        </div>
+                                                        <ul class="submenuItems child_menu">
+                                                           
+                                                            <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#sda_aar">Actor Approval Report</button></li>
+                                                            <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#sda_ffl">Filtered FileName List</button></li>
+                                                            <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#sda_sfl">Selected FileName List</button></li>
+                                                            <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#sda_iex">Image Exclusives</button></li>
+                                                            <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#psreport">Project Summary Report</button></li>
+                                                            <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#imreport">Image Notes Report</button></li>
+                                                            <li><button class="btn btn-block btn_admin"data-toggle="modal" data-target="#icreport">Image Caption Report</button></li>
+                                                            <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#taggview1">Tagging View #1</button></li>
+                                                            <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#taggview2">Tagging View #2</button></li>
+                                                            <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#curreport">Current Activity Report</button></li>
+                                                            <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#transreport">Transaction Report</button></li>
+                                                            <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#iiftagging">Advanced Image Tagging</button></li>
+                                                            <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#adreport">Actor ID Report</button></li>
+                                                            <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#delivery">Delivery</button></li>
+                                                            <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#foxaechive">FOX Archive Delivery</button></li>
+                                                            <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#unfinalization">Finalize/Unfinalize</button></li>
+                                                            <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#rejtoggle">Rejection Toggle</button></li>
+                    
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <div class="dropdownlink"><i class="fa fa-users dp_i" aria-hidden="true"></i><span>Wide Edit Administration</span>
+                                                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                        </div>
+                                                        <ul class="submenuItems child_menu">
+                                                            <li><button class="btn btn-block btn_wedit" data-toggle="modal" data-target="#wea_sda_ffl">Filtered FileName List</button></li>
+                                                            <li><button class="btn btn-block btn_wedit" data-toggle="modal" data-target="#wea_sda_sfl">Selected FileName List</button></li>
+                                                            <li><button class="btn btn-block btn_wedit"data-toggle="modal" data-target="#sendemailnoti">Send Email Notification</button></li>
+                                                            <li><button class="btn btn-block btn_wedit"data-toggle="modal" data-target="#wea_imreport">Image Notes Report</button></li>
+                                                            <li><button class="btn btn-block btn_wedit" data-toggle="modal" data-target="#uploadimages">Upload Images</button></li>
+                                                        </ul>
+                                                    </li>
+                    
+                                                    <li>
+                                                        <div class="dropdownlink"><i class="fa fa-pencil-square-o dp_i" aria-hidden="true"></i><span>Wide Edit Album</span>
+                                                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                        </div>
+                                                        <ul class="submenuItems">
+                                                            <li class="itemss">
+                                                                <i class="fa fa-plus-square-o dp_i" title="Add Album" data-toggle="modal" data-target="#AddAlbum1" aria-hidden="true"></i>
+                                                                <i class="fa fa-minus-square-o dp_i" title="Delete Album" data-toggle="modal" data-target="#DelAlbum1" aria-hidden="true"></i>
+                                                                <i class="fa fa-language dp_i" title="Rename Album" data-toggle="modal" data-target="#RnmAlbum1" aria-hidden="true"></i>
+                                                                <i class="fa fa-pencil-square-o dp_i"title="Edit Album"  data-toggle="modal" data-target="#EdiAlbum1" aria-hidden="true"></i>
+                                                                <i class="fa fa-tag dp_i" title="Tagging Album" data-toggle="modal" data-target="#Taggimg" aria-hidden="true"></i>
+                                                                <i class="fa fa-envelope dp_i" title="Email" data-toggle="modal" data-target="#Emailnote" aria-hidden="true"></i>
+                                                                <i class="fa fa-sign-out dp_i" title="Album Sign-off" data-toggle="modal" data-target="#album-sign-off" aria-hidden="true"></i>
+                    
+                                                            </li>
+                                                            <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true"> &nbsp;&nbsp;</i>Album1</a></li>
+                                                            <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true">&nbsp;&nbsp;</i>MyAlbum</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li> -->
+                                                    <div class="dropdownlink"><i class="fa fa-file-text-o dp_i" aria-hidden="true"></i><span>Audit</span>
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                                     </div>
-                                                    <div class="form-group save_note">
-                                                        <button class="btn btn-block">Save Note</button>
-                                                    </div>
-                                                </div>
+                                                    <ul class="submenuItems child_menu">
+                                                        <li><a href="#">Conflicts</a></li>
+                                                        <li><a href="#">No Conflicts</a></li>
+                                                        <li><a href="#">Bypass 2nd Tagger</a></li>
+                                                        <li class="aud_btn"> <button class="btn">Publish Image(s)</button></li>
+                                                        <li class="aud_btn"> <button class="btn">Hide Image(s)</button></li>
+                                                        <li class="aud_btn"> <button class="btn">UnhideImage(s)</button></li>
+                                                        <li class="aud_btn"> <button class="btn">Clear Tagg(s)</button></li>
+                                                        <li class="aud_btn"> <button class="btn">Clear Single Tag</button></li>
+                                                    </ul>
+                                                    </li>
+                                                    <!-- <li>
+                                                        <div class="dropdownlink"><i class="fa fa-sign-out dp_i" aria-hidden="true"></i><span>Retouch</span></div>
+                                                    </li> -->
+                                                </ul>
                                             </div>
+                                            <div role="tabpanel" class="tab-pane pinfo db_com" id="pinfo">
+                                                <h1>Project Info</h1>
+                    
+                                                <div class="db_com info_div">
+                                                    <div class="info-up indigo lighten-1"></div>
+                                                    <div class="info_avatar"><img src="images/agents_of_shield.png" class="rounded-circle"></div>
+                                                    <div class="info-body">
+                                                        <h4 class="info-title">Photo : 102</h4>
+                                                        <hr>
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                                <p><i class="fa fa-camera" aria-hidden="true"></i> <span>Bob D'Amico</span></p>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                                <p><i class="fa fa-calendar" aria-hidden="true"></i> <span>03/17/2017</span></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                    
+                                                </div>
+                    
+                    
+                                            </div>
+                    
                                         </div>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <div class="dropdownlink"><i class="fa fa-users dp_i" aria-hidden="true"></i><span>Administration</span>
-                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                    </div>
-                                    <ul class="submenuItems">
-                                        <!-- <li><a href="#">Actor Approval Report</a></li> -->
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#sda_aar">Actor Approval Report</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#sda_ffl">Filtered FileName List</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#sda_sfl">Selected FileName List</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#sda_iex">Image Exclusives</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#psreport">Project Summary Report</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#imreport">Image Notes Report</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#icreport">Image Caption Report</a></li>
-                                        <li><a href=="javascript:void(0)" data-toggle="modal" data-target="#taggview1">Tagging View #1</a></li>
-                                        <li><a href=="javascript:void(0)" data-toggle="modal" data-target="#taggview2">Tagging View #2</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#curreport">Current Activity Report</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#transreport">Transaction Report</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#iiftagging">Advanced Image Tagging</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#adreport">Actor ID Report</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#delivery">Delivery</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#foxaechive">FOX Archive Delivery</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#unfinalization">Finalize/Unfinalize</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#rejtoggle">Rejection Toggle</a></li>
-
-                                    </ul>
-                                </li>
-                                <li>
-                                    <div class="dropdownlink"><i class="fa fa-users dp_i" aria-hidden="true"></i><span>Wide Edit Administration</span>
-                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                    </div>
-                                    <ul class="submenuItems">
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#wea_sda_ffl">Filtered FileName List</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#wea_sda_sfl">Selected FileName List</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#sendemailnoti">Send Email Notification</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#wea_imreport">Image Notes Report</a></li>
-                                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#uploadimages">Upload Images</a></li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <div class="dropdownlink"><i class="fa fa-pencil-square-o dp_i" aria-hidden="true"></i><span>Wide Edit Album</span>
-                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                    </div>
-                                    <ul class="submenuItems">
-                                        <li class="itemss">
-                                            <i class="fa fa-plus-square-o dp_i" data-toggle="modal" data-target="#AddAlbum1" aria-hidden="true"></i>
-                                            <i class="fa fa-minus-square-o dp_i" data-toggle="modal" data-target="#DelAlbum1" aria-hidden="true"></i>
-                                            <i class="fa fa-language dp_i" data-toggle="modal" data-target="#RnmAlbum1" aria-hidden="true"></i>
-                                            <i class="fa fa-pencil-square-o dp_i" data-toggle="modal" data-target="#EdiAlbum1" aria-hidden="true"></i>
-                                            <i class="fa fa-tag dp_i" data-toggle="modal" data-target="#Taggimg" aria-hidden="true"></i>
-                                            <i class="fa fa-envelope dp_i" data-toggle="modal" data-target="#Emailnote" aria-hidden="true"></i>
-                                            <i class="fa fa-sign-out dp_i" data-toggle="modal" data-target="#album-sign-off" aria-hidden="true"></i>
-
-                                        </li>
-                                        <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true"> &nbsp;&nbsp;</i>Album1</a></li>
-                                        <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true">&nbsp;&nbsp;</i>MyAlbum</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <div class="dropdownlink"><i class="fa fa-file-text-o dp_i" aria-hidden="true"></i><span>Audit</span>
-                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                    </div>
-                                    <ul class="submenuItems">
-                                        <li><a href="#">Conflicts</a></li>
-                                        <li><a href="#">No Conflicts</a></li>
-                                        <li><a href="#">Bypass 2nd Tagger</a></li>
-                                        <li class="aud_btn"> <button class="btn">Publish Image(s)</button></li>
-                                        <li class="aud_btn"> <button class="btn">Hide Image(s)</button></li>
-                                        <li class="aud_btn"> <button class="btn">UnhideImage(s)</button></li>
-                                        <li class="aud_btn"> <button class="btn">Clear Tagg(s)</button></li>
-                                        <li class="aud_btn"> <button class="btn">Clear Single Tag</button></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <div class="dropdownlink"><i class="fa fa-sign-out dp_i" aria-hidden="true"></i><span>Logout</span></div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div role="tabpanel" class="tab-pane pinfo db_com" id="pinfo">
-                            <h1>Project Info</h1>
-
-                            <div class="db_com info_div">
-                                <div class="info-up indigo lighten-1"></div>
-                                <div class="info_avatar"><img src="images/agents_of_shield.png" class="rounded-circle"></div>
-                                <div class="info-body">
-                                    <h4 class="info-title">Photo : 5401</h4>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                            <p><i class="fa fa-camera" aria-hidden="true"></i> <span>Bob D'Amico</span></p>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                            <p><i class="fa fa-calendar" aria-hidden="true"></i> <span>03/17/2017</span></p>
-                                        </div>
+                    
                                     </div>
                                 </div>
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-            <!-- /#sidebar-wrapper -->
-
+                                <!-- /#sidebar-wrapper -->
             <!-- Page Content -->
             <div id="page-content-wrapper" class="db_com pcw">
                 <div class="container-fluid">
@@ -459,12 +451,7 @@
                                     </li>
                                     <li><a href="#"><i class="fa fa-forward"></i></a></li>
                                     <li><a href="#"><i class="fa fa-step-forward"></i></a></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <a href="viewproject.html" class="btn btn-sm view_1">Back</a>
-                                </ul>
+                                    
                                 
                             </div>
                         
