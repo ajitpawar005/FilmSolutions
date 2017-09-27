@@ -136,7 +136,7 @@
                     <ol class="breadcrumb st_breadcrumb">
                         <!--<li class="breadcrumb-item"><a href="javascript:void(0)">Gallery</a></li> -->
                         <li class="breadcrumb-item"><a href="viewproject.html">FS-DEMO-EXEC</a></li>
-                        <li class="breadcrumb-item active">Images</li>
+                       <!-- <li class="breadcrumb-item active">Images</li> -->
                     </ol>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -150,7 +150,7 @@
                             <li><button title="Make Cover" ><i class="fa fa-window-restore" aria-hidden="true"></i></button></li>
                             <li><button title="Email Selected Images"  data-toggle="modal" data-target="#email"><i class="fa fa-envelope" aria-hidden="true"></i></button></li>
                             <li><button title="Download Selected Images"  data-toggle="modal" data-target="#fs_download"><i class="fa fa-download" aria-hidden="true"></i></button></li>
-                            <li><a title="compare Selected Images" href="compareimg.html"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
+                            <li><a title="Select Images to Compare" href="comparetool.html"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
                             <li><button title="Print Selected Images"  data-toggle="modal" data-target="#printtool"><i class="fa fa-print" aria-hidden="true"></i></button></li>
                             <li><button title="Change View Settings" data-toggle="modal" data-target="#fs_view"><i class="fa fa-desktop" aria-hidden="true"></i></button></li>
                             <li><button title="Delete Selected Asset(s)" data-toggle="modal" data-target="#fs_dele"><i class="fa fa-trash-o" aria-hidden="true"></i></button></li>
@@ -7759,7 +7759,17 @@
                                        
                                         <div class="col-sm-6"> 
                                                 <div class="div_shots">
-                                                   <button class="pull-right" data-toggle="modal" data-target="#addshorts">Add Key  </button>
+                                                        <a href="#" rel="popover" data-placement="bottom"  data-popover-content="#myPopover">My Popover</a>
+                                                        <div id="myPopover" class="hide">
+                                                                This is a popover list:
+                                                                <ul>
+                                                                    <li>List item 1</li>
+                                                                    <li>List item 2</li>
+                                                                    <li>List item 3</li>
+                                                                </ul>
+                                                            </div>
+                                                   <button class="pull-right" data-toggle="popover" data-placement="bottom" data-content="Content">Add Key  </button>
+                                                   <!--<a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">Bottom</a> -->
                                                     <button class="pull-right"  data-toggle="modal" data-target="#reshorts">Remove Key</button> 
                                                     <button class="pull-right" data-toggle="modal" data-target="#editshorts"> Edit Key</button>                                                                
                                         </div>
@@ -8320,6 +8330,20 @@
         $('select').selectpicker();
 
         $('.dropdown-toggle').dropdown();
+
+        $('[data-toggle="popover"]').popover(); 
+        $(function(){
+    $('[rel="popover"]').popover({
+        container: 'body',
+        html: true,
+        content: function () {
+            var clone = $($(this).data('popover-content')).clone(true).removeClass('hide');
+            return clone;
+        }
+    }).click(function(e) {
+        e.preventDefault();
+    });
+});
 
     /*$("#cap_mod").on("mousedown",function() {
         $("#imagecap").hide();
