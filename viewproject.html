@@ -147,7 +147,7 @@
                             <li><button title="Select All"  class="select_all"><i class="fa fa-check" aria-hidden="true"></i></button></li>
                             <li><button title="Deselect All" class="select_alle"><i class="fa fa-window-close" aria-hidden="true"></i></button></li>
                             <li><button title="Go To" data-toggle="modal" data-target="#goto"><i class="fa fa-share" aria-hidden="true"></i></button></li>
-                            <li><button title="Make Cover" ><i class="fa fa-window-restore" aria-hidden="true"></i></button></li>
+                            <!-- <li><button title="Make Cover" ><i class="fa fa-window-restore" aria-hidden="true"></i></button></li> -->
                             <li><button title="Email Selected Images"  data-toggle="modal" data-target="#email"><i class="fa fa-envelope" aria-hidden="true"></i></button></li>
                             <li><button title="Download Selected Images"  data-toggle="modal" data-target="#fs_download"><i class="fa fa-download" aria-hidden="true"></i></button></li>
                             <li><a title="Select Images to Compare" href="comparetool.html"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
@@ -7759,114 +7759,16 @@
                                        
                                         <div class="col-sm-6"> 
                                                 <div class="div_shots">
-                                                        <!-- <a href="#" rel="popover" data-placement="bottom"  data-popover-content="#myPopover">My Popover</a>
-                                                        <div id="myPopover" class="hide">
-                                                                This is a popover list:
-                                                                <ul>
-                                                                    <li>List item 1</li>
-                                                                    <li>List item 2</li>
-                                                                    <li>List item 3</li>
-                                                                </ul>
-                                                            </div> -->
-                                                            
-                
-                                                             
-                                                                     
-                                                              
-
-
-
-
-                                                   <button id="adde"class="pull-right"  data-toggle="popover" data-placement="bottom" >Add Key  </button>
-
-                                                            <div id="addkey" class="hide add_key">
-                                                                <div class="titlee">
-                                                                        <h5>Enter New Shortcut Keys & Value</h5>
-                                                                </div>
-                                                                <div class="db_com adpage">
-                                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                                        <h6>Keys:</h6>
-                                                                    </div>
-                                                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                                                            <h6>Description:</h6>
-                                                                    </div>
-                                                                    
-                                                                
-                                                                </div>
-                                                                <div class="db_com adpage">
-                                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                                            <div class="form-group">
-                                                                            <input type="text" class="form-control" id="usr">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                                                        <div class="form-group">
-                                                                            <input type="text" class="form-control" id="usr">
-                                                                        </div>
-                                                                    </div>
-                                                                    
-                                                                
-                                
-                                                            </div>
-                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                    <div class="add_bte">
-                                                                    <button type="button" class="pull-right">ADD!</button>
-                                                                </div>
-                                                                </div>
-                                                        </div> 
-
-                                                   <!--<a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">Bottom</a> -->
-                                                    <button id="ede" class="pull-right"  data-toggle="popover" data-placement="bottom"> Edit Key</button> 
+                                                  
+                                                  
                                                     
-                                                    <div id="edikey" class="hide edi_key">
+                                                    <button id="rme" class="pull-right" data-toggle="popover" data-placement="bottom"> Remove Key </button>                                                               
+                                                          <div id="remekey" class="hide reme_key">
                                                             <div class="titlee">
-                                                                    <h5>Modify the Shortcut Key(s) and/or Value</h6>
-                                                            </div>
-                                                            <div class="db_com edpage">
-                                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                                    <h6>Key</h6>
-                                                                </div>
-                                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                                                        <h6>Description</h6>
-                                                                </div>
-                                                                <div class="db_com edshorts">
-                                                                <div class="table-responsive">
-                                                           
-                                                                <table class="col-sm-12">
-                                                                    <tbody>
-                                                                    <tr>
-                                                                    <td class="col-sm-4"><input type="text" class="form-control" id="usr" value="AA"></td>
-                                                                    <td class="col-sm-8"><input type="text" class="form-control" id="usr" value="aaaaaa"></td>
-                                                                
-                                                                    </tr>  
-                                                                              
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                       
-                                                             </div>
-                                                               
-                                                            </div>
-                                                    
-                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                    <div class="ede_bte">
-                                                                       <button type="button" class="pull-right">UPDATE!</button>
-                                                                   </div>
-                                                            </div>
-                                                    
-                                                    </div>
-                                                    
-                                                    <button id="rme" class="pull-right" data-toggle="popover" data-placement="bottom"> Remove Key </button>                                                                
-    
-                                                    <div id="remekey" class="hide reme_key">
-                                                            <div class="titlee">
-                                                                    <h5>If you would like to deleteShortcut(s)..! Please Check the Box.</h5>
-                                                            </div>
-                                                        
-                                                                    
+                                                                    <h5>If you would like to delete Shortcut(s)..! Please Check the Box.</h5>
+                                                            </div>   
                                                                <div class="db_com reshorts">
                                                                 <div class="table-responsive">
-                                                           
                                                                 <table class="col-sm-12 " >
                                                                   
                                                                         <tr>
@@ -7875,8 +7777,7 @@
                                                                                 <th >Description</th>
                                                                                 
                                                                         </tr>
-                                                                    
-                                                               
+
                                                                     <tr>
                                                                         <td>
                                                                             <div class="checkbox check_r">
@@ -7928,37 +7829,90 @@
                                                             <button type="button" class="pull-right">REMOVE!</button>
                                                         </div>
                                                         </div>
-                                                    </div>
-                                                   <!-- <a data-placement="bottom" data-toggle="popover" data-title="Login" data-container="body" type="button" data-html="true" href="#" id="login">Login</a>
-                                                    <div id="popover-content" class="hide">
-                                                      <form class="form-inline" role="form">
-                                                        <div class="form-group">
-                                                          <select class="form-control">
-                                                            <option>NA</option>
-                                                            <option>RU</option>
-                                                            <option>EU</option>
-                                                            <option>SEA</option>
-                                                          </select> 
-                                                          <input type="text" placeholder="Name" class="form-control" maxlength="5">
-                                                          <button type="submit" class="btn btn-primary">Go To Login »</button>                                  
-                                                        </div>
-                                                      </form>
-                                                    </div> -->
-
-
-
-                                        
-                                        
-                                        
-                                        
+              
                                                 </div>
+                                                   <!--<a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">Bottom</a> -->
+                                                   <button id="ede" class="pull-right"  data-toggle="popover" data-placement="bottom"> Edit Key</button> 
+                                                   <div id="edikey" class="hide edi_key">
+                                                       <div class="titlee">
+                                                               <h5>Modify the Shortcut Key(s) and/or Value</h6>
+                                                       </div>
+                                                       <div class="db_com edpage">
+                                                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                               <h6>Key</h6>
+                                                           </div>
+                                                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                                                   <h6>Description</h6>
+                                                           </div>
+                                                           <div class="db_com edshorts">
+                                                           <div class="table-responsive">
+                                                      
+                                                           <table class="col-sm-12">
+                                                               <tbody>
+                                                               <tr>
+                                                               <td class="col-sm-4"><input type="text" class="form-control" id="usr" value="AA"></td>
+                                                               <td class="col-sm-8"><input type="text" class="form-control" id="usr" value="aaaaaa"></td>
+                                                           
+                                                               </tr>  
+                                                                         
+                                                               </tbody>
+                                                           </table>
+                                                           </div>
+                                                           </div>
+                                                       </div>
+                                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                               <div class="ede_bte">
+                                                                  <button type="button" class="pull-right">UPDATE!</button>
+                                                              </div>
+                                                       </div>
+                                               </div>
+
+                                                <button id="adde"class="pull-right"  data-toggle="popover" data-placement="bottom" >Add Key  </button>
+                                                <div id="addkey" class="hide add_key">
+                                                    <div class="titlee">
+                                                            <h5>Enter New Shortcut Keys & Value</h5>
+                                                    </div>
+                                                    <div class="db_com adpage">
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                            <h6>Keys:</h6>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                                                <h6>Description:</h6>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="db_com adpage">
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                <div class="form-group">
+                                                                <input type="text" class="form-control" id="usr">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" id="usr">
+                                                            </div>
+                                                        </div>
+                    
+                                                     </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="add_bte">
+                                                        <button type="button" class="pull-right">ADD!</button>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+
+
+                                            
+                                             
                                     </div>
                                     </div>
                                    </div>
+
+
                                    <div class="cap_cont db_com ">  
                                         <div class="row"></div>
                                     <div class="table-responsive" style="color:#ddd; font-size:12px;">
-                                        <table class="col-sm-12">
+                                        <table class="col-sm-8">
                                             <tbody>
                                             <tr>
                                             <td class="col-sm-6">AA-aaaaaaaa</td>
@@ -8206,7 +8160,7 @@
     </div> -->
 
           <!-- ================== Edit Shortcuts =================== -->
-          <div class="modal fade" id="editshorts" tabindex="-1" role="dialog" aria-labelledby="addshortsLabel" aria-hidden="true">
+        <!--  <div class="modal fade" id="editshorts" tabindex="-1" role="dialog" aria-labelledby="addshortsLabel" aria-hidden="true">
                 <div class="vertical-alignment-helper">    
             <div class="modal-dialog vertical-align-center modal-sm">
                     <div class="modal-content">
@@ -8246,13 +8200,13 @@
                                                     <td class="col-sm-6">II-iiiiiiii</td>
                                                   
                                                     </tr> -->               
-                                            </tbody>
+                                          <!--  </tbody>
                                         </table>
                                     </div>
                                <!-- <label style="color:#A9A9A9; font-size:12px;">N/A (Dean Cain)
                                 </label></br>
                                 <label style="color:#A9A9A9; font-size:12px;">N/A (Dean Cain) </label> -->
-                            </div>
+                          <!--  </div>
                                        
                                     </div>
                                    
@@ -8264,18 +8218,18 @@
                                  <div class="add_bt">
                                     <button type="button" class="pull-right">UPDATE!</button>
                                 </div>
-                                </div>
+                                </div> -->
                             <!-- <div class="modal-footer db_com">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         </div> -->
-                        </div>
+                    <!--    </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
           <!-- ================== Remove Shortcuts =================== -->
-          <div class="modal fade" id="reshorts" tabindex="-1" role="dialog" aria-labelledby="reshortsLabel" aria-hidden="true">
+         <!-- <div class="modal fade" id="reshorts" tabindex="-1" role="dialog" aria-labelledby="reshortsLabel" aria-hidden="true">
                 <div class="vertical-alignment-helper">    
             <div class="modal-dialog vertical-align-center modal-sm">
                     <div class="modal-content">
@@ -8363,11 +8317,11 @@
                             <!-- <div class="modal-footer db_com">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         </div> -->
-                        </div>
+                      <!--  </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
