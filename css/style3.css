@@ -793,13 +793,13 @@ transition: all .1s ease-in;}
 .modal-content .modal-body .form-group input{box-shadow: inset 0px 0px 0px 1px #292929;background-color: #666;border: none;color:#ddd;}
 .modal-content .modal-body .form-group input:focus{box-shadow:inset 0px 0px 0px 1px #292929;border-color:#292929;}
 .modal-content .modal-body button{background-color:#9c3127;color:#fff;border: none;padding: 7px 10px;border-radius: 3px;}
-.modal-content .modal-body button:hover,.modal-content .modal-body button:focus{background-color:#9c3127;color:#fff;border: none;}
+/*.modal-content .modal-body button:hover,.modal-content .modal-body button:focus{background-color:#9c3127;color:#fff;border: none;}*/
 .modal-content .modal-body .mbody-btn{background-color:#292929;border-radius:0px;border:2px solid #292929;color:#ddd;text-transform:none;font-size:12px;box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);}
 .modal-content .modal-body .mbody-btn:hover,.modal-content .modal-body .mbody-btn:focus{background-color:#292929;border-radius:0px;border:2px solid #292929;box-shadow:none;box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);}
 .modal-content .modal-body .down-selectpic{display: inline-block;vertical-align: middle;margin:0px;padding:7px 0px;}
 .modal-content .modal-body .down-selectpic .form-control{height:auto;}
 .modal-content .modal-body .down-selectpic button{padding: 0px 28px;background-color:#404040;border-radius:0px;border:1px solid #292929;color:#ddd;margin:0px !important;}
-.modal-content .modal-body .down-selectpic button:hover,.modal-content .modal-body .down-selectpic button:focus{padding: 0px 28px;background-color:#404040;border-radius:0px;border:1px solid #292929;box-shadow:none;color:#ddd;}
+/*.modal-content .modal-body .down-selectpic button:hover,.modal-content .modal-body .down-selectpic button:focus{padding: 0px 28px;background-color:#404040;border-radius:0px;border:1px solid #292929;box-shadow:none;color:#ddd;}*/
 .modal-content .modal-body .down-selectpic .form-control .dropdown-menu{background-color:#404040;margin:0px !important;}
 .modal-content .modal-body .down-selectpic .form-control .dropdown-menu li{}
 .modal-content .modal-body .down-selectpic .form-control .dropdown-menu li a{color:#ddd;}
@@ -868,7 +868,7 @@ transition: all .1s ease-in;}
 .printtool_div .printbtn button{background-color:#292929;border-radius:0px;border:2px solid #292929;color:#ddd; text-transform:uppercase;width:49%;float:left;}
 .printtool_div .printbtn .btn_downl{margin-right:6px;}
 .printtool_div .printbtn button i{}
-.printtool_div .printbtn button:hover,.modal-content .modal-footer button:focus{background-color:#292929;border-radius:0px;border:2px solid #292929;}
+/*.printtool_div .printbtn button:hover,.modal-content .modal-footer button:focus{background-color:#292929;border-radius:0px;border:2px solid #292929;} */
 
 .printtool_div .print-imgcontainer{background-color:#444;box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);min-height:715px;padding:15px 0px;}
 .printtool_div .print-imgcontainer .printtool-cont{}
@@ -962,7 +962,7 @@ float:left;
 .psreport_div .modal-body .psreport-divtable .table td,.psreport_div .modal-body .psreport-divtable .table th{color:#ddd;text-shadow: 1px 0px #000;font-size: 12px;}
 .psreport_div .modal-footer{}
 .psreport_div .modal-footer button{background-color:#292929;border-radius:0px;border:2px solid #292929;color:#ddd;padding: 7px 25px; text-transform:none;margin-right: 10px;}
-.psreport_div .modal-footer button:hover,.psreport_div .modal-footer button:focus{background-color:#292929;border-radius:0px;border:2px solid #292929;box-shadow:none;}
+/*.psreport_div .modal-footer button:hover,.psreport_div .modal-footer button:focus{background-color:#292929;border-radius:0px;border:2px solid #292929;box-shadow:none;} */
 
 
 /* Image Notes Report / Image Caption Report Section Modal Popup */
@@ -1004,7 +1004,7 @@ float:left;
 .iiftag_div .iiftag .form-group h5{margin:0px;font-size:12px;text-shadow: 1px 0px #000;color:#ddd;display: inline-block;vertical-align: middle;}
 .iiftag_div .iiftag .form-group input{display: inline-block;vertical-align: middle;width:70%;}
 .iiftag_div .iiftag button{background-color:#292929;border-radius:0px;border:2px solid #292929;color:#ddd;text-transform:none;font-size:12px;box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);}
-.iiftag_div .iiftag button:hover,.iiftag_div .iiftag button:focus{background-color:#292929;border-radius:0px;border:2px solid #292929;box-shadow:none;box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);}
+/*.iiftag_div .iiftag button:hover,.iiftag_div .iiftag button:focus{background-color:#292929;border-radius:0px;border:2px solid #292929;box-shadow:none;box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);}*/
 .iiftag_div .iiftag_cont{background-color: #444;box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);min-height:290px;margin:15px 0px;padding:15px;}
 .iiftag_div .iiftag_cont h3{text-shadow: 1px 0px #000;color:#ddd;margin:0px 0px 15px 0px; font-size:16px;}
 .iiftag_div .iiftag_cont p{text-align:center;font-size:12px;text-shadow: 1px 0px #000;color:#ddd;}
@@ -1026,7 +1026,7 @@ float:left;
 .foxaechive_div .modal-body .down-selectpic{display: inline-block;vertical-align: middle;margin:0px;padding:7px 0px;}
 .foxaechive_div .modal-body .down-selectpic .form-control{height:34px;}
 .foxaechive_div .modal-body .down-selectpic button{padding: 0px 28px;background-color:#404040;border-radius:0px;border:1px solid #292929;color:#ddd;margin:0px !important;height:34px;}
-.foxaechive_div .modal-body .down-selectpic button:hover,.modal-content .modal-body .down-selectpic button:focus{padding: 0px 28px;background-color:#404040;border-radius:0px;border:1px solid #292929;box-shadow:none;color:#ddd;height:34px;}
+/*.foxaechive_div .modal-body .down-selectpic button:hover,.modal-content .modal-body .down-selectpic button:focus{padding: 0px 28px;background-color:#404040;border-radius:0px;border:1px solid #292929;box-shadow:none;color:#ddd;height:34px;}*/
 .foxaechive_div .modal-body .down-selectpic .form-control .dropdown-menu{background-color:#404040;margin:0px !important;}
 
 /* Unfinalization / Rejection Toggle Modal Popup */
@@ -1036,7 +1036,7 @@ float:left;
 .unfinalization_div .modal-body .down-selectpic{display: inline-block;vertical-align: middle;margin:0px;padding:7px 0px;}
 .unfinalization_div .modal-body .down-selectpic .form-control{height:34px;}
 .unfinalization_div .modal-body .down-selectpic button{padding: 0px 28px;background-color:#404040;border-radius:0px;border:1px solid #292929;color:#ddd;margin:0px !important;height:34px;}
-.unfinalization_div .modal-body .down-selectpic button:hover,.modal-content .modal-body .down-selectpic button:focus{padding: 0px 28px;background-color:#404040;border-radius:0px;border:1px solid #292929;box-shadow:none;color:#ddd;height:34px;}
+/*.unfinalization_div .modal-body .down-selectpic button:hover,.modal-content .modal-body .down-selectpic button:focus{padding: 0px 28px;background-color:#404040;border-radius:0px;border:1px solid #292929;box-shadow:none;color:#ddd;height:34px;} */
 .unfinalization_div .modal-body .down-selectpic .form-control .dropdown-menu{background-color:#404040;margin:0px !important;}
 
 
@@ -1386,6 +1386,17 @@ border: 1px solid #292929 !important;
     width: 28% !important;
 
 }
+/*Shortkeys*/
+/*Popover*/
+.popover.bottom>.arrow:after {
+    border-bottom-color: #131212 !important;
+}
+
+.popover{
+    background-color: #535353 !important;
+    border: 1px solid #0a0a0a;
+}
+
 /**Add Shortcut*/
 .adpage input{
 box-shadow: inset 0px 0px 0px 1px #292929;

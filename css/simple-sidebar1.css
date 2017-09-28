@@ -178,6 +178,8 @@
 	
    .tab-content .side_dropdown .dropdownlink .fa-chevron-down {top:16px;right:10px;left: auto;position: absolute;color: #252525;display:inline-block;}
    .submenuItems {display: none;overflow-y: auto;max-height: 120px;margin:0px;padding:10px 0px;list-style:none;width:100%;float:left;background: rgba(0,0,0,.31);}
+
+   .submenuItemsss {display: none;margin:0px;padding:10px 0px;list-style:none;width:100%;float:left;background: rgba(0,0,0,.31);}
    .submenuItems li {list-style:none;display:block;line-height:20px;height: 27px;color: #a9a9a9;text-decoration: none;}
    .submenuItems li button.btn.btn-block.btn_admin {background-color:transparent !important;display: block;color: #a9a9a9;padding:5px 15px;-webkit-transition: all 0.4s ease-out;transition: all 0.4s ease-out;text-shadow: 1px 0px #000;font-size:12px;text-decoration:none !important;    text-align: left;}
    .submenuItems li button.btn.btn-block.btn_admin:hover,button.btn.btn-block.btn_admin:visited {background-color: #000 !important;color: #fff; height: 27px;}
