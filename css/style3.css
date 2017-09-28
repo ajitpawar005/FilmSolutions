@@ -1395,8 +1395,12 @@ border: 1px solid #292929 !important;
 .popover{
     background-color: #535353 !important;
     border: 1px solid #0a0a0a;
+    padding-bottom: 8px;
 }
+.popover-content {
 
+padding:0px 0px !important;
+}
 /**Add Shortcut*/
 .adpage input{
 box-shadow: inset 0px 0px 0px 1px #292929;
@@ -1405,17 +1409,23 @@ border: none;
 color: #ddd;
 height: 100%;
 }
-.titlee h4{
- font-size: 15px;
+
+.add_bte button{
+    background-color: #9c3127 !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 7px !important;
+    border-radius: 3px !important;
+    margin-bottom: 7px !important;
 }
-.add_bt button{
-    background-color: #9c3127;
-    color: #fff;
-    border: none;
-    padding: 7px 20px;
-    border-radius: 3px;
-    margin-bottom: 7px;
-}
+.db_com.adpage {
+    text-align: center;
+    color: #ddd;
+    }
+input#usr {
+    padding: 4px 2px !important;
+    }
+
 /**Edit Shortcut*/
 .edpage input{
     box-shadow: inset 0px 0px 0px 1px #292929;
@@ -1424,8 +1434,18 @@ height: 100%;
     color: #ddd;
     height: 100%;
     }
-    .titlee h4{
-     font-size: 15px;
+    .db_com.edpage {
+        text-align: center;
+        color: #ddd;
+        }
+    
+    .ede_bte button{
+        background-color: #9c3127 !important;
+        color: #fff !important;
+        border: none !important;
+        padding: 7px !important;
+        border-radius: 3px !important;
+        margin-bottom: 7px !important;
     }
 
 /**Re Shortcut*/
@@ -1443,15 +1463,22 @@ height: 100%;
          margin-bottom: 0px !important;
     }
 .reshorts {
-    color:#A9A9A9;
-    font-size: 13px;
+    color:#ddd;
+    font-size: 12px;
     margin: 0px 30px;
 }
 .reshorts .table-responsive {
     
     overflow-x: visible !important;
 }
-
+.rme_bte button{
+    background-color: #9c3127 !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 7px !important;
+    border-radius: 3px !important;
+    margin-bottom: 7px !important;
+}
 
 /*Compare Image*/
 

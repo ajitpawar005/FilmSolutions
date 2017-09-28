@@ -7768,42 +7768,167 @@
                                                                     <li>List item 3</li>
                                                                 </ul>
                                                             </div> -->
-                                                   <button class="pull-right"  data-toggle="popover" data-placement="bottom"  data-popover-content="#addkey">Add Key  </button>
+                                                            
+                
+                                                             
+                                                                     
+                                                              
 
-                                                  <div id="addkey" class="hide add_key">
-                                                   <div class="row">
-                                                    <div class="titlee">
-                                                            <h5>Enter New Shortcut Keys & Value</h5>
-                                                    </div>
-                                                    <div class="db_com adpage">
-                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                            <h6>Keys:</h6>
-                                                        </div>
-                                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                                                <h6>Description:</h6>
-                                                        </div>
-                                                        
-                                                       
-                                                    </div>
-                                                    <div class="db_com adpage">
-                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                                <input type="text" class="form-control" id="usr">
-                                                        </div>
-                                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                                            <div class="form-group">
-                                                                <input type="text" class="form-control" id="usr">
+
+
+
+                                                   <button id="adde"class="pull-right"  data-toggle="popover" data-placement="bottom" >Add Key  </button>
+
+                                                            <div id="addkey" class="hide add_key">
+                                                                <div class="titlee">
+                                                                        <h5>Enter New Shortcut Keys & Value</h5>
+                                                                </div>
+                                                                <div class="db_com adpage">
+                                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                        <h6>Keys:</h6>
+                                                                    </div>
+                                                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                                                            <h6>Description:</h6>
+                                                                    </div>
+                                                                    
+                                                                
+                                                                </div>
+                                                                <div class="db_com adpage">
+                                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                            <div class="form-group">
+                                                                            <input type="text" class="form-control" id="usr">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                                                        <div class="form-group">
+                                                                            <input type="text" class="form-control" id="usr">
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                
+                                
                                                             </div>
-                                                        </div>
-                                                        
-                                                    </div>
-                    
-                                                </div>
-                                            </div> 
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                    <div class="add_bte">
+                                                                    <button type="button" class="pull-right">ADD!</button>
+                                                                </div>
+                                                                </div>
+                                                        </div> 
 
                                                    <!--<a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">Bottom</a> -->
-                                                    <button class="pull-right"  data-toggle="modal" data-target="#reshorts">Remove Key</button> 
-                                                    <button class="pull-right" data-toggle="modal" data-target="#editshorts"> Edit Key</button>                                                                
+                                                    <button id="ede" class="pull-right"  data-toggle="popover" data-placement="bottom"> Edit Key</button> 
+                                                    
+                                                    <div id="edikey" class="hide edi_key">
+                                                            <div class="titlee">
+                                                                    <h5>Modify the Shortcut Key(s) and/or Value</h6>
+                                                            </div>
+                                                            <div class="db_com edpage">
+                                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                    <h6>Key</h6>
+                                                                </div>
+                                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                                                        <h6>Description</h6>
+                                                                </div>
+                                                                <div class="db_com edshorts">
+                                                                <div class="table-responsive">
+                                                           
+                                                                <table class="col-sm-12">
+                                                                    <tbody>
+                                                                    <tr>
+                                                                    <td class="col-sm-4"><input type="text" class="form-control" id="usr" value="AA"></td>
+                                                                    <td class="col-sm-8"><input type="text" class="form-control" id="usr" value="aaaaaa"></td>
+                                                                
+                                                                    </tr>  
+                                                                              
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                       
+                                                             </div>
+                                                               
+                                                            </div>
+                                                    
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                    <div class="ede_bte">
+                                                                       <button type="button" class="pull-right">UPDATE!</button>
+                                                                   </div>
+                                                            </div>
+                                                    
+                                                    </div>
+                                                    
+                                                    <button id="rme" class="pull-right" data-toggle="popover" data-placement="bottom"> Remove Key </button>                                                                
+    
+                                                    <div id="remekey" class="hide reme_key">
+                                                            <div class="titlee">
+                                                                    <h5>If you would like to deleteShortcut(s)..! Please Check the Box.</h5>
+                                                            </div>
+                                                        
+                                                                    
+                                                               <div class="db_com reshorts">
+                                                                <div class="table-responsive">
+                                                           
+                                                                <table class="col-sm-12 " >
+                                                                  
+                                                                        <tr>
+                                                                                <th ></th>
+                                                                                <th >Key</th>
+                                                                                <th >Description</th>
+                                                                                
+                                                                        </tr>
+                                                                    
+                                                               
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="checkbox check_r">
+                                                                                    <label class="chek-label"><input type="checkbox" value=""><span class="cr"><i class="cr-icon fa fa-check"></i></span></label>
+                                                                                </div>
+                                                                            </td>
+                                                                    <td >AA</td>
+                                                                    <td >aaaaaa</td>
+                                                                
+                                                                    </tr>  
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="checkbox check_r">
+                                                                                    <label class="chek-label"><input type="checkbox" value=""><span class="cr"><i class="cr-icon fa fa-check"></i></span></label>
+                                                                                </div>
+                                                                            </td>
+                                                                        <td >CC</td>
+                                                                        <td >cccccc</td>
+                                                                    </tr>  
+                                                                    <tr >
+                                                                        <td>
+                                                                            <div class="checkbox check_r">
+                                                                                    <label class="chek-label"><input type="checkbox" value=""><span class="cr"><i class="cr-icon fa fa-check"></i></span></label>
+                                                                                </div>
+                                                                            </td>
+                                                                         <td >EE</td>
+                                                                         <td >eeeeee</td>
+                                                                                
+                                                                    </tr>  
+                                                                    <tr >
+                                                                        <td>
+                                                                            <div class="checkbox check_r">
+                                                                                    <label class="chek-label"><input type="checkbox" value=""><span class="cr"><i class="cr-icon fa fa-check"></i></span></label>
+                                                                                </div>
+                                                                            </td>
+                                                                        <td >II</td>
+                                                                         <td >iiiiii</td>
+                                                                                        
+                                                                    </tr>  
+                                                                                
+                                                                    
+                                                                </table>
+                                                            </div> 
+                                                        </div>
+                                                      
                                                  
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                         <div class="rme_bte">
+                                                            <button type="button" class="pull-right">REMOVE!</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
                                                    <!-- <a data-placement="bottom" data-toggle="popover" data-title="Login" data-container="body" type="button" data-html="true" href="#" id="login">Login</a>
                                                     <div id="popover-content" class="hide">
                                                       <form class="form-inline" role="form">
@@ -7858,9 +7983,9 @@
                         
                         <div class="to_div db_com">
                                <!-- <h5 style="color:#ddd; text-align:left;">Shortcut Keys :<p><span style="color:#A9A9A9; font-size:12px;" >Add Key</span><span style="color:#A9A9A9; font-size:12px;"> Remove Key</span><span style="color:#A9A9A9; font-size:12px;"> Edit Key</span></p></h5> -->
-                            
+                               <div class="form-group">
                                 <textarea class="form-control" id="body" rows="7"></textarea>
-                            
+                               </div>
                         
                     </div>
                     </div>
@@ -8025,7 +8150,7 @@
     </div>
 
       <!-- ================== Add Shortcuts =================== -->
-      <div class="modal fade" id="addshorts" tabindex="-1" role="dialog" aria-labelledby="addshortsLabel" aria-hidden="true">
+     <!-- <div class="modal fade" id="addshorts" tabindex="-1" role="dialog" aria-labelledby="addshortsLabel" aria-hidden="true">
             <div class="vertical-alignment-helper">    
         <div class="modal-dialog vertical-align-center modal-sm">
                 <div class="modal-content">
@@ -8074,11 +8199,11 @@
                         <!-- <div class="modal-footer db_com">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     </div> -->
-                    </div>
+                 <!--   </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
           <!-- ================== Edit Shortcuts =================== -->
           <div class="modal fade" id="editshorts" tabindex="-1" role="dialog" aria-labelledby="addshortsLabel" aria-hidden="true">
@@ -8400,13 +8525,58 @@
 }); */
 
 
-$("[data-toggle=popover]").popover({
+/*$("[data-toggle=popover]").popover({
     html: true, 
 	content: function() {
           return $('#addkey').html();
         }
+});*/
+
+/*$("[data-toggle=popover]").popover({
+    html: true, 
+	content: function() {
+          return $('#remkey').html();
+        }
+}); */
+
+var ops = {
+    'html':true,    
+    content: function(){
+        return $('#addkey').html();
+    }
+};
+
+$(function(){
+    $('#adde').popover(ops)
 });
 
+var opse = {
+    'html':true,    
+    content: function(){
+        return $('#edikey').html();
+    }
+};
+
+$(function(){
+    $('#ede').popover(opse)
+});
+
+
+var opsr = {
+    'html':true,    
+    content: function(){
+        return $('#remekey').html();
+    }
+};
+
+$(function(){
+    $('#rme').popover(opsr)
+});
+
+/*$(function(){
+    // Enables popover
+    $("[data-toggle=popover]").popover();
+});*/
     /*$("#cap_mod").on("mousedown",function() {
         $("#imagecap").hide();
     });
