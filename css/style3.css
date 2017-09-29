@@ -589,6 +589,13 @@ display: inline-block;width:25px;height:25px;border-radius: 100%;background-colo
     height:206px;
 	border: 3px solid transparent;
 }
+@-moz-document url-prefix()  {
+    .imge {
+        width: 303px;
+        height:206px;
+        border: 3px solid transparent;
+    }
+}
 .selectborder {
     border: 3px solid #9c3127;
 }
@@ -680,8 +687,12 @@ display: inline-block;width:25px;height:25px;border-radius: 100%;background-colo
 .st_headicon{text-align: right;}
 .st_headicon ul{margin:0px;padding:0px;width:100%;list-style:none;display:inline-block;}
 .st_headicon ul li{display:inline-block;list-style:none;}
-.st_headicon ul li a{text-decoration:none;color:#fff;display: block;padding: 10px;}
-.st_headicon ul li button{text-decoration:none;color:#fff;display: block;padding: 10px;background-color: transparent;
+ul.header_menu li:hover {
+    background-color: #292929;
+}
+/*.st_headicon ul li:hover{background-color:#292929;}*/
+.st_headicon ul li a{text-decoration:none;color:#ddd;display: block;padding: 12px;}
+.st_headicon ul li button{text-decoration:none;color:#ddd;display: block;padding: 10px;background-color: transparent;
     border-color: transparent;
 }
 .st_headicon ul li a i{}
@@ -1092,7 +1103,7 @@ background-color: #535353!important;border: 1px solid #101010;}
 
 /*====================== Audit Design ===========================*/
 .aud_btn{}
-.aud_btn button.btn{background-color: #9c3127;margin:6px 15px;color: #A9A9A9;width:55%; height:79%;border: 1px solid #252525;padding: 0px 0px;font-size:12px;}
+.aud_btn button.btn{background-color: #9c3127;margin:6px 15px;color: #A9A9A9;width:55%; height:79%;border: 1px solid #252525;padding: 2px 0px;font-size:12px;}
 li.aud_btn {margin: 5px 0px;}
 
 
@@ -1189,7 +1200,7 @@ text-align: center;
     height:1024px;
 }
 
-button.close_img {
+/*button.close_img {
     font-size: 12px;
     background: #252525 !important;
     border: 1px solid #000 !important;
@@ -1198,12 +1209,31 @@ button.close_img {
     padding: 0px !important
 }
 
+
+
 button.close_img a{
 text-decoration: none !important;
 color: #fff;
 display: block;
 padding: 4px !important;
+} */
+
+a.btn.btn-default.btn-flat.close_img{
+background-color: #292929;
+padding: 2px 14px;
+border: 1px solid #292929;
+min-width: 80px;
 }
+
+a.btn.btn-default.btn-flat.close_img:hover {
+color: #ddd;
+font-size: 14px;
+font-weight: bolder;
+}
+
+
+
+
 /*Size Selection*/
 .down-selectpic1 {
 margin-right: 8px;
@@ -1215,7 +1245,7 @@ background-color: transparent !important;
 
 .down-selectpic1 button.btn.dropdown-toggle.btn-default{
 min-width: 100px !important;
-padding: 3px !important;
+padding: 2px !important;
 margin-top: 4px !important;
 border: 1px solid #292929 !important;
 }
@@ -1541,7 +1571,7 @@ input#textInput {
     margin-bottom: 8px !important;
 }
 
-button.close_imge {
+/*button.close_imge {
 
     font-size: 12px;
     background: #252525 !important;
@@ -1556,7 +1586,7 @@ text-decoration: none;
 color: #fff;
 display: block;
 padding: 2px !important;
-}
+}*/
 
 .chek_box .di-check .chek-label {
     float: left;
@@ -1616,6 +1646,11 @@ padding: 2px !important;
     height: 315px;
     border: 3px solid transparent;
 }
+    @-moz-document url-prefix(){
+        .imge_comp {width:466px;}
+    } 
+
+
 .img_tile{
     position: relative;
     margin: 1% auto;
@@ -1648,3 +1683,31 @@ margin: 0px 5px;
 .comp1_img i{
     font-size: 16px !important;
 }
+
+a.btn.btn-default.btn-flat.close_img1{
+    background-color: #292929;
+    padding: 2px 14px;
+    border: 1px solid #292929;
+    min-width: 80px;
+    float: left;
+    }
+    
+    a.btn.btn-default.btn-flat.close_img1:hover {
+    color: #ddd;
+    font-size: 14px;
+    font-weight: bolder;
+    }
+
+    a.btn.btn-default.btn-flat.close_img2{
+        background-color: #292929;
+        padding: 2px 14px;
+        border: 1px solid #292929;
+        min-width: 80px;
+        float: left;
+        }
+        
+        a.btn.btn-default.btn-flat.close_img2:hover {
+        color: #ddd;
+        font-size: 14px;
+        font-weight: bolder;
+        }

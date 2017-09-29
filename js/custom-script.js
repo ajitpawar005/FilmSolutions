@@ -15,10 +15,12 @@ $(document).ready(function()
 	$('.side_dropdown').addClass('active');	
 	if($("#wrapper").hasClass("toggled"))
 	{
+		$('.pcw').css('min-height',($(window).height()-($('.header-container-section').height()+$('.bcs').height()+$('.fcs').height()))+'px');
 	$('.sidebar-wrapper, .sidebar-nav').css('min-height',($('.pcw').height()+11)+'px');
 	}
 	else
 	{
+		$('.pcw').css('min-height',($(window).height()-($('.header-container-section').height()+$('.bcs').height()+$('.fcs').height()))+'px');
 	$('.sidebar-wrapper, .sidebar-nav').css('min-height',($('.pcw').height())+'px');
 	}
 	
