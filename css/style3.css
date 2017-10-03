@@ -649,7 +649,7 @@ display: inline-block;width:25px;height:25px;border-radius: 100%;background-colo
 .bgcolor{background-color: #666666;background-image:none;}
 .st_rmp{background-color:transparent !important;}
 .st_subdiv{
-    padding:0px 29px;
+    padding:0px 0px;
     margin: 0px !important;}
 .st_subdiv .sub_head{border-bottom:1px solid #f1f1f1;padding:0px 15px;margin-bottom:15px;}
 .st_subdiv .sub_head h2{color: #9c3127;margin:0px;font-size:20px;padding-bottom:15px;}
