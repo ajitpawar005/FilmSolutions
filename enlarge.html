@@ -12,7 +12,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="css/simple-sidebar1.css" rel="stylesheet">
     <link href="css/style3.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
@@ -138,8 +138,8 @@
                     <ol class="breadcrumb st_breadcrumb">
                        <!-- <li class="breadcrumb-item"><a href="selectgallery.html">DEMO</a></li> -->
                         <li class="breadcrumb-item"><a href="viewproject.html">FS_DEMO-EXEC</a></li>
-                        <li class="breadcrumb-item">Images</li>
-                        <li class="breadcrumb-item active">sarvaya001.jpg</li>
+                       <!-- <li class="breadcrumb-item">Images</li> -->
+                        <li class="breadcrumb-item active"><span class="nm"></span></li>
                     </ol>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -148,8 +148,8 @@
                           <li> <button class=" btn_image" title="Image Transaction"  data-toggle="modal" data-target="#imagetransreport"><i class="fa fa-text-height" aria-hidden="true"></i></button></li>
                           <li>  <button class=" btn_image" title="Image History"  data-toggle="modal" data-target="#imagehistory"><i class="fa fa-header" aria-hidden="true"></i></button></li>
                           <li> <button  title="Image Notes" class="button1" ><i class="fa fa-pencil-square-o"></i></button></li>
-                          <li><a title="Close Image" href="viewproject.html" class=""><i class="fa fa-search-minus" aria-hidden="true"></i></a></li>
-                          <li><a title="Enlarge Image " href="eenlarge.html" class=""><i class="fa fa-search-plus" aria-hidden="true"></i></a></li>
+                          <li><a title="Close Image"  href="viewproject.html" class=""><i class="fa fa-search-minus" aria-hidden="true"></i></a></li>
+                          <li><button title="Enlarge Image "  onclick="enlarge()" class=""><i class="fa fa-search-plus" aria-hidden="true"></i></button></li>
                            <!-- <li><a title="I'M DONE" href="javascript:void(0)" data-toggle="modal" data-target="#imdone"><i class="fa fa-hand-paper-o" aria-hidden="true"></i></a></li>
                             <li><a title="Select All" href="javascript:void(0)" class="select_all"><i class="fa fa-check" aria-hidden="true"></i></a></li>
                             <li><a title="Deselect All" href="javascript:void(0)" class="select_alle"><i class="fa fa-window-close" aria-hidden="true"></i></a></li>
@@ -445,17 +445,18 @@
                     <div class="row">
                         <div class="col-lg-12 rightside_menu_panel st_rmp">
 
-                           <div class="rightside_menu_middlepanel holder text-center">
-                                <ul>
-                                    <li><a href="#" class="first" id="first"><i class="fa fa-step-backward"></i></a></li>
-                                    <li><a href="#" class="pre" id="pre"><i class="fa fa-backward"></i></a></li>
-                                    <li>
-                                        <p>Page : 1 of 1</br><span id="sizee"></span> Image: 1 of 102</p>
-                                    </li>
-                                    <li><a href="#" class="nex" id="nex"><i class="fa fa-forward"></i></a></li>
-                                    <li><a href="#" class="last" id="last"><i class="fa fa-step-forward"></i></a></li>
-                                </ul>
-                            </div>
+                                <div class="rightside_menu_middlepanel1  holder text-center">
+                                        <ul>
+                                            <!-- <li><a href="#" class="first" id="first"><i class="fa fa-step-backward"></i></a></li>
+                                            <li><a href="#" class="pre" id="pre"><i class="fa fa-backward"></i></a></li>
+                                            <li>
+                                                <p>Page : 1 of 1</br><span id="sizee">0</span> (Image)s Selected</p>
+                                            </li>
+                                            <li><a href="#" class="nex" id="nex"><i class="fa fa-forward"></i></a></li>
+                                            <li><a href="#" class="last" id="last"><i class="fa fa-step-forward"></i></a></li> -->
+                                            
+                                        </ul>
+                                    </div>
                         
 
                         </div>
@@ -463,34 +464,10 @@
                     <div class="row">
                         <div class="db_container db_com rightside-gallerycontainer-panel">
                                
-                            <div class="st_subdiv db_com ">
-                                <div class="img_dive ">
-                                    <div class="span31">
-                                        <div class="imgee">
-                                        <a href="javascript:void(0)" class=""><img src="http://fsapi.sarvaya.com/image/resize/XnzE4hubRLh46CvUr_59mo9H13r4L10m3Z_VRtAmznZhxWuMZIV11CuLud0aBnZ_8_0zHgw1lrt1mxkysQt_HY24qFYAgknVjGFSdo1m5U29r-2hstX_CR2nTYpejYKg:600:600"></a>
-                                        </div>
-                                        <!--<div class="tile">
-                                            <h3>sarvaya001.jpg</h3>
-                                           <div class="float menu-share" id="1">
-                                                <i class="fa fa-plus my-float"></i>
-                                            </div>
-                                            <div class="soc ts1"> -->
-                                                <!-- <a href="#" title="Reject"><i class="fa fa-times" aria-hidden="true"></i></a>
-                              <a href="#" title="Approve"><i class="fa fa-check"></i></a>
-                              <a href="#" title="Like It"> <i class="fa fa-thumbs-o-up"></i></a> -->
-                                               <!-- <a href="#" title="Revert Action"><i class="fa fa-undo"></i></a>
-                                                <a href="#" title="Image Designation"><i class="fa fa-share-alt"></i></a>-->
-                                               <!-- <a href="#" title="Retouch Comment"><i class="fa fa-paint-brush"></i></a>
-                                                <a href="#" title="Image Transaction">T</a>
-                                                <a href="#" title="Image History">H</a>
-                                                <a href="#">G</a>
-                                                <a href="#" title="Image Captions"><i class="fa fa-comment-o"></i></a>
-                                                <a href="#" title="Image Notes"><i class="fa fa-pencil-square-o"></i></a>
-                                                <a href="enlarge.html" title="Enlarge Image"><i class="fa fa-search-plus"></i></a>
-                                            </div>
-                                        </div> -->
-                                    </div>
+                            <div class="st_subdiv1 db_com " id="easyPaginate">
+                                <div id="imglist">
                                 </div>
+                               
                                
                                 
                                 
@@ -4652,7 +4629,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <!-- Custom Script Js Start Here 27/03/2017 -->
-    <script src="js/custom-script.js"></script>
+    <!-- <script src="js/custom-script.js"></script> -->
     <!-- Custom Script Js End Here 27/03/2017 -->
     <!-- Select Dropdown Js Start Here 27/03/2017 -->
     <script src="js/bootstrap-select.js"></script>
@@ -4665,16 +4642,14 @@
 
 
     <script>
-      
-        
-
+    
         $(document).ready(function () {
             $('.db_carousel').carousel({
                 interval: false
             })
         });
         $('.modal-dialog').draggable();
-    
+        
 
         $(document).ready(function () {
             var $mainButton = $(".tile .float"),
@@ -4718,15 +4693,79 @@
 
             var accordion = new Accordion($('.accordion-menu'), false);
         });
-
-
-   
+        var ide;
         $(document).ready(function () {
+           var id =window.location.search.substring(1).split("=");
+            
+            var imageUrlsArrayLevel1 =  [];
+            var imageUrlsArrayLevel2 =  [];
+            ide=id[1];
+            
             $("button").click(function () {
                 $("#panel").slideToggle("slow");
             });
+            
+            $.ajax({
+                type: 'GET',
+                cache: false,
+                contentType: 'text/html',
+                url: "http://fsapi.sarvaya.com/images/thumb/3247206/600/1",
+                success:
+                function(response) {
+                    var imagesUrls =[];
+                    
+                    imagesUrls = JSON.parse(response).images;
+                    var cnt =0;
+                    imagesUrls.forEach(function(key, value) {
+                        var obj = {};
+                        obj.id= cnt;
+                        obj.imageName = key.imageName;
+                        obj.imageUrl = key.imageUrl;
+                        imageUrlsArrayLevel1.push(obj);
+                        cnt++;
+                    });
+                   
+                    imageUrlsArrayLevel1.forEach(function(item){
+                        //if(item.id == parseInt(ide)){
+                            $("#imglist").append(`
+                                
+                                                <div class="img_dive ">
+                                                    <div class="span31">
+                                                        <div class="imgee">
+                                                        <a href="javascript:void(0)" class=""><img src=`+imageUrlsArrayLevel1[item.id].imageUrl+`"></a>
+                                                        </div>
+                                                    </div>
+                                               </div> 
+                               
+                                `)
+                        //}
+                    });
+                    
+                    
+                    // var length = imageUrlsArrayLevel1.length;
+                    // for(var i = 0; i< 1; i++){
+                    //     }  
+                        $(".nm").text(imageUrlsArrayLevel1[ide].imageName);
+                        $('#easyPaginate').easyPaginate({
+                                paginateElement: '.img_dive',
+                                  elementsPerPage: 1,
+                                  imgid:ide,
+                                 effect: 'climb'
+                            });
+                    }
+
+                   
+            });
+
+  
         });
    
+        
+        function enlarge(){
+            console.log('fd');
+            //window.location = 'eenlarge.html?id='+ide;
+            window.location.replace('eenlarge.html?id='+ide);
+        }   
 
         $(".button1").on("click",function() {
         $("#info1").fadeToggle();
@@ -4744,7 +4783,7 @@
 	
     </script>
 
-
+<script src="js/custom-script.js"></script>
  
 </body>
 

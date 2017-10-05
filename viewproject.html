@@ -12,7 +12,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="css/simple-sidebar1.css" rel="stylesheet">
     <link href="css/style3.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
@@ -432,31 +432,34 @@
             <!-- /#sidebar-wrapper -->
 
             <!-- Page Content -->
+            <div class="preload"><img src="http://i.imgur.com/KUJoe.gif">
+            </div>
             <div id="page-content-wrapper" class="db_com pcw">
+                    
                 <div class="container-fluid">
+                        
                     <div class="row">
                         <div class="col-lg-12 rightside_menu_panel st_rmp">
 
-                            <div class="rightside_menu_middlepanel holder text-center">
-                                <ul>
-                                    <li><a href="#" class="first" id="first"><i class="fa fa-step-backward"></i></a></li>
-                                    <li><a href="#" class="pre" id="pre"><i class="fa fa-backward"></i></a></li>
-                                    <li>
-                                        <p>Page : 1 of 1</br><span id="sizee">0</span> (Image)s Selected</p>
-                                    </li>
-                                    <li><a href="#" class="nex" id="nex"><i class="fa fa-forward"></i></a></li>
-                                    <li><a href="#" class="last" id="last"><i class="fa fa-step-forward"></i></a></li>
-                                </ul>
-                            </div>
+                                <div class="rightside_menu_middlepanel holder text-center">
+                                        <ul>
+                                            <!-- <li><a href="#" class="first" id="first"><i class="fa fa-step-backward"></i></a></li>
+                                            <li><a href="#" class="pre" id="pre"><i class="fa fa-backward"></i></a></li>
+                                            <li>
+                                                <p>Page : 1 of 1</br><span id="sizee">0</span> (Image)s Selected</p>
+                                            </li>
+                                            <li><a href="#" class="nex" id="nex"><i class="fa fa-forward"></i></a></li>
+                                            <li><a href="#" class="last" id="last"><i class="fa fa-step-forward"></i></a></li> -->
+                                            
+                                        </ul>
+                                    </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="db_container db_com rightside-gallerycontainer-panel">
                                
-                            <div class="st_subdiv db_com ">
-                                <div id="imgList">
-
-                                </div>
+                            <div class="st_subdiv db_com " id="easyPaginate">
+                                
                             </div>
                         </div>
                     </div>
@@ -5047,225 +5050,7 @@
         </div>
     </div>
 
-      <!-- ================== Add Shortcuts =================== -->
-     <!-- <div class="modal fade" id="addshorts" tabindex="-1" role="dialog" aria-labelledby="addshortsLabel" aria-hidden="true">
-            <div class="vertical-alignment-helper">    
-        <div class="modal-dialog vertical-align-center modal-sm">
-                <div class="modal-content">
-                    <div class="db_com addshorts_div modal-com">
-                        <div class="modal-header db_com">
-                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-    
-                        </button>
-                            <h4 class="modal-title" id="addshortsLabel">Add Shortcut Keys</h4>
-    
-                        </div>
-                        <div class="modal-body db_com">
-                            <div class="row">
-                                <div class="titlee">
-                                        <h4>Enter New Shortcut Keys & Value</h4>
-                                </div>
-                                <div class="db_com adpage">
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                        <h5>Keys:</h5>
-                                    </div>
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                            <h5>Description:</h5>
-                                    </div>
-                                    
-                                   
-                                </div>
-                                <div class="db_com adpage">
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                            <input type="text" class="form-control" id="usr">
-                                    </div>
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="usr">
-                                        </div>
-                                    </div>
-                                    
-                                </div>
 
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                             <div class="add_bt">
-                                <button type="button" class="pull-right">ADD!</button>
-                            </div>
-                            </div>
-                        <!-- <div class="modal-footer db_com">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    </div> -->
-                 <!--   </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-          <!-- ================== Edit Shortcuts =================== -->
-        <!--  <div class="modal fade" id="editshorts" tabindex="-1" role="dialog" aria-labelledby="addshortsLabel" aria-hidden="true">
-                <div class="vertical-alignment-helper">    
-            <div class="modal-dialog vertical-align-center modal-sm">
-                    <div class="modal-content">
-                        <div class="db_com addshorts_div modal-com">
-                            <div class="modal-header db_com">
-                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-        
-                            </button>
-                                <h4 class="modal-title" id="addshortsLabel">Edit Shortcut Keys</h4>
-        
-                            </div>
-                            <div class="modal-body db_com">
-                                <div class="row">
-                                    <div class="titlee">
-                                            <h4>Modify the Shortcut Key(s) and/or Value</h4>
-                                    </div>
-                                    <div class="db_com edpage">
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                            <h5>Key:</h5>
-                                        </div>
-                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                                <h5>Description</h5>
-                                        </div>
-                                        <div class="db_com edshorts">
-                                        <div class="table-responsive">
-                                   
-                                        <table class="col-sm-12">
-                                            <tbody>
-                                            <tr>
-                                            <td class="col-sm-4"><input type="text" class="form-control" id="usr" value="AA"></td>
-                                            <td class="col-sm-8"><input type="text" class="form-control" id="usr" value="aaaaaa"></td>
-                                        
-                                            </tr>  
-                                            <!-- <tr>
-                                                    
-                                                    <td class="col-sm-6">EE-eeeeeeee</td> 
-                                                    <td class="col-sm-6">II-iiiiiiii</td>
-                                                  
-                                                    </tr> -->               
-                                          <!--  </tbody>
-                                        </table>
-                                    </div>
-                               <!-- <label style="color:#A9A9A9; font-size:12px;">N/A (Dean Cain)
-                                </label></br>
-                                <label style="color:#A9A9A9; font-size:12px;">N/A (Dean Cain) </label> -->
-                          <!--  </div>
-                                       
-                                    </div>
-                                   
-                                    
-    
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                 <div class="add_bt">
-                                    <button type="button" class="pull-right">UPDATE!</button>
-                                </div>
-                                </div> -->
-                            <!-- <div class="modal-footer db_com">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        </div> -->
-                    <!--    </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-          <!-- ================== Remove Shortcuts =================== -->
-         <!-- <div class="modal fade" id="reshorts" tabindex="-1" role="dialog" aria-labelledby="reshortsLabel" aria-hidden="true">
-                <div class="vertical-alignment-helper">    
-            <div class="modal-dialog vertical-align-center modal-sm">
-                    <div class="modal-content">
-                        <div class="db_com addshorts_div modal-com">
-                            <div class="modal-header db_com">
-                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-        
-                            </button>
-                                <h4 class="modal-title" id="reshortsLabel">Edit Shortcut Keys</h4>
-        
-                            </div>
-                            <div class="modal-body db_com">
-                                <div class="row">
-                                    <div class="titlee">
-                                            <h4>If you would like to deleteShortcut(s)..! Please Check the Box.</h4>
-                                    </div>
-                                
-                                            
-                                       <div class="db_com reshorts">
-                                        <div class="table-responsive">
-                                   
-                                        <table class="col-sm-12 " >
-                                          
-                                                <tr>
-                                                        <th ></th>
-                                                        <th >Key</th>
-                                                        <th >Description</th>
-                                                        
-                                                </tr>
-                                            
-                                       
-                                            <tr>
-                                                <td>
-                                                    <div class="checkbox check_r">
-                                                            <label class="chek-label"><input type="checkbox" value=""><span class="cr"><i class="cr-icon fa fa-check"></i></span></label>
-                                                        </div>
-                                                    </td>
-                                            <td >AA</td>
-                                            <td >aaaaaa</td>
-                                        
-                                            </tr>  
-                                            <tr>
-                                                <td>
-                                                    <div class="checkbox check_r">
-                                                            <label class="chek-label"><input type="checkbox" value=""><span class="cr"><i class="cr-icon fa fa-check"></i></span></label>
-                                                        </div>
-                                                    </td>
-                                                <td >CC</td>
-                                                <td >cccccc</td>
-                                            </tr>  
-                                            <tr >
-                                                <td>
-                                                    <div class="checkbox check_r">
-                                                            <label class="chek-label"><input type="checkbox" value=""><span class="cr"><i class="cr-icon fa fa-check"></i></span></label>
-                                                        </div>
-                                                    </td>
-                                                 <td >EE</td>
-                                                 <td >eeeeee</td>
-                                                        
-                                            </tr>  
-                                            <tr >
-                                                <td>
-                                                    <div class="checkbox check_r">
-                                                            <label class="chek-label"><input type="checkbox" value=""><span class="cr"><i class="cr-icon fa fa-check"></i></span></label>
-                                                        </div>
-                                                    </td>
-                                                <td >II</td>
-                                                 <td >iiiiii</td>
-                                                                
-                                            </tr>  
-                                                        
-                                            
-                                        </table>
-                                    </div> 
-                                </div>
-                              
-                         
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                 <div class="re_bt">
-                                    <button type="button" class="pull-right">REMOVE!</button>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            <!-- <div class="modal-footer db_com">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        </div> -->
-                      <!--  </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
@@ -5273,25 +5058,21 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <!-- Custom Script Js Start Here 27/03/2017 -->
-    <script src="js/custom-script.js"></script>
+    <!-- <script src="js/custom-script.js"></script> -->
     <!-- Custom Script Js End Here 27/03/2017 -->
     <!-- Select Dropdown Js Start Here 27/03/2017 -->
     <script src="js/bootstrap-select.js"></script>
     <!-- Select Dropdown Js End Here 27/03/2017 -->
 
+    <script src="js/jquery.easyPaginate1.js"></script>
     
-    <script src="js/jquery.easyPaginate.js"></script>
-    <script src="js/jquery.jqpagination.js"></script>
+    
 
 
 
     <script>
-        /*$('#easyPaginate').easyPaginate({
-                paginateElement: '.img_div',
-                elementsPerPage: 10,
-                effect: 'climb'
-            });*/
-        
+
+      
 
         $(document).ready(function () {
             $('.db_carousel').carousel({
@@ -5348,12 +5129,15 @@
             var accordion = new Accordion($('.accordion-menu'), false);
         });
 
-
+        $(function() {
+            $(".preload").fadeOut(2000, function() {
+                $(".rightside_menu_middlepanel").fadeIn(2000);        
+            });
+        });
    
         $(document).ready(function () {
             var imageUrlsArrayDefault =  [];
-            var imageUrlsArrayLevel1 =  [];
-            var imageUrlsArrayLevel2 =  [];
+
          
             $("button").click(function () {
                 $("#panel").slideToggle("slow");
@@ -5364,6 +5148,7 @@
                 cache: false,
                 contentType: 'text/html',
                 url: 'http://fsapi.sarvaya.com/images/thumb/3247206/300/1',
+                //url: 'http://fsapi.sarvaya.com/images/thumb/3247206/300/2',
                 success:
                 function(response) {
                     var imagesUrls =[];
@@ -5376,14 +5161,15 @@
                         obj.imageUrl = key.imageUrl;
                         imageUrlsArrayDefault.push(obj);
                     });
-                    console.log(imageUrlsArrayDefault);
+                   
                     var length = imageUrlsArrayDefault.length;
-                    for(var i = 0; i< 20; i++){
-                        $("#imgList").append(`
+                    var flag = false;
+                    for(var i = 0; i< length; i++){
+                        $("#easyPaginate").append(`
                                 <div class="img_div">
                                                     <div class="span3">
                                                         <div class="imge">
-                                                        <a href="javascript:void(0)" class="thumbnail img-check"><img src=`+imageUrlsArrayDefault[i].imageUrl+`"></a>
+                                                        <a href="javascript:void(0)" class="thumbnail img-check"><img src=`+imageUrlsArrayDefault[i].imageUrl+`" data-index="`+i+`"></a>
                                                         </div>
                                                         <div class="tile">
                                                             <h3> <span>`+imageUrlsArrayDefault[i].imageName+` </span> </h3>
@@ -5398,80 +5184,82 @@
                                                                 <button class="btn btn_image" title="Image Captions"  data-toggle="modal" data-target="#imagecap"><i class="fa fa-comment-o"></i></button>
 
                                                                 <a href="#" title="Image Notes" class="button1" ><i class="fa fa-pencil-square-o"></i></a>
-                                                                <a href="enlarge.html" title="Enlarge Image"><i class="fa fa-search-plus"></i></a>
+                                                                <a href="enlarge.html?data=`+i+`" title="Enlarge Image"><i class="fa fa-search-plus"></i></a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                 `)
-                        }  
+                            flag = true;
+                        }
+                        if(flag){
+                            $('#easyPaginate').easyPaginate({
+                                paginateElement: '.img_div',
+                                  elementsPerPage: 20,
+                                 effect: 'climb'
+                            });
+                        }
                     }
             });
 
-            $.ajax({
-                type: 'GET',
-                cache: false,
-                contentType: 'text/html',
-                url: 'http://fsapi.sarvaya.com/images/thumb/3247206/600/1',
-                success:
-                function(response) {
-                    var imagesUrls =[];
-                    // document.write("<br /><strong>title:</strong> " + response.title + " <strong>urls:</strong> " + response.urls);
-                    imagesUrls = JSON.parse(response).images;
-                    imagesUrls.forEach(function(key, value) {
-                        var obj = {};
-                        obj.imageName = key.imageName;
-                        obj.imageUrl = key.imageUrl;
-                        imageUrlsArrayLevel1.push(obj);
-                    });
-                    $(".nm1").text(imageUrlsArrayLevel1[0].imageName);
-                    $(".imgUrl1").attr("src", imageUrlsArrayLevel1[0].imageUrl);   
-                }
-            });
-            $.ajax({
-                type: 'GET',
-                cache: false,
-                contentType: 'text/html',
-                url: 'http://fsapi.sarvaya.com/images/thumb/3247206/700/1',
-                success:
-                function(response) {
-                    var imagesUrls =[];
-                    // document.write("<br /><strong>title:</strong> " + response.title + " <strong>urls:</strong> " + response.urls);
-                    imagesUrls = JSON.parse(response).images;
-                    imagesUrls.forEach(function(key, value) {
-                        var obj = {};
-                        obj.imageName = key.imageName;
-                        obj.imageUrl = key.imageUrl;
-                        imageUrlsArrayLevel2.push(obj);
-                    });
-                    $(".nm1").text(imageUrlsArrayLevel2[0].imageName);
-                    $(".imgUrl1").attr("src", imageUrlsArrayLevel2[0].imageUrl);   
-                }
-            });
-        });
-
-       $(document).on("click",".imge",function(dom){	  
-        if (event.ctrlKey) 
-	    {
-		  $(this).addClass("selectborder");
-		}
-        else{
-            if($(this).hasClass("selectborder"))
-            {
-            $(this).removeClass("selectborder");
-            }
-            else{
-              $('.imge').removeClass("selectborder");
-              $(this).addClass("selectborder");
-              console.log(dom);
-            }  
     
-        }
-
-        var c=($(".selectborder").length);
-	    $("#sizee").text(c);
-
+        });
+        var storeIndexes =[];
+        var getFirstSelectedImageIndex;
+        var getLastSelectedImageIndex;
+        var getSelectedImagesIndex =[];
+        var keycode = null;
+        $(document).on('keydown', function(e){
+            keycode = e.keyCode || e.which;
+        });
+        $(document).on('keyup', function(e){
+            keycode = null;
         }); 
+
+        $(document).on("click",".imge",function(event){
+            //Single image select deselect
+            if(keycode == null){
+                $('.imge').removeClass("selectborder");
+                $(this).addClass("selectborder");
+                const ct = $(this).find( "img").data('index');
+                getFirstSelectedImageIndex = ct;
+                storeIndexes.push(ct);
+                return false;
+            }
+            // Ctrl key image selection
+            if((keycode == 17 )|| (keycode == 224)){
+                const ct = $(this).find( "img").data('index');
+                if($(this).hasClass("selectborder")){
+                    $(this).removeClass("selectborder"); 
+                    var index = getSelectedImagesIndex.indexOf(ct);
+                    getSelectedImagesIndex.splice(index,1);
+                    return false;
+                }
+                else{
+                    $(this).addClass("selectborder")
+                    getSelectedImagesIndex.push(ct);
+                    return false;
+                }
+            }
+            // Shift key image selection
+            if(keycode == 16){
+                storeIndexes[0] = getFirstSelectedImageIndex;
+                getLastSelectedImageIndex = $(this).find("img").data('index');
+                storeIndexes.push(getLastSelectedImageIndex);
+                if(storeIndexes[0]> storeIndexes[1]){
+                    var temp = storeIndexes[0];
+                    storeIndexes[0] = storeIndexes[1];
+                    storeIndexes[1] = temp;
+                }
+                for(var i=storeIndexes[0]; i<=storeIndexes[1]; i++){
+                    $('img[data-index="'+i+'"]').parent().closest('div').addClass('selectborder');
+                }
+                storeIndexes[0] = getFirstSelectedImageIndex;
+                //storeIndexes[1] = getFirstSelectedImageIndex;
+                storeIndexes = [];
+                return false;
+            }
+        });
 
 
 	   $(".select_all").click(function(){
@@ -5502,34 +5290,8 @@
 
         $('.dropdown-toggle').dropdown();
 
-      /*  $('[data-toggle="popover"]').popover(); 
-        $(function(){
-    $('[rel="popover"]').popover({
-        container: 'body',
-        html: true,
-        content: function () {
-            var clone = $($(this).data('popover-content')).clone(true).removeClass('hide');
-            return clone;
-        }
-    }).click(function(e) {
-        e.preventDefault();
-    });
-}); */
 
 
-/*$("[data-toggle=popover]").popover({
-    html: true, 
-	content: function() {
-          return $('#addkey').html();
-        }
-});*/
-
-/*$("[data-toggle=popover]").popover({
-    html: true, 
-	content: function() {
-          return $('#remkey').html();
-        }
-}); */
 
 var ops = {
     'html':true,    
@@ -5565,19 +5327,17 @@ $(function(){
     $('#rme').popover(opsr)
 });
 
-/*$(function(){
-    // Enables popover
-    $("[data-toggle=popover]").popover();
-});*/
-    /*$("#cap_mod").on("mousedown",function() {
-        $("#imagecap").hide();
-    });
-    $("#cap_mod").on("mouseup",function() {
-        $("#imagecap").show();
-    }); */
+
+ 
+        
     </script>
 
 
+<script src="js/custom-script.js"></script>
+
+
+    
+   
 </body>
 
 </html>

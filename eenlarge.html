@@ -136,8 +136,8 @@
                     <ol class="breadcrumb st_breadcrumb">
                         <!-- <li class="breadcrumb-item"><a href="selectgallery.html">Gallery</a></li> -->
                         <li class="breadcrumb-item"><a href="viewproject.html">FS_DEMO-EXEC</a></li>
-                        <li class="breadcrumb-item">Images</li>
-                        <li class="breadcrumb-item active">sarvaya001.jpg</li>
+                       <!-- <li class="breadcrumb-item">Images</li> -->
+                        <li class="breadcrumb-item active"><span class="nme"></span></li>
                     </ol>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -146,7 +146,8 @@
                                 <li> <button class=" btn_image" title="Image Transaction"  data-toggle="modal" data-target="#imagetransreport"><i class="fa fa-text-height" aria-hidden="true"></i></button></li>
                                 <li>  <button class=" btn_image" title="Image History"  data-toggle="modal" data-target="#imagehistory"><i class="fa fa-header" aria-hidden="true"></i></button></li>
                                 <li> <button  title="Image Notes" class="button1" ><i class="fa fa-pencil-square-o"></i></button></li>
-                                <li><a title="Close Image" href="enlarge.html" class=""><i class="fa fa-search-minus" aria-hidden="true"></i></a></li>
+                                <li><button title="Close Image "  onclick="close_eenlarge()" class=""><i class="fa fa-search-minus" aria-hidden="true"></i></button></li>
+                                
                                  <!--<li><a title="Close Image" href="eenlarge.html" class=""><i class="fa fa-search-plus" aria-hidden="true"></i></a></li> -->
                                  <!-- <li><a title="I'M DONE" href="javascript:void(0)" data-toggle="modal" data-target="#imdone"><i class="fa fa-hand-paper-o" aria-hidden="true"></i></a></li>
                                   <li><a title="Select All" href="javascript:void(0)" class="select_all"><i class="fa fa-check" aria-hidden="true"></i></a></li>
@@ -443,17 +444,18 @@
                     <div class="row">
                         <div class="col-lg-12 rightside_menu_panel st_rmp">
 
-                           <div class="rightside_menu_middlepanel holder text-center">
-                                <ul>
-                                    <li><a href="#" class="first" id="first"><i class="fa fa-step-backward"></i></a></li>
-                                    <li><a href="#" class="pre" id="pre"><i class="fa fa-backward"></i></a></li>
-                                    <li>
-                                        <p>Page : 1 of 1</br><span id="sizee">0</span> Image: 1 of 102</p>
-                                    </li>
-                                    <li><a href="#" class="nex" id="nex"><i class="fa fa-forward"></i></a></li>
-                                    <li><a href="#" class="last" id="last"><i class="fa fa-step-forward"></i></a></li>
-                                </ul>
-                            </div>
+                                <div class="rightside_menu_middlepanel1  holder text-center">
+                                        <ul>
+                                            <!-- <li><a href="#" class="first" id="first"><i class="fa fa-step-backward"></i></a></li>
+                                            <li><a href="#" class="pre" id="pre"><i class="fa fa-backward"></i></a></li>
+                                            <li>
+                                                <p>Page : 1 of 1</br><span id="sizee">0</span> (Image)s Selected</p>
+                                            </li>
+                                            <li><a href="#" class="nex" id="nex"><i class="fa fa-forward"></i></a></li>
+                                            <li><a href="#" class="last" id="last"><i class="fa fa-step-forward"></i></a></li> -->
+                                            
+                                        </ul>
+                                    </div>
                         
 
                         </div>
@@ -462,34 +464,8 @@
                         <div class="db_container db_com rightside-gallerycontainer-panel">
                                
                             <div class="st_subdiv db_com " id="easyPaginate">
-                                <div class="eimg_dive ">
-                                    <div class="span312">
-                                        <div class="eimgee">
-                                        <a href="javascript:void(0)" class=""><img src="http://fsapi.sarvaya.com/image/resize/XnzE4hubRLh46CvUr_59mo9H13r4L10m3Z_VRtAmznZhxWuMZIV11CuLud0aBnZ_8_0zHgw1lrt1mxkysQt_HY24qFYAgknVjGFSdo1m5U29r-2hstX_CR2nTYpejYKg:700:700"></a>
+                                    <div id="imgelist">
                                         </div>
-                                        <!--<div class="tile">
-                                            <h3>sarvaya001.jpg</h3>
-                                           <div class="float menu-share" id="1">
-                                                <i class="fa fa-plus my-float"></i>
-                                            </div>
-                                            <div class="soc ts1"> -->
-                                                <!-- <a href="#" title="Reject"><i class="fa fa-times" aria-hidden="true"></i></a>
-                              <a href="#" title="Approve"><i class="fa fa-check"></i></a>
-                              <a href="#" title="Like It"> <i class="fa fa-thumbs-o-up"></i></a> -->
-                                               <!-- <a href="#" title="Revert Action"><i class="fa fa-undo"></i></a>
-                                                <a href="#" title="Image Designation"><i class="fa fa-share-alt"></i></a>-->
-                                               <!-- <a href="#" title="Retouch Comment"><i class="fa fa-paint-brush"></i></a>
-                                                <a href="#" title="Image Transaction">T</a>
-                                                <a href="#" title="Image History">H</a>
-                                                <a href="#">G</a>
-                                                <a href="#" title="Image Captions"><i class="fa fa-comment-o"></i></a>
-                                                <a href="#" title="Image Notes"><i class="fa fa-pencil-square-o"></i></a>
-                                                <a href="enlarge.html" title="Enlarge Image"><i class="fa fa-search-plus"></i></a>
-                                            </div>
-                                        </div> -->
-                                    </div>
-                                </div>
-                               
                                 
                                 
                                
@@ -4718,16 +4694,114 @@
             var accordion = new Accordion($('.accordion-menu'), false);
         });
 
-
-   
+        var ide;
+        var id;
         $(document).ready(function () {
+            id =window.location.search.substring(1).split("=");
+            
+            var imageUrlsArrayLevel1 =  [];
+            var imageUrlsArrayLevel2 =  [];
+            ide=id[1];
+            
             $("button").click(function () {
                 $("#panel").slideToggle("slow");
             });
+            
+            $.ajax({
+                type: 'GET',
+                cache: false,
+                contentType: 'text/html',
+                url: 'http://fsapi.sarvaya.com/images/thumb/3247206/700/1',
+                success:
+                function(response) {
+                    var imagesUrls =[];
+                    
+                    imagesUrls = JSON.parse(response).images;
+                    var cnt =0;
+                    imagesUrls.forEach(function(key, value) {
+                        var obj = {};
+                        obj.id= cnt;
+                        obj.imageName = key.imageName;
+                        obj.imageUrl = key.imageUrl;
+                        imageUrlsArrayLevel1.push(obj);
+                        cnt++;
+                    });
+
+                    imageUrlsArrayLevel1.forEach(function(item){
+                        //if(item.id == parseInt(ide)){
+                            $("#imgelist").append(`
+                                
+                                                <div class="eimg_dive ">
+                                                    <div class="span312">
+                                                        <div class="eimgee">
+                                                        <a href="javascript:void(0)" class=""><img src=`+imageUrlsArrayLevel1[item.id].imageUrl+`"></a>
+                                                        </div>
+                                                    </div>
+                                               </div> 
+                               
+                                `)
+                        //}
+                    });
+                    
+                        $(".nme").text(imageUrlsArrayLevel1[ide].imageName);
+                        $('#easyPaginate').easyPaginate({
+                                paginateElement: '.eimg_dive',
+                                  elementsPerPage: 1,
+                                  imgid:ide,
+                                 effect: 'climb'
+                            });
+                    }
+                   
+            });
+
+            /*$.ajax({
+                type: 'GET',
+                cache: false,
+                contentType: 'text/html',
+                url: 'http://fsapi.sarvaya.com/images/thumb/3247206/600/1',
+                success:
+                function(response) {
+                    var imagesUrls1 =[];
+                    // document.write("<br /><strong>title:</strong> " + response.title + " <strong>urls:</strong> " + response.urls);
+                    imagesUrls1 = JSON.parse(response).images;
+                    imagesUrls1.forEach(function(key, value) {
+                        var obj = {};
+                        obj.imageName1 = key.imageName1;
+                        obj.imageUrl1 = key.imageUrl1;
+                        imageUrlsArrayLevel1.push(obj);
+                    });
+                   // console.log(imageUrlsArrayLevel1);
+                    $(".nm1").text(imageUrlsArrayLevel1[0].imageName);
+                    $(".imgUrl1").attr("src", imageUrlsArrayLevel1[0].imageUrl);   
+                }
+            });
+            $.ajax({
+                type: 'GET',
+                cache: false,
+                contentType: 'text/html',
+                url: 'http://fsapi.sarvaya.com/images/thumb/3247206/700/1',
+                success:
+                function(response) {
+                    var imagesUrls =[];
+                    // document.write("<br /><strong>title:</strong> " + response.title + " <strong>urls:</strong> " + response.urls);
+                    imagesUrls = JSON.parse(response).images;
+                    imagesUrls.forEach(function(key, value) {
+                        var obj = {};
+                        obj.imageName = key.imageName;
+                        obj.imageUrl = key.imageUrl;
+                        imageUrlsArrayLevel2.push(obj);
+                    });
+                    $(".nm1").text(imageUrlsArrayLevel2[0].imageName);
+                    $(".imgUrl1").attr("src", imageUrlsArrayLevel2[0].imageUrl);   
+                }
+            });*/
         });
-   
 
-
+        function close_eenlarge(){
+            //console.log('fd');
+            //window.location = 'eenlarge.html?id='+ide;
+            window.location.replace('enlarge.html?data='+parseInt(id[1]));
+        }  
 
     $(".button1").on("click",function() {
         $("#info1").fadeToggle();

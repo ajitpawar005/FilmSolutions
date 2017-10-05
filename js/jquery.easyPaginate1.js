@@ -23,10 +23,10 @@
 
 (function($){
     $.fn.easyPaginate = function (options) {
-       // console.log(options);
         var defaults = {
             
             hashPage: 'page',
+            
             effect: 'default',
             slideOffset: 200,
             firstButton: true,
@@ -50,7 +50,7 @@
             plugin.settings = {
                 pages: 0,
                 objElements: Object,
-                currentPage:1
+                currentPage: 1
             }
             
             var getNbOfPages = function() {
@@ -68,7 +68,7 @@
                     htmlNav += '<li><a href="" title="Previous" rel="" class="prev">'+plugin.settings.prevButtonText+'</a></li>';
                 }
                 
-                htmlNav += '<li><p>Page : 1 of 102</p></li>';
+                htmlNav += '<li><p>Page : 1 of 1</br><span id="sizee">0</span> (Image)s Selected</p></li>';
                /* for(i = 1;i <= plugin.settings.pages;i++) {
                     htmlNav += '<li><a href="#'+plugin.settings.hashPage+':'+i+'" title="Page '+i+'" rel="'+i+'" class="page">'+i+'</a>';
                 };*/
@@ -88,7 +88,7 @@
                 });
                 //plugin.el.after(plugin.nav);
                 $(".rightside_menu_middlepanel ul").append(plugin.nav);
-                $(".rightside_menu_middlepanel1 ul").append(plugin.nav);
+    
                 //var elSelector = '#' + plugin.el.get(0).id + ' + ';
                 $('.easyPaginateNav a.page,.easyPaginateNav a.first,.easyPaginateNav a.last').on('click', function(e) {
                     e.preventDefault();
@@ -101,22 +101,8 @@
                     page = plugin.settings.currentPage > 1?parseInt(plugin.settings.currentPage) - 1:1;
                     displayPage(page);
                 });
-
-                $('.rightside_menu_middlepanel1 a.prev').on('click', function(e) {
-                    e.preventDefault();
-                    console.log("inisde prev");
-                    page = plugin.settings.currentPage > 1?parseInt(plugin.settings.currentPage) - 1:1;
-                    displayPage(page);
-                });
     
                 $('.rightside_menu_middlepanel a.next').on('click', function(e) {
-                    e.preventDefault();
-                    console.log("inisde next");
-                    page = plugin.settings.currentPage < plugin.settings.pages?parseInt(plugin.settings.currentPage) + 1:plugin.settings.pages;
-                    displayPage(page);
-                });
-
-                $('.rightside_menu_middlepanel1 a.next').on('click', function(e) {
                     e.preventDefault();
                     console.log("inisde next");
                     page = plugin.settings.currentPage < plugin.settings.pages?parseInt(plugin.settings.currentPage) + 1:plugin.settings.pages;
@@ -222,23 +208,16 @@
         
                 // Here we go
                 displayNav();
-                var flag = false;
+                
                 page = 1;
                 if(document.location.hash.indexOf('#'+plugin.settings.hashPage+':') != -1) {
                     page = parseInt(document.location.hash.replace('#'+plugin.settings.hashPage+':', ''));
                     if(page.length <= 0 || page < 1 || page > plugin.settings.pages) {
                         page = 1;
                     }
-                    flag = true;
                 }
                 
-                displayPage( (parseInt(plugin.settings.imgid)+1), 'default');
-                // if(!flag){
-                //     displayPage(page, 'default');
-                // }
-                // else{
-                //     displayPage(plugin.settings.imgid, 'default');
-                // }
+                displayPage(page, 'default');
             }
         });
     };

@@ -69,6 +69,5 @@ $(document).ready(function()
 	}            
 	});	
 
-	
 });
 /* Menu Toggle Script End Here 27/03/2017 */
