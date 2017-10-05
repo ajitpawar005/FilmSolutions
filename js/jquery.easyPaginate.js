@@ -68,7 +68,7 @@
                     htmlNav += '<li><a href="" title="Previous" rel="" class="prev">'+plugin.settings.prevButtonText+'</a></li>';
                 }
                 
-                htmlNav += '<li><p>Page : 1 of 102</p></li>';
+                htmlNav += '<li><p>Page : 1 of <span class="pages">'+plugin.settings.pages+'</span></p></li>';
                /* for(i = 1;i <= plugin.settings.pages;i++) {
                     htmlNav += '<li><a href="#'+plugin.settings.hashPage+':'+i+'" title="Page '+i+'" rel="'+i+'" class="page">'+i+'</a>';
                 };*/

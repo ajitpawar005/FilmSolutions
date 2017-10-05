@@ -39,7 +39,6 @@
             nextButtonText: '<i class="fa fa-forward"></i>'
         }
             
-    
         
         return this.each (function (instance) {        
             
@@ -68,7 +67,7 @@
                     htmlNav += '<li><a href="" title="Previous" rel="" class="prev">'+plugin.settings.prevButtonText+'</a></li>';
                 }
                 
-                htmlNav += '<li><p>Page : 1 of 1</br><span id="sizee">0</span> (Image)s Selected</p></li>';
+                htmlNav += '<li><p> <span class="page">'+1+'</span> of <span class="pages">'+plugin.settings.pages+'</span></br><span id="sizee">0</span> (Image)s Selected</p></li>';
                /* for(i = 1;i <= plugin.settings.pages;i++) {
                     htmlNav += '<li><a href="#'+plugin.settings.hashPage+':'+i+'" title="Page '+i+'" rel="'+i+'" class="page">'+i+'</a>';
                 };*/
@@ -100,6 +99,7 @@
                     console.log("inisde prev");
                     page = plugin.settings.currentPage > 1?parseInt(plugin.settings.currentPage) - 1:1;
                     displayPage(page);
+                    
                 });
     
                 $('.rightside_menu_middlepanel a.next').on('click', function(e) {
@@ -107,9 +107,11 @@
                     console.log("inisde next");
                     page = plugin.settings.currentPage < plugin.settings.pages?parseInt(plugin.settings.currentPage) + 1:plugin.settings.pages;
                     displayPage(page);
+                   
                 });
-            };
             
+            };
+           
             var displayPage = function(page, forceEffect) {
                 if(plugin.settings.currentPage != page) {
                     plugin.settings.currentPage = parseInt(page);
@@ -139,7 +141,7 @@
                     }
                 }
             };
-            
+            console.log(plugin.settings.currentPage);
             var transition_default = function(offsetStart, offsetEnd) {
                 plugin.currentElements.hide();
                 plugin.currentElements = plugin.settings.objElements.slice(offsetStart, offsetEnd).clone();
@@ -203,6 +205,7 @@
             console.log(plugin.settings.objElements);
                 console.log("plugin.settings.objElements ============");
             plugin.settings.pages = getNbOfPages();
+            console.log(plugin.settings.pages);
             if(plugin.settings.pages > 1) {
                 plugin.el.html();
         
@@ -210,6 +213,7 @@
                 displayNav();
                 
                 page = 1;
+               
                 if(document.location.hash.indexOf('#'+plugin.settings.hashPage+':') != -1) {
                     page = parseInt(document.location.hash.replace('#'+plugin.settings.hashPage+':', ''));
                     if(page.length <= 0 || page < 1 || page > plugin.settings.pages) {
