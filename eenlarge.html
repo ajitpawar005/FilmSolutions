@@ -12,7 +12,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link href="css/font-awesome.min.css" rel="stylesheet"> -->
     <link href="css/simple-sidebar1.css" rel="stylesheet">
     <link href="css/style3.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
@@ -136,8 +136,8 @@
                     <ol class="breadcrumb st_breadcrumb">
                         <!-- <li class="breadcrumb-item"><a href="selectgallery.html">Gallery</a></li> -->
                         <li class="breadcrumb-item"><a href="viewproject.html">FS_DEMO-EXEC</a></li>
-                       <!-- <li class="breadcrumb-item">Images</li> -->
-                        <li class="breadcrumb-item active"><span class="nme"></span></li>
+                        <li class="breadcrumb-item">Images</li>
+                       <!-- <li class="breadcrumb-item active"><span class="nme"></span></li> -->
                     </ol>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -466,13 +466,6 @@
                             <div class="st_subdiv db_com " id="easyPaginate">
                                     <div id="imgelist">
                                         </div>
-                                
-                                
-                               
-                               
-                                
-                                
-                                
                                 
                             </div>
                         </div>
@@ -4696,105 +4689,50 @@
 
         var ide;
         var id;
+        var currentImgIndex;
         $(document).ready(function () {
             id =window.location.search.substring(1).split("=");
             
-            var imageUrlsArrayLevel1 =  [];
             var imageUrlsArrayLevel2 =  [];
-            ide=id[1];
+            //currentImgIndex = parseInt( localStorage.getItem("enlCurImgIndex"));
+            //var imageUrlsArrayLevel2 =  [];
+
+
+            ide=parseInt(localStorage.getItem('level1SelectedImageIndex'));
             
             $("button").click(function () {
                 $("#panel").slideToggle("slow");
             });
-            
-            $.ajax({
-                type: 'GET',
-                cache: false,
-                contentType: 'text/html',
-                url: 'http://fsapi.sarvaya.com/images/thumb/3247206/700/1',
-                success:
-                function(response) {
-                    var imagesUrls =[];
-                    
-                    imagesUrls = JSON.parse(response).images;
-                    var cnt =0;
-                    imagesUrls.forEach(function(key, value) {
-                        var obj = {};
-                        obj.id= cnt;
-                        obj.imageName = key.imageName;
-                        obj.imageUrl = key.imageUrl;
-                        imageUrlsArrayLevel1.push(obj);
-                        cnt++;
-                    });
-
-                    imageUrlsArrayLevel1.forEach(function(item){
-                        //if(item.id == parseInt(ide)){
+                var flag = false;
+                    imageUrlsArrayLevel2 =  JSON.parse(localStorage.getItem('allImagesLevel2'));
+                    imageUrlsArrayLevel2.forEach(function(item){
+                        
                             $("#imgelist").append(`
                                 
                                                 <div class="eimg_dive ">
                                                     <div class="span312">
                                                         <div class="eimgee">
-                                                        <a href="javascript:void(0)" class=""><img src=`+imageUrlsArrayLevel1[item.id].imageUrl+`"></a>
+                                                        <a href="javascript:void(0)" class=""><img src=`+item.url+`"></a>
                                                         </div>
                                                     </div>
-                                               </div> 
+                                                    <div class="img_tile">
+                                                        <span class="ii"> `+item.name+` </span>
+                                                    </div>
+                                        </div> 
                                
                                 `)
-                        //}
+                               // $(".nme").text(item.name);
+                        flag = true;
                     });
-                    
-                        $(".nme").text(imageUrlsArrayLevel1[ide].imageName);
+                    if(flag){
+                        //$(".nme").text(imageUrlsArrayLevel2[ide].name);
                         $('#easyPaginate').easyPaginate({
                                 paginateElement: '.eimg_dive',
                                   elementsPerPage: 1,
                                   imgid:ide,
                                  effect: 'climb'
                             });
-                    }
-                   
-            });
-
-            /*$.ajax({
-                type: 'GET',
-                cache: false,
-                contentType: 'text/html',
-                url: 'http://fsapi.sarvaya.com/images/thumb/3247206/600/1',
-                success:
-                function(response) {
-                    var imagesUrls1 =[];
-                    // document.write("<br /><strong>title:</strong> " + response.title + " <strong>urls:</strong> " + response.urls);
-                    imagesUrls1 = JSON.parse(response).images;
-                    imagesUrls1.forEach(function(key, value) {
-                        var obj = {};
-                        obj.imageName1 = key.imageName1;
-                        obj.imageUrl1 = key.imageUrl1;
-                        imageUrlsArrayLevel1.push(obj);
-                    });
-                   // console.log(imageUrlsArrayLevel1);
-                    $(".nm1").text(imageUrlsArrayLevel1[0].imageName);
-                    $(".imgUrl1").attr("src", imageUrlsArrayLevel1[0].imageUrl);   
-                }
-            });
-            $.ajax({
-                type: 'GET',
-                cache: false,
-                contentType: 'text/html',
-                url: 'http://fsapi.sarvaya.com/images/thumb/3247206/700/1',
-                success:
-                function(response) {
-                    var imagesUrls =[];
-                    // document.write("<br /><strong>title:</strong> " + response.title + " <strong>urls:</strong> " + response.urls);
-                    imagesUrls = JSON.parse(response).images;
-                    imagesUrls.forEach(function(key, value) {
-                        var obj = {};
-                        obj.imageName = key.imageName;
-                        obj.imageUrl = key.imageUrl;
-                        imageUrlsArrayLevel2.push(obj);
-                    });
-                    $(".nm1").text(imageUrlsArrayLevel2[0].imageName);
-                    $(".imgUrl1").attr("src", imageUrlsArrayLevel2[0].imageUrl);   
-                }
-            });*/
+                        }
         });
 
         function close_eenlarge(){

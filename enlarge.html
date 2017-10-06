@@ -138,8 +138,8 @@
                     <ol class="breadcrumb st_breadcrumb">
                        <!-- <li class="breadcrumb-item"><a href="selectgallery.html">DEMO</a></li> -->
                         <li class="breadcrumb-item"><a href="viewproject.html">FS_DEMO-EXEC</a></li>
-                       <!-- <li class="breadcrumb-item">Images</li> -->
-                        <li class="breadcrumb-item active"><span class="nm"></span></li>
+                        <li class="breadcrumb-item">Images</li>
+                        <!--<li class="breadcrumb-item active"><span class="nm"></span></li> -->
                     </ol>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -4694,84 +4694,70 @@
             var accordion = new Accordion($('.accordion-menu'), false);
         });
         var ide;
+        var selectedImageName;
+        var flag= false;
         $(document).ready(function () {
            var id =window.location.search.substring(1).split("=");
             
             var imageUrlsArrayLevel1 =  [];
-            var imageUrlsArrayLevel2 =  [];
-            ide=id[1];
-            
+            ide= parseInt(localStorage.getItem('level1SelectedImageIndex'));
+
+            selectedImageName = localStorage.getItem('level1ImageName');
             $("button").click(function () {
                 $("#panel").slideToggle("slow");
             });
-            
-            $.ajax({
-                type: 'GET',
-                cache: false,
-                contentType: 'text/html',
-                url: "http://fsapi.sarvaya.com/images/thumb/3247206/600/1",
-                success:
-                function(response) {
-                    var imagesUrls =[];
-                    
-                    imagesUrls = JSON.parse(response).images;
-                    var cnt =0;
-                    imagesUrls.forEach(function(key, value) {
-                        var obj = {};
-                        obj.id= cnt;
-                        obj.imageName = key.imageName;
-                        obj.imageUrl = key.imageUrl;
-                        imageUrlsArrayLevel1.push(obj);
-                        cnt++;
-                    });
-                   
-                    imageUrlsArrayLevel1.forEach(function(item){
-                        //if(item.id == parseInt(ide)){
-                            $("#imglist").append(`
+                var level2Images = [];
+                imageUrlsArrayLevel1 =  JSON.parse(localStorage.getItem('allImages'));
+                level2Images = imageUrlsArrayLevel1;
+                var arr = [];
+                level2Images.forEach(function(key,value){
+                    key.url = key.url.replace("600:600","700:700");
+                    var ob = {};
+                    ob.id = key.id;
+                    ob.name = key.name;
+                    ob.url = key.url;
+                    arr.push(ob);
+                })
+                localStorage.setItem('allImagesLevel2',JSON.stringify(arr));
+
+                imageUrlsArrayLevel1.forEach(function(item){                    
+                    $("#imglist").append(`
                                 
                                                 <div class="img_dive ">
+
                                                     <div class="span31">
                                                         <div class="imgee">
-                                                        <a href="javascript:void(0)" class=""><img src=`+imageUrlsArrayLevel1[item.id].imageUrl+`"></a>
+                                                        <a href="javascript:void(0)" class=""><img src="`+item.url+`"></a>
                                                         </div>
                                                     </div>
-                                               </div> 
-                               
+                                               
+                                               <div class="img_tile">
+                                                <span class="ii"> `+item.name+` </span>
+                                            </div>
+                                        </div>
                                 `)
                         //}
+                        //$(".nm").text(item.name);
+                        flag = true;
                     });
-                    
-                    
-                    // var length = imageUrlsArrayLevel1.length;
-                    // for(var i = 0; i< 1; i++){
-                    //     }  
-                        $(".nm").text(imageUrlsArrayLevel1[ide].imageName);
+                     if(flag){
+                     
                         $('#easyPaginate').easyPaginate({
-                                paginateElement: '.img_dive',
-                                  elementsPerPage: 1,
+                               paginateElement: '.img_dive',
+                              elementsPerPage: 1,
                                   imgid:ide,
-                                 effect: 'climb'
+                             effect: 'climb'
                             });
-                    }
-
-                   
-            });
-
+                        }
   
         });
-   
-        
-        function enlarge(){
-            console.log('fd');
-            //window.location = 'eenlarge.html?id='+ide;
-            window.location.replace('eenlarge.html?id='+ide);
-        }   
-
         $(".button1").on("click",function() {
         $("#info1").fadeToggle();
     });
 
-    
+    function enlarge(){
+        window.location.replace('eenlarge.html');
+    }
     
     $(".closebtn").click(function(){
         $("#info1").fadeToggle();

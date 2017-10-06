@@ -22,7 +22,7 @@
     <body  >
         <!-- Login Panel Html Start Here 25/03/2017 -->
         <div class="login_div">
-            
+
                 <div  class="col-sm-4  loginform_container_section" >
                     <div class="page-header">
                         <h1>Login </h1>
@@ -30,26 +30,23 @@
                     <!-- <h1>Login</h1> -->
                     <div class="login_data"   >
                     <form name="login_form"  action="dashboard.html" >
-                        
+
                         <div class="form-group ">
                            <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
-                            <input class="form-control" type="text" name="username" placeholder="User Name" required/>
-                           
-                            
+                            <input class="form-control" type="text" name="username" placeholder="User Name" required id="username"
+                            value="asharma"/>
+
+
                         </div>
                         <div class="form-group ">
                            <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> -->
-                            <input class="form-control " type="password" name="password"   placeholder="Password" required/>
-                            
-                          
-                            
+                            <input class="form-control " type="password" name="password"   placeholder="Password" required id="password"/>
                         </div>
                         <div class="checkbox">
                             <label><input type="checkbox"/> Remember me</label>
                         </div>
                         <div>
-                            <input class="btn btn-danger btn-block "type="submit" 
-                        value="Log In">
+                            <input class="btn btn-danger btn-block " type="button" value="Log In" id="login-btn">
                         </div>
                         <div class="contact-info">
                             <p>For Any Assistance & Information, Please Contact:
@@ -58,18 +55,19 @@
                             <h6><i class="fa fa-phone"></i>&nbsp;(818) 588 3500</h6>
                             <h6><i class="fa fa-at" aria-hidden="true"></i>&nbsp;info@filmsolutions.com</h6>
                         </div>
-                    
+
                     </form>
                     </div>
-               
+
             </div>
         </div>
-        <!-- Login Panel Html End Here 25/03/2017 -->		
+        <!-- Login Panel Html End Here 25/03/2017 -->
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
- 
+        <script src="js/variable.js"></script>
+
 		<script>
             $(document).ready(function() {
                 function setHeight() {
@@ -77,11 +75,37 @@
                     $('.loginform_container_section,.login_div').css('height', windowHeight);
                 };
                 setHeight();
-            
+
                 $(window).resize(function() {
                     setHeight();
                 });
+
+                $("#login-btn").click(function(){
+                  var username = $("#username").val();
+                  var password = $("#password").val();
+                  $.ajax({
+                    type:"POST",
+                    url:apiurl+"auth/login",
+                    dataType:"json",
+                    data:{username:username,password:password},
+                    beforeSend:function(){},
+                    success:function(data){
+                        if(data.status){
+                          localStorage.setItem('id_token', data.id_token);
+                          localStorage.setItem('userObj', JSON.stringify(data.user));
+                          window.location.replace("dashboard.html");
+                        }else{
+                          alert(data.message);
+                        }
+                    },
+                    error:function(){},
+
+                  });
                 });
+
+
+
+            });
 		</script>
     </body>
 </html>

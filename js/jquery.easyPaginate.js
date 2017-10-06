@@ -95,32 +95,19 @@
                     displayPage($(this).attr('rel'));                
                 });
     
-                $('.rightside_menu_middlepanel a.prev').on('click', function(e) {
-                    e.preventDefault();
-                    console.log("inisde prev");
-                    page = plugin.settings.currentPage > 1?parseInt(plugin.settings.currentPage) - 1:1;
-                    displayPage(page);
-                });
-
+               
                 $('.rightside_menu_middlepanel1 a.prev').on('click', function(e) {
                     e.preventDefault();
-                    console.log("inisde prev");
                     page = plugin.settings.currentPage > 1?parseInt(plugin.settings.currentPage) - 1:1;
                     displayPage(page);
-                });
-    
-                $('.rightside_menu_middlepanel a.next').on('click', function(e) {
-                    e.preventDefault();
-                    console.log("inisde next");
-                    page = plugin.settings.currentPage < plugin.settings.pages?parseInt(plugin.settings.currentPage) + 1:plugin.settings.pages;
-                    displayPage(page);
+                    localStorage.setItem("enlCurImgIndex",page);
                 });
 
                 $('.rightside_menu_middlepanel1 a.next').on('click', function(e) {
                     e.preventDefault();
-                    console.log("inisde next");
                     page = plugin.settings.currentPage < plugin.settings.pages?parseInt(plugin.settings.currentPage) + 1:plugin.settings.pages;
                     displayPage(page);
+                    localStorage.setItem("enlCurImgIndex", page);
                 });
             };
             
@@ -214,8 +201,6 @@
             
             plugin.currentElements = $([]);
             plugin.settings.objElements = plugin.el.find(plugin.settings.paginateElement);
-            console.log(plugin.settings.objElements);
-                console.log("plugin.settings.objElements ============");
             plugin.settings.pages = getNbOfPages();
             if(plugin.settings.pages > 1) {
                 plugin.el.html();
