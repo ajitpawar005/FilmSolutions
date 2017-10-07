@@ -68,7 +68,7 @@
                     htmlNav += '<li><a href="" title="Previous" rel="" class="prev">'+plugin.settings.prevButtonText+'</a></li>';
                 }
                 
-                htmlNav += '<li><p>Page : 1 of </span> of <span class="pages">'+plugin.settings.pages+'</span></br><span id="sizee">0</span> (Image)s Selected</p></li>';
+                htmlNav += '<li><p>Page : 1 of </span> <span class="pages">'+plugin.settings.pages+'</span></br><span id="sizee">0</span> (Image)s Selected</p></li>';
                /* for(i = 1;i <= plugin.settings.pages;i++) {
                     htmlNav += '<li><a href="#'+plugin.settings.hashPage+':'+i+'" title="Page '+i+'" rel="'+i+'" class="page">'+i+'</a>';
                 };*/

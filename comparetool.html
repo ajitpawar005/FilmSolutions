@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="icon" href="images/favicon-icon.png" type="image/png" sizes="16x16">
+    <title>FS Project | Gallery Page</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/simple-sidebar1.css" rel="stylesheet">
+    <link href="css/style3.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/jquery.simpleImageDiff.css" rel="stylesheet">
+  <!-- Select Dropdown Css Start Here 27/03/2017 -->
+    <link href="css/bootstrap-select.css" rel="stylesheet">
+</head>
+
+<body class="bgcolor">
+   <!-- Navbar Html Start Here 27/03/2017 -->
+    <div class="header-container-section db_com">
+        <nav class="navbar navbar-default">
+            <div class="container" style="width:100% !important;">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                        aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+                    <a class="navbar-brand" href="index.html"><img src="images/header-logo.png" alt="FS Logo" Title="FS" /></a>
+                </div>
+
+               <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="select_option">
+                            <select class="selectpicker" title="Select Project" data-live-search="true" onchange="window.location.href=this.options[this.selectedIndex].value">
+					          <option value="viewproject.html">FS-Demo</option>
+			                </select>
+                        </li>
+                        <li class="dropdown notifications-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Notification">
+                  <i class="fa fa-bell-o"></i>
+                  <span class="badge badge-notify">2</span>
+                </a>
+                            <ul class="dropdown-menu info_receiv">
+
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu info">
+
+
+                                        <li>
+                                            <a href="#">
+                           5 new members joined
+                        </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                          You changed your username
+                        </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown lan">
+                            <a href="#" class="dropdown-toggle title1" title="Languages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-flag flag-icon-section"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">English</a></li>
+                                <li><a href="#">français</a></li>
+                                <li><a href="#">Español</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown pro">
+                            <a href="#" class="dropdown-toggle title1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><img src="images/got1.jpg" class="img-circle" alt="User Image">John </i></a>
+                            <ul class="dropdown-menu user_pro">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="images/got1.jpg" class="img-circle" alt="User Image">
+
+                                    <p>
+                                        Alexander Pierce - Actor
+                                        <small>ID:110101</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="index.html" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+
+    <!-- Navbar Html End Here 27/03/2017 -->
+
+    <!-- Breadcrumb Container Section Html Start Here 27/03/2017 -->
+    <div class="breadcrumb_container_section bcs db_com">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <ol class="breadcrumb st_breadcrumb">
+                        <!-- <li class="breadcrumb-item"><a href="selectgallery.html">Gallery</a></li> -->
+                        <li class="breadcrumb-item"><a href="viewproject.html">FS_DEMO-EXEC</a></li>
+                        <li class="breadcrumb-item">COMPARE TOOL</li>
+                        <!-- <li class="breadcrumb-item">Sarvaya001.jpg</li> -->
+
+                    </ol>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="db_com st_headicon">
+                        <ul>
+                            <li class="chek_box">
+                                    <div class="checkbox down-input di-check">
+                                            <label class="chek-label">
+                            <input type="checkbox" value="">
+                            <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                            Show Image Status
+                            </label>
+                                        </div>
+                            </li>
+                            <li>
+                                    <div id="slidecontainer">
+                                        <div class="form-group rangee">
+                                            <div class="col-lg-10 col-md-10 col-sm-10">
+                                            <input type="range" min="1" max="100" value="25" class="slider" id="myRange" title="" onchange="updateTextInput(this.value);">
+                                             </div>
+                                             <div class="col-lg-2 col-md-2 col-sm-2">
+                                            <input type="text" id="textInput" value="25" disabled>
+                                             </div>
+                                          </div>
+                                        </div>
+                            </li>    
+                            <li class="comp1_img">
+                                <a title="compare Selected Images" href="compareimg.html"><i class="fa fa-compress" aria-hidden="true"></i></a>
+                            </li>
+                                      
+                                <li>
+                                    <a href="viewproject.html" class="btn btn-default btn-flat close_img1">Close</a>
+
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Container Section Html Start Here 27/03/2017 -->
+
+    <!-- Galley Page Container Html Start Here 25/03/2017 -->
+
+
+    <div class="galley-page-container db_com">
+
+        <div id="wrapper" class="db_com">
+
+            <a href="javascript:void(0)" class="menu-toggle-button1" id="menu-toggle"><i class="fa fa-bars"></i></a>
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper" class="sidebar-wrapper">
+                <div class="sidebar-nav">
+                    <div class="tab_divv">
+                        <ul class="tab_ul" role="tablist">
+                            <li role="presentation" class="active"><a href="#sb_menu" aria-controls="sb_menu" role="tab" data-toggle="tab"><i class="fa fa-th-large" aria-hidden="true"></i></a></li>
+                            <li role="presentation"><a href="#pinfo" aria-controls="pinfo" role="tab" data-toggle="tab" title="Project Info">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <!-- <li><a href="javascript:void(0)" title="Advance Search" data-toggle="modal" data-target="#search"><i class="fa fa-search" aria-hidden="true"></i></a></li> -->
+                        </ul>
+                    </div>
+                    <div class="tab-content db_com">
+                        <div role="tabpanel" class="tab-pane active db_com side_dropdown" id="sb_menu">
+                            <ul class="accordion-menu side-menu">
+                               
+                                <div class="dropdownlink"><i class="fa fa-file-text-o dp_i" aria-hidden="true"></i><span>Audit</span>
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </div>
+                                <ul class="submenuItemsss child_menu">
+                                    <li><a href="#">Conflicts</a></li>
+                                    <li><a href="#">No Conflicts</a></li>
+                                    <li><a href="#">Bypass 2nd Tagger</a></li>
+                                    <li class="aud_btn"> <button class="btn">Publish Image(s)</button></li>
+                                    <li class="aud_btn"> <button class="btn">Hide Image(s)</button></li>
+                                    <li class="aud_btn"> <button class="btn">UnhideImage(s)</button></li>
+                                    <li class="aud_btn"> <button class="btn">Clear Tagg(s)</button></li>
+                                    <li class="aud_btn"> <button class="btn">Clear Single Tag</button></li>
+                                </ul>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                        <div role="tabpanel" class="tab-pane pinfo db_com" id="pinfo">
+                            <h1>Project Info</h1>
+
+                            <div class="db_com info_div">
+                                <div class="info-up indigo lighten-1"></div>
+                                <div class="info_avatar"><img src="images/agents_of_shield.png" class="rounded-circle"></div>
+                                <div class="info-body">
+                                    <h4 class="info-title">Photo : 102</h4>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                            <p><i class="fa fa-camera" aria-hidden="true"></i> <span>Bob D'Amico</span></p>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                            <p><i class="fa fa-calendar" aria-hidden="true"></i> <span>03/17/2017</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- /#sidebar-wrapper -->
+            <!-- Page Content -->
+            <div id="page-content-wrapper" class="db_com pcw">
+                    <div class="container-fluid">
+                        
+                        <div class="row">
+                            <div class="db_container db_com rightside-gallerycontainer-panel">
+                                   
+                                <div class="st_subdiv db_com ">
+                                   <div id="comparediv">
+
+                                   </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                    </div>
+                    <!-- /#page-content-wrapper -->
+    
+                </div>
+                <!-- /#wrapper -->
+    
+    
+    
+    
+            </div>
+    
+    
+            <!-- Galley Page Container Html End Here 25/03/2017 -->
+    
+        <!-- Fixed Footer Html Start Here 25/03/2017 -->
+        <div class="navbar navbar-fixed-bottom fixedbottom_container_section fcs">
+            <p>For more information or for technical assistance, Please Contact : Film Solutions, LLC @ (818) 588 3500 :: info@filmsolutions.com</p>
+        </div>
+
+    </div>
+    <!-- Fixed Footer Html Start Here 25/03/2017 -->
+    
+    <!-- image info -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Custom Script Js Start Here 27/03/2017 -->
+    <script src="js/custom-script.js"></script>
+    <!-- Custom Script Js End Here 27/03/2017 -->
+    <!-- Select Dropdown Js Start Here 27/03/2017 -->
+    <script src="js/bootstrap-select.js"></script>
+    <!-- Select Dropdown Js End Here 27/03/2017 -->
+    <script src="js/jquery.easyPaginate1.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.db_carousel').carousel({
+                interval: false
+            })
+        });
+        $('.modal-dialog').draggable();
+  
+  
+        $(document).ready(function () {
+            var $mainButton = $(".tile .float"),
+                $zoommenu = $(".tile .soc");
+            $mainButton.on("click", function () {
+                var id = ($(this).attr('id'));
+                $zoommenu = $(".ts" + id);
+                $(".soc").not($zoommenu).removeClass("pad");
+                $(this).html($(this).html() == '<i class="fa fa-times my-float"></i>' ? '<i class="fa fa-plus my-float"></i>' : '<i class="fa fa-times my-float"></i>');
+                $zoommenu.toggleClass("pad");
+            });
+        });
+    
+  
+        $(function () {
+            var Accordion = function (el, multiple) {
+                this.el = el || {};
+                // more then one submenu open?
+                this.multiple = multiple || false;
+
+                var dropdownlink = this.el.find('.dropdownlink');
+                dropdownlink.on('click',
+                    { el: this.el, multiple: this.multiple },
+                    this.dropdown);
+            };
+
+            Accordion.prototype.dropdown = function (e) {
+                var $el = e.data.el,
+                    $this = $(this),
+                    //this is the ul.submenuItems
+                    $next = $this.next();
+
+                $next.slideToggle();
+                $this.parent().toggleClass('open');
+
+                if (!e.data.multiple) {
+                    //show only one menu at the same time
+                    $el.find('.submenuItems').not($next).slideUp().parent().removeClass('open');
+                }
+            }
+
+            var accordion = new Accordion($('.accordion-menu'), false);
+        });
+
+
+        $(document).ready(function () {
+            var imageUrlsArrayDefault =  [];
+
+         
+            $("button").click(function () {
+                $("#panel").slideToggle("slow");
+            });
+           
+
+                    var  getselectedimgs= JSON.parse(localStorage.getItem('selectedimgs'));
+                    console.log(getselectedimgs);
+                    var length = getselectedimgs.length;
+                    var flag = false;
+                    for(var i = 0; i< length; i++){
+                        var image = getselectedimgs[i];
+                        $("#comparediv").append(`
+                            
+                                                <div class="img_div">
+                                   
+                                                    <div class="span3">
+                                                        <div class="imge">
+                                                                 <a href="javascript:void(0)" class="thumbnail img-check"><img src=`+image.url+`" data-index="`+i+`"></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="img_tile">
+                                                     <span class="ii"> `+image.name+` </span>
+                                                    </div>
+                                                </div>
+                            
+                                `);
+                                        
+                                /*for(var i = 0; i< length; i++){
+                                    console.log(length);
+                                $(".imgliste").append(`
+                                               
+                                                    
+                                        <div class=" rightside_menu_panel st_rmp">
+
+                                            <div class="rightside_menu_middlepanel holder text-center">
+                                                <ul>
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
+                                   
+                                           
+                                `); */
+
+                                
+                                    
+                                flag = true;
+                            }
+                            if(flag){
+                                  $('#easyPaginate').easyPaginate({
+                                      paginateElement: '.span3',
+                                        elementsPerPage: 20,
+                                       effect: 'climb',
+                                       gridType: "album"
+                                  });
+                              }
+            });
+
+            var getFirstSelectedImageIndex;
+            var getLastSelectedImageIndex;
+            var getSelectedImagesIndex =[];
+            var keycode = null;
+            var allSelectedImagesArray = [];
+            $(document).on('keydown', function(e){
+                keycode = e.keyCode || e.which;
+            });
+            $(document).on('keyup', function(e){
+                keycode = null;
+            }); 
+
+            $(document).on("click",".imge",function(event){
+            //Single image select deselect
+            if(keycode == null){
+                storeIndexes =[];
+                if($(this).hasClass("selectborder")){
+                    $('.imge').removeClass("selectborder");
+                    $(this).removeClass("selectborder"); 
+                    getSelectedImages();
+                    return false;
+                }
+                else{
+                    $('.imge').removeClass("selectborder");
+                    $(this).addClass("selectborder");
+                    const ct = $(this).find( "img").data('index');
+                    getFirstSelectedImageIndex = ct;
+                    storeIndexes.push(ct);
+                    getSelectedImages();
+                    return false;
+                }
+            }
+            // Ctrl key image selection
+            if((keycode == 17 )|| (keycode == 224)){
+                const ct = $(this).find( "img").data('index');
+                if($(this).hasClass("selectborder")){
+                    $(this).removeClass("selectborder"); 
+                    var index = getSelectedImagesIndex.indexOf(ct);
+                    getSelectedImagesIndex.splice(index,1);
+                }
+                else{
+                    $(this).addClass("selectborder")
+                    getSelectedImagesIndex.push(ct);
+                }
+                getSelectedImages();
+                return false;
+            }
+            // Shift key image selection
+            if(keycode == 16){
+                storeIndexes[0] = getFirstSelectedImageIndex;
+                getLastSelectedImageIndex = $(this).find("img").data('index');
+                storeIndexes.push(getLastSelectedImageIndex);
+                if(storeIndexes[0]> storeIndexes[1]){
+                    var temp = storeIndexes[0];
+                    storeIndexes[0] = storeIndexes[1];
+                    storeIndexes[1] = temp;
+                }
+                for(var i=storeIndexes[0]; i<=storeIndexes[1]; i++){
+                    $('img[data-index="'+i+'"]').parent().closest('div').addClass('selectborder');
+                }
+                storeIndexes[0] = getFirstSelectedImageIndex;
+                storeIndexes = [];
+                getSelectedImages();
+                return false;
+            }
+        });
+
+        $('select').selectpicker();
+
+        $('.dropdown-toggle').dropdown();
+
+        function updateTextInput(val) {
+            document.getElementById('textInput').value = val;
+        }
+
+    </script>
+
+
+</body>
+
+</html>

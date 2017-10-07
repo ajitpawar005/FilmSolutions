@@ -465,6 +465,7 @@
                                
                             <div class="st_subdiv db_com " id="easyPaginate">
                                     <div id="imgelist">
+                                        <span></span>                           <span></span>
                                         </div>
                                 
                             </div>
@@ -4692,14 +4693,8 @@
         var currentImgIndex;
         $(document).ready(function () {
             id =window.location.search.substring(1).split("=");
-            
             var imageUrlsArrayLevel2 =  [];
-            //currentImgIndex = parseInt( localStorage.getItem("enlCurImgIndex"));
-            //var imageUrlsArrayLevel2 =  [];
-
-
-            ide=parseInt(localStorage.getItem('level1SelectedImageIndex'));
-            
+            ide=parseInt(localStorage.getItem('level1SelectedImageIndex'));            
             $("button").click(function () {
                 $("#panel").slideToggle("slow");
             });
@@ -4708,17 +4703,19 @@
                     imageUrlsArrayLevel2.forEach(function(item){
                         
                             $("#imgelist").append(`
-                                
-                                                <div class="eimg_dive ">
-                                                    <div class="span312">
-                                                        <div class="eimgee">
-                                                        <a href="javascript:void(0)" class=""><img src=`+item.url+`"></a>
-                                                        </div>
-                                                    </div>
+                                                <div class="eimg_dive "> 
                                                     <div class="img_tile">
                                                         <span class="ii"> `+item.name+` </span>
                                                     </div>
-                                        </div> 
+                                                    <div class="span312">
+                                                          
+                                                                <div class="eimgee">
+                                                             
+                                                                    <a href="javascript:void(0)" class="eimg_dive_ver"><img src=`+item.url+`"></a>
+                                                               
+                                                            </div>
+                                                    </div>
+                                                </div>
                                
                                 `)
                                // $(".nme").text(item.name);
@@ -4738,7 +4735,7 @@
         function close_eenlarge(){
             //console.log('fd');
             //window.location = 'eenlarge.html?id='+ide;
-            window.location.replace('enlarge.html?data='+parseInt(id[1]));
+            window.location.replace('enlarge.html');
         }  
 
     $(".button1").on("click",function() {

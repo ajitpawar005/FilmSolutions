@@ -19,20 +19,14 @@
 }
 /* Arimo Font Family Css Start Here 25/03/2017 */
 
-
 body
 {
-   
 	background:url(../images/body-background-image.jpg) no-repeat center center fixed;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;
     background-size:cover;
 }
-
-
-
-
 
 body a{text-decoration:none;}
 body a:focus,body a.focus{box-shadow:none;text-decoration:none; outline:none;}
@@ -363,15 +357,16 @@ text-align:center;
 {
 display:inline-block;
 margin-top:15px; 
+padding: 0px 3px;
 }
 #page-content-wrapper .rightside_menu_panel .rightside_menu_middlepanel ul li p,#page-content-wrapper .rightside_menu_panel .rightside_menu_middlepanel1 ul li p
 {
-font-size:10px;
+font-size:12px;
 color:#fff;
 margin-bottom:0px;
 line-height:15px; 
 text-align:center;
-width: 140px;
+width: 100%;
 }
 #page-content-wrapper .rightside_menu_panel .rightside_menu_middlepanel ul li a,#page-content-wrapper .rightside_menu_panel .rightside_menu_middlepanel1 ul li a{display:block; color:#fff;font-size: 11px;width: 25px;height: 25px;
 border-radius: 100%;background-color: #292929;text-align: center;line-height: 20px;box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);}
@@ -517,7 +512,7 @@ background-size: cover;background-repeat: no-repeat;min-height: 250px;}
 .db_selcont .db_selunder .db_scs{padding-top:30px;}
 .db_selcont .db_selunder .db_scs .db_frgroup{box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);}
 .db_selcont .db_selunder .db_scs .db_frgroup button{padding:10px 12px;}
-.db_container{margin:0px !important; padding:30px 36px;}
+.db_container{margin:0px !important; padding: 0px 36px 30px 36px;}
 .db_subdiv{background-color:#fff;padding: 15px 0px 0px;}
 .db_subdiv .sub_head{border-bottom:1px solid #f1f1f1;padding:0px 15px;margin-bottom:15px;}
 .db_subdiv .sub_head h2{color: #9c3127;margin:0px;font-size:20px;padding-bottom:15px;}
@@ -547,7 +542,6 @@ display: inline-block;width:25px;height:25px;border-radius: 100%;background-colo
 .img_div {
     float: left !important;
     margin: 5px 10px  !important;
-	
 }
 
 /*enlarge image*/
@@ -557,10 +551,16 @@ display: inline-block;width:25px;height:25px;border-radius: 100%;background-colo
 	
 }
 .eimg_dive {
-    
-     margin: 5px 160px !important;
+     /* margin: 0px 0px !important; */
      
+    
+     overflow-x:  scroll;
  }
+ .eimg_dive_ver {
+    /* margin: 0px 0px !important; */
+    height: 600px;
+    overflow-y: scroll;
+}
 
 
 .imge {
@@ -640,7 +640,7 @@ display: inline-block;width:25px;height:25px;border-radius: 100%;background-colo
 /*enlarge image*/
 .st_subdiv .span31{}
 .easyPaginateNav {
-    width: 1041px;
+    width: 100% !important;
     float: left;
 }
 

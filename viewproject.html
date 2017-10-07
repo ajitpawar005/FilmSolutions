@@ -111,8 +111,6 @@
                                 </li>
                             </ul>
                         </li>
-
-
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -434,13 +432,22 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="db_container db_com rightside-gallerycontainer-panel">
-
-                            <div class="st_subdiv db_com " id="easyPaginate">
-                                <div id="imgList">
+                        <div id="mainGrid">
+                            <div class="db_container db_com rightside-gallerycontainer-panel">
+                                <div class="st_subdiv db_com " id="easyPaginate">
+                                    <div id="imgList">
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div id="albumGrid">
+                                <div class="db_container db_com rightside-gallerycontainer-panel">
+                                    <div class="st_subdiv db_com " id="albumEasyPaginate">
+                                        <div id="albumImgList">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
 
 
@@ -4868,7 +4875,6 @@
                                         </select>
                                     </div>
                                 </div>
-
                         </div>
 
                    <div class="option_cap db_com">
@@ -4906,8 +4912,6 @@
                           </div>
                   </div>
             </div>
-
-
             </div>
             <!--<div class="modal-footer db_com">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -5099,55 +5103,6 @@
                 $("#panel").slideToggle("slow");
             });
 
-
-
-            $.ajax({
-                type: 'GET',
-                cache: false,
-                contentType: 'text/html',
-                url: 'http://fsapi.sarvaya.com/images/thumb/3247206/700/1',
-                success:
-                function(response) {
-                    var imagesUrls =[];
-                    // document.write("<br /><strong>title:</strong> " + response.title + " <strong>urls:</strong> " + response.urls);
-                    imagesUrls = JSON.parse(response).images;
-                    imagesUrls.forEach(function(key, value) {
-                        var ct = 0;
-                        var obj = {};
-                        obj.index = ct;
-                        obj.imageName = key.imageName;
-                        obj.imageUrl = key.imageUrl;
-                        imageUrlsArrayLevel1.push(obj);
-                        ct ++;
-                    });
-                    $(".nm1").text(imageUrlsArrayLevel1[0].imageName);
-                    $(".imgUrl1").attr("src", imageUrlsArrayLevel1[0].imageUrl);
-                }
-            });
-            $.ajax({
-                type: 'GET',
-                cache: false,
-                contentType: 'text/html',
-                url: 'http://fsapi.sarvaya.com/images/thumb/3247206/1600/1',
-                success:
-                function(response) {
-                    var imagesUrls =[];
-                    // document.write("<br /><strong>title:</strong> " + response.title + " <strong>urls:</strong> " + response.urls);
-                    imagesUrls = JSON.parse(response).images;
-                    var ct = 0;
-                    imagesUrls.forEach(function(key, value) {
-                        var obj = {};
-                        obj.index  = ct;
-                        obj.imageName = key.imageName;
-                        obj.imageUrl = key.imageUrl;
-                        imageUrlsArrayLevel2.push(obj);
-                        ct++;
-                    });
-                    $(".nm1").text(imageUrlsArrayLevel2[0].imageName);
-                    $(".imgUrl1").attr("src", imageUrlsArrayLevel2[0].imageUrl);
-                }
-            });
-
             //Abhi
             projectId = localStorage.getItem("projectId");
             $.ajax({
@@ -5172,7 +5127,7 @@
                 level1Images = imageData;
                 var arr = [];
                 level1Images.forEach(function(key,value){
-                    key.url = key.url.replace("300:300","600:600");
+                    key.url = key.url.replace("300:300","700:700");
                     var ob = {};
                     ob.id = key.id;
                     ob.name = key.name;
@@ -5218,22 +5173,31 @@
                             $('#easyPaginate').easyPaginate({
                                 paginateElement: '.img_div',
                                   elementsPerPage: 20,
-                                 effect: 'climb'
+                                 effect: 'climb',
+                                 gridType: "main"
                             });
                         }
               },
               error:function(data){}
             });
-
+            var storeIndexes =[];
             $(document).on('click','.enlargeImg',function(){
                 var id = $(this).attr('id');
-                //url = url.replace("300:300","600:600");
                 localStorage.setItem("level1Image",id);
                 localStorage.setItem("level1ImageName",$(this).attr('name'));
                 localStorage.setItem("level1SelectedImageIndex",$(this).data('imgindex'))
                 window.location.replace('enlarge.html');
             });
             $("#albums").on('click','.albumLink',function(){
+                function reload_js(src) {
+                $('script[src="' + src + '"]').remove();
+                    $('<script>').attr('src', src).appendTo('head');
+                        console.log("Reloaded");
+                    }
+                reload_js('js/jquery.easyPaginate1.js');
+                storeIndexes = [];
+                $('.imge').removeClass("selectborder");
+                getSelectedImages();
               var id = $(this).attr("id");
               var projectId = localStorage.getItem("projectId");
               $.ajax({
@@ -5249,10 +5213,13 @@
                     alert("No assets found");
                     return false;
                   }
-                  $("#imgList").html("");
+                  var flag=false;
+                 // $(".easyPaginateNav").empty();
+                  $("#mainGrid").html("");
+                  $("#albumImgList").empty();
                   for(var i = 0; i< data.imageData.length; i++){
                     var image = data.imageData[i];
-                      $("#imgList").append(`
+                      $("#albumImgList").append(`
                               <div class="img_div" id="img_li_div">
                                                   <div class="span3">
                                                       <div class="imge" assetName="`+image.name+`">
@@ -5279,7 +5246,16 @@
                                                   </div>
                                               </div>
                               `);
+                              flag = true;
                       }
+                      if(flag){
+                            $('#albumEasyPaginate').easyPaginate({
+                                paginateElement: '.img_div',
+                                  elementsPerPage: 20,
+                                 effect: 'climb',
+                                 gridType: "album"
+                            });
+                        }
                 },
                 error:function() {}
               });
@@ -5358,7 +5334,7 @@
             });
         });
         /* Shiv */
-        var storeIndexes =[];
+        
         var getFirstSelectedImageIndex;
         var getLastSelectedImageIndex;
         var getSelectedImagesIndex =[];
@@ -5375,15 +5351,20 @@
             //Single image select deselect
             if(keycode == null){
                 storeIndexes =[];
-                $('.imge').removeClass("selectborder");
                 if($(this).hasClass("selectborder")){
+                    $('.imge').removeClass("selectborder");
                     $(this).removeClass("selectborder"); 
+                    getSelectedImages();
+                    return false;
                 }
                 else{
+                    $('.imge').removeClass("selectborder");
                     $(this).addClass("selectborder");
                     const ct = $(this).find( "img").data('index');
                     getFirstSelectedImageIndex = ct;
                     storeIndexes.push(ct);
+                    getSelectedImages();
+                    return false;
                 }
             }
             // Ctrl key image selection
@@ -5398,6 +5379,8 @@
                     $(this).addClass("selectborder")
                     getSelectedImagesIndex.push(ct);
                 }
+                getSelectedImages();
+                return false;
             }
             // Shift key image selection
             if(keycode == 16){
@@ -5414,34 +5397,57 @@
                 }
                 storeIndexes[0] = getFirstSelectedImageIndex;
                 storeIndexes = [];
+                getSelectedImages();
+                return false;
             }
+        });
+
+        // var getAllSelectedImageArray = [];
+        //     allSelectedImagesArray = [];
+        //     getAllSelectedImageArray =  $('.selectborder');
+        //     getAllSelectedImageArray.each(function(key,value){
+        //         var obj = {};
+        //         obj.id = $(value).find("img").attr('id');
+        //         obj.name = $(value).find("img").attr('assetName');
+        //         obj.url = $(value).find("img").attr('src');
+
+        //         allSelectedImagesArray.push(obj);
+                
+        //     })
+          
+
+        function getSelectedImages(){
             var getAllSelectedImageArray = [];
             allSelectedImagesArray = [];
             getAllSelectedImageArray =  $('.selectborder');
             getAllSelectedImageArray.each(function(key,value){
-                allSelectedImagesArray.push($(value).find("img").attr('id'));
+                var obj = {};
+                obj.id = $(value).find("img").attr('id');
+                obj.name = $(value).find("img").attr('assetName');
+                obj.url = $(value).find("img").attr('src');
+                allSelectedImagesArray.push(obj);
             })
+            localStorage.setItem("selectedimgs", JSON.stringify(allSelectedImagesArray));
             var cc=($(".selectborder").length);
             $("#sizee").text(cc);
-            
             console.log("Slected all images index");
             console.log(allSelectedImagesArray);
-            return false;
-        });
-
-
+            return true;
+        }
 
 	   $(".select_all").click(function(){
 		  $(".imge").addClass("selectborder");
           var cc=($(".selectborder").length);
-	      $("#sizee").text(cc);
+          $("#sizee").text(cc);
+          getSelectedImages();
        });
 
 
         $(".select_alle").click(function(){
             $(".imge").removeClass("selectborder");
             var ccc=($(".selectborder").length);
-        $("#sizee").text(ccc);
+            $("#sizee").text(ccc);
+            getSelectedImages();
         });
 
 

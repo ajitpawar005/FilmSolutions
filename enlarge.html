@@ -4706,12 +4706,11 @@
             $("button").click(function () {
                 $("#panel").slideToggle("slow");
             });
-                var level2Images = [];
                 imageUrlsArrayLevel1 =  JSON.parse(localStorage.getItem('allImages'));
-                level2Images = imageUrlsArrayLevel1;
+                var level2Images = JSON.parse(localStorage.getItem('allImages'));
                 var arr = [];
                 level2Images.forEach(function(key,value){
-                    key.url = key.url.replace("600:600","700:700");
+                    key.url = key.url.replace("700:700","1600:1600");
                     var ob = {};
                     ob.id = key.id;
                     ob.name = key.name;
@@ -4719,21 +4718,18 @@
                     arr.push(ob);
                 })
                 localStorage.setItem('allImagesLevel2',JSON.stringify(arr));
-
                 imageUrlsArrayLevel1.forEach(function(item){                    
                     $("#imglist").append(`
                                 
                                                 <div class="img_dive ">
-
+                                                <div class="img_tile">
+                                                    <span class="ii"> `+item.name+` </span>
+                                                </div>
                                                     <div class="span31">
                                                         <div class="imgee">
                                                         <a href="javascript:void(0)" class=""><img src="`+item.url+`"></a>
                                                         </div>
                                                     </div>
-                                               
-                                               <div class="img_tile">
-                                                <span class="ii"> `+item.name+` </span>
-                                            </div>
                                         </div>
                                 `)
                         //}
