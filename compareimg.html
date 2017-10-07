@@ -16,13 +16,21 @@
     <link href="css/simple-sidebar1.css" rel="stylesheet">
     <link href="css/style3.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
-    <link href="css/jquery.simpleImageDiff.css" rel="stylesheet">
-  <!-- Select Dropdown Css Start Here 27/03/2017 -->
+
+     <!-- <link href="css/jquery.simpleImageDiff.css" rel="stylesheet"> -->
+
+
+    <!-- Select Dropdown Css Start Here 27/03/2017 -->
     <link href="css/bootstrap-select.css" rel="stylesheet">
 </head>
 
 <body class="bgcolor">
-   <!-- Navbar Html Start Here 27/03/2017 -->
+
+
+
+
+
+    <!-- Navbar Html Start Here 27/03/2017 -->
     <div class="header-container-section db_com">
         <nav class="navbar navbar-default">
             <div class="container" style="width:100% !important;">
@@ -39,13 +47,21 @@
                     <a class="navbar-brand" href="index.html"><img src="images/header-logo.png" alt="FS Logo" Title="FS" /></a>
                 </div>
 
-               <!-- Collect the nav links, forms, and other content for toggling -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="select_option">
                             <select class="selectpicker" title="Select Project" data-live-search="true" onchange="window.location.href=this.options[this.selectedIndex].value">
-					          <option value="viewproject.html">FS-Demo</option>
-			                </select>
+			 
+				
+				<option value="viewproject.html">FS-Demo</option>
+				
+			 
+			 
+				
+			 
+			</select>
                         </li>
                         <li class="dropdown notifications-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Notification">
@@ -91,7 +107,7 @@
                                     <img src="images/got1.jpg" class="img-circle" alt="User Image">
 
                                     <p>
-                                        Alexander Pierce - Actor
+                                        John Pierce - Actor
                                         <small>ID:110101</small>
                                     </p>
                                 </li>
@@ -118,7 +134,13 @@
 
     <!-- Navbar Html End Here 27/03/2017 -->
 
+
+
+
+
     <!-- Breadcrumb Container Section Html Start Here 27/03/2017 -->
+
+
     <div class="breadcrumb_container_section bcs db_com">
         <div class="container-fluid">
             <div class="row">
@@ -126,15 +148,15 @@
                     <ol class="breadcrumb st_breadcrumb">
                         <!-- <li class="breadcrumb-item"><a href="selectgallery.html">Gallery</a></li> -->
                         <li class="breadcrumb-item"><a href="viewproject.html">FS_DEMO-EXEC</a></li>
-                        <li class="breadcrumb-item">COMPARE TOOL</li>
-                        <!-- <li class="breadcrumb-item">Sarvaya001.jpg</li> -->
+                        <li class="breadcrumb-item">COMPARE TOOL2</li>
+                       <!-- <li class="breadcrumb-item">Sarvaya001.jpg</li> -->
 
                     </ol>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="db_com st_headicon">
                         <ul>
-                            <li class="chek_box">
+                            <!-- <li class="chek_box">
                                     <div class="checkbox down-input di-check">
                                             <label class="chek-label">
                             <input type="checkbox" value="">
@@ -147,29 +169,28 @@
                                     <div id="slidecontainer">
                                         <div class="form-group rangee">
                                             <div class="col-lg-10 col-md-10 col-sm-10">
-                                            <input type="range" min="1" max="100" value="25" class="slider" id="myRange" title="" onchange="updateTextInput(this.value);">
+                                            <input type="range" min="1" max="100" value="25" class="slider" id="myRange" title="slide to select image size" onchange="updateTextInput(this.value);">
                                              </div>
                                              <div class="col-lg-2 col-md-2 col-sm-2">
-                                            <input type="text" id="textInput" value="25" disabled>
+                                            <input type="text" id="textInput" title="Image Size" value="25" disabled>
                                              </div>
                                           </div>
                                         </div>
-                            </li>    
-                            <li class="comp1_img">
-                                <a title="compare Selected Images" href="compareimg.html"><i class="fa fa-compress" aria-hidden="true"></i></a>
-                            </li>
-                                      
+                            </li>             -->
                                 <li>
-                                    <a href="viewproject.html" class="btn btn-default btn-flat close_img1">Close</a>
+                                    <a href="comparetool.html" class="btn btn-default btn-flat close_img2">Close</a>
 
                                 </li>
                         </ul>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>
     </div>
+
+
     <!-- Breadcrumb Container Section Html Start Here 27/03/2017 -->
+
 
     <!-- Galley Page Container Html Start Here 25/03/2017 -->
 
@@ -179,9 +200,13 @@
         <div id="wrapper" class="db_com">
 
             <a href="javascript:void(0)" class="menu-toggle-button1" id="menu-toggle"><i class="fa fa-bars"></i></a>
+
             <!-- Sidebar -->
             <div id="sidebar-wrapper" class="sidebar-wrapper">
+
+
                 <div class="sidebar-nav">
+                  
                     <div class="tab_divv">
                         <ul class="tab_ul" role="tablist">
                             <li role="presentation" class="active"><a href="#sb_menu" aria-controls="sb_menu" role="tab" data-toggle="tab"><i class="fa fa-th-large" aria-hidden="true"></i></a></li>
@@ -195,7 +220,7 @@
                     <div class="tab-content db_com">
                         <div role="tabpanel" class="tab-pane active db_com side_dropdown" id="sb_menu">
                             <ul class="accordion-menu side-menu">
-                               
+                              
                                 <div class="dropdownlink"><i class="fa fa-file-text-o dp_i" aria-hidden="true"></i><span>Audit</span>
                                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                 </div>
@@ -210,7 +235,7 @@
                                     <li class="aud_btn"> <button class="btn">Clear Single Tag</button></li>
                                 </ul>
                                 </li>
-                               
+                                
                             </ul>
                         </div>
                         <div role="tabpanel" class="tab-pane pinfo db_com" id="pinfo">
@@ -244,35 +269,47 @@
             <!-- /#sidebar-wrapper -->
             <!-- Page Content -->
             <div id="page-content-wrapper" class="db_com pcw">
-                    <div class="container-fluid">
-                        
-                        <div class="row">
-                            <div class="db_container db_com rightside-gallerycontainer-panel">
-                                   
-                                <div class="st_subdiv db_com ">
-                                   <div id="comparediv">
-
-                                   </div>
-                                    
+                <div class="container-fluid">
+                
+                    <div class="row">
+                        <div class="db_container db_com rightside-gallerycontainer-panel">
+                            <div class="st_subdiv db_com">
+                                <div class="title_image  col-md-8 col-md-offset-2 ">
+                                <div class="img2 col-md-6 ">
+                                  <span class="img1_name"></span>
                                 </div>
+                                <div class="img2  col-md-6 ">
+                                  <span class="img2_name"></span>
+                                </div>
+                                </div>
+                                <div data-diff="1" id="img2" style="display:none;">
+                                
+                                </div>
+                                <br><br>
+
                             </div>
                         </div>
-    
-    
                     </div>
-                    <!-- /#page-content-wrapper -->
-    
+
+
                 </div>
-                <!-- /#wrapper -->
-    
-    
-    
-    
+                <!-- /#page-content-wrapper -->
+
             </div>
-    
-    
-            <!-- Galley Page Container Html End Here 25/03/2017 -->
-    
+            <!-- /#wrapper -->
+
+
+
+
+        </div>
+
+
+        <!-- Galley Page Container Html End Here 25/03/2017 -->
+
+
+
+
+
         <!-- Fixed Footer Html Start Here 25/03/2017 -->
         <div class="navbar navbar-fixed-bottom fixedbottom_container_section fcs">
             <p>For more information or for technical assistance, Please Contact : Film Solutions, LLC @ (818) 588 3500 :: info@filmsolutions.com</p>
@@ -280,8 +317,11 @@
 
     </div>
     <!-- Fixed Footer Html Start Here 25/03/2017 -->
-    
+
+  
     <!-- image info -->
+
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
@@ -294,8 +334,7 @@
     <!-- Select Dropdown Js Start Here 27/03/2017 -->
     <script src="js/bootstrap-select.js"></script>
     <!-- Select Dropdown Js End Here 27/03/2017 -->
-    <script src="js/jquery.easyPaginate1.js"></script>
-
+    <script src="js/jquery.simpleImageDiff.js"></script>
     <script>
         $(document).ready(function () {
             $('.db_carousel').carousel({
@@ -303,21 +342,9 @@
             })
         });
         $('.modal-dialog').draggable();
-  
-  
-        $(document).ready(function () {
-            var $mainButton = $(".tile .float"),
-                $zoommenu = $(".tile .soc");
-            $mainButton.on("click", function () {
-                var id = ($(this).attr('id'));
-                $zoommenu = $(".ts" + id);
-                $(".soc").not($zoommenu).removeClass("pad");
-                $(this).html($(this).html() == '<i class="fa fa-times my-float"></i>' ? '<i class="fa fa-plus my-float"></i>' : '<i class="fa fa-times my-float"></i>');
-                $zoommenu.toggleClass("pad");
-            });
-        });
-    
-  
+   
+      
+   
         $(function () {
             var Accordion = function (el, multiple) {
                 this.el = el || {};
@@ -347,8 +374,7 @@
 
             var accordion = new Accordion($('.accordion-menu'), false);
         });
-
-
+  
         $(document).ready(function () {
             var imageUrlsArrayDefault =  [];
 
@@ -357,142 +383,71 @@
                 $("#panel").slideToggle("slow");
             });
            
-
-                    var  getselectedimgs= JSON.parse(localStorage.getItem('selectedimgs'));
+                    var getselectedimgs = [];
+                     getselectedimgs= JSON.parse(localStorage.getItem('selectedimgslevel'));
                     console.log(getselectedimgs);
                     var length = getselectedimgs.length;
                     var flag = false;
-                    for(var i = 0; i< length; i++){
-                        var image = getselectedimgs[i];
-                        $("#comparediv").append(`
-                            
-                                                <div class="img_div">
-                                   
-                                                    <div class="span3">
-                                                        <div class="imge">
-                                                                 <a href="javascript:void(0)" class="thumbnail img-check"><img src=`+image.url+`" 
-                                                                 data-index="`+i+`" id="`+image.id+`" assetName="`+image.name+`""></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="img_tile">
-                                                     <span class="ii"> `+image.name+` </span>
-                                                    </div>
-                                                </div>
-                            
-                                `);
-                                        
-                                /*for(var i = 0; i< length; i++){
-                                    console.log(length);
-                                $(".imgliste").append(`
-                                               
-                                                    
-                                        <div class=" rightside_menu_panel st_rmp">
+                    getselectedimgs.forEach(function(key,value) {
+                        $("#img2").append(`
+                             
+                             <img src="`+key.url+`">
+                        `);
+                         flag = true; 
+                    }) 
+                  
+                    if(flag){
+                     $('[data-diff]').simpleImageDiff({
+                                    resize: false,
+                                    width: 800,
+                                    titles: {
+                        
+                                    },
+                                    maxWidth: 2000
+                                });
+                                }
 
-                                            <div class="rightside_menu_middlepanel holder text-center">
-                                                <ul>
-                                                    
-                                                </ul>
-                                            </div>
-                                        </div>
-                                   
-                                           
-                                `); */
-
-                                
-                                    
-                                flag = true;
-                            }
-                            if(flag){
-                                  $('#easyPaginate').easyPaginate({
-                                      paginateElement: '.span3',
-                                        elementsPerPage: 20,
-                                       effect: 'climb',
-                                       gridType: "album"
-                                  });
-                              }
+                    $('.img1_name').text(getselectedimgs[0].name);
+                    $('.img2_name').text(getselectedimgs[1].name);        
             });
 
-            var getFirstSelectedImageIndex;
-            var getLastSelectedImageIndex;
-            var getSelectedImagesIndex =[];
-            var keycode = null;
-            var allSelectedImagesArray = [];
-            $(document).on('keydown', function(e){
-                keycode = e.keyCode || e.which;
-            });
-            $(document).on('keyup', function(e){
-                keycode = null;
-            }); 
 
-            $(document).on("click",".imge",function(event){
-            //Single image select deselect
-           /* if(keycode == null){
-                storeIndexes =[];
-                if($(this).hasClass("selectborder")){
-                    $('.imge').removeClass("selectborder");
-                    $(this).removeClass("selectborder"); 
-                    getSelectedImages();
-                    return false;
-                }
-                else{
-                    $('.imge').removeClass("selectborder");
-                    $(this).addClass("selectborder");
-                    const ct = $(this).find( "img").data('index');
-                    getFirstSelectedImageIndex = ct;
-                    storeIndexes.push(ct);
-                    getSelectedImages();
-                    return false;
-                }
-            }*/
-            // Ctrl key image selection
-            if((keycode == 17 )|| (keycode == 224)){
-                const ct = $(this).find("img").data('index');
-                if($(this).hasClass("selectborder")){
-                    $(this).removeClass("selectborder"); 
-                    var index = getSelectedImagesIndex.indexOf(ct);
-                    getSelectedImagesIndex.splice(index,1);
-                }
-                else{
-                    if(getSelectedImagesIndex.length <2){
-                    $(this).addClass("selectborder")
-                    getSelectedImagesIndex.push(ct);
-                    }
-                }
-                getSelectedImages();
-                return false;
-            }
+
+
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#panel").slideToggle("slow");
+            });
         });
+    
+        $('[data-diff]').simpleImageDiff({
+            resize: false,
+            width: 800,
+            titles: {
 
-
-           function getSelectedImages(){
-            var getAllSelectedImageArray = [];
-            allSelectedImagesArraylevel = [];
-            getAllSelectedImageArray =  $('.selectborder');
-            getAllSelectedImageArray.each(function(key,value){
-                var obj = {};
-                obj.id = $(value).find("img").attr('id');
-                obj.name = $(value).find("img").attr('assetName');
-                obj.url = $(value).find("img").attr('src');
-                allSelectedImagesArraylevel.push(obj);
-            })
-            localStorage.setItem("selectedimgslevel", JSON.stringify(allSelectedImagesArraylevel));
-            //var cc=($(".selectborder").length);
-            //$("#sizee").text(cc);
-            console.log("Slected all images index");
-            console.log(allSelectedImagesArraylevel);
-            return true;
-        }
-
+            },
+            maxWidth: 2000
+        });
+   
         $('select').selectpicker();
 
         $('.dropdown-toggle').dropdown();
+
 
         function updateTextInput(val) {
             document.getElementById('textInput').value = val;
         }
 
     </script>
+  <!-- <script>
+  var slider = document.getElementById("myRange");
+var output = document.getElementById("textInput");
+output.innerHTML = slider.value;
 
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script> -->
 
 </body>
 

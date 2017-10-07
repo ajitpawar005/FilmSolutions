@@ -1092,10 +1092,6 @@ li.aud_btn {margin: 5px 0px;}
 	border:2px solid #eee;
 }
 
-.b-diff {
-    height: 532.8px;
-    margin-left: 100px;
-}
 .easyPaginateNav a {
     color: #ddd;
     text-decoration: none;
@@ -1680,6 +1676,7 @@ a.btn.btn-default.btn-flat.close_img1{
     a.btn.btn-default.btn-flat.close_img2{
         background-color: #292929;
         padding: 2px 14px;
+        margin-top: 7px;
         border: 1px solid #292929;
         min-width: 80px;
         float: left;
@@ -1692,3 +1689,26 @@ a.btn.btn-default.btn-flat.close_img1{
         }
       
     span.ii  {color: #ddd}
+
+.title_image.col-md-8.col-md-offset-2 {margin-top: 20px;}
+.img2.col-md-6 { text-align: center;color:#ddd;}
+
+    /*Image Slider*/
+    .b-diff { 
+        height: 532.8px;
+        margin: 50px 178px;position: relative; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+    .b-diff img                 { max-width: 100%;}
+    .b-diff__item               { position: absolute; top: 0; left: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;}
+    .b-diff__item:nth-child(1)    { z-index: 1;}
+    .b-diff__item:nth-child(2)    { z-index: 2;}
+    .b-diff__control            { position: absolute; z-index: 3; height: 100%; padding: 0 18px;}
+    .b-diff__control:hover      { cursor: col-resize;}
+    .b-diff__control:hover .b-diff__arrow_left      { -webkit-transform: translate3d(-5px, 0, 0); transform: translate3d(-5px, 0, 0);}
+    .b-diff__control:hover .b-diff__arrow_right     { -webkit-transform: translate3d(5px, 0, 0); transform: translate3d(5px, 0, 0);}
+    .b-diff__line                                   { height: 100%; width: 4px; background: #f5f5f5;}
+    .b-diff__arrow              { position: absolute; top: 50%; width: 0; height: 0; -webkit-transition: transform .3s ease; transition: transform .3s ease; -webkit-transform: translate3d(0px, 0, 0); transform: translate3d(0px, 0, 0);}
+    .b-diff__arrow_left         { left: 0px; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-right:10px solid #f5f5f5;}
+    .b-diff__arrow_right        { right: 0px; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left:10px solid #f5f5f5;}
+    .b-diff__title              { background: rgba(0, 0, 0, 0.7); color: #ffffff; font-size: 16px; line-height: 20px; position: absolute; padding: 5px 10px; z-index: 2; max-width: 45%; word-wrap: break-word;}
+    .b-diff__title_before       { right: 0px; top: 0px;}
+    .b-diff__title_after        { left: 0px; top: 0px;}
