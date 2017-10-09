@@ -1281,47 +1281,48 @@
                     <div class="modal-body db_com">
                         <div class="row">
                             <div class="db_com viewtool-cont ">
-
+                                <form>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group down-selectpic">
                                         <!-- <h4>Columns</h4> -->
-                                        <select id="basic" class="selectpicker form-control" title="Columns">
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-					<option>7</option>
-					<option selected>Auto</option>
-					</select>
+                                        <select id="basic" class="selectpicker form-control comn_sele" title="Columns">
+                                            <option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3" selected>3</option>
+											<option value="4" >4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="3">Auto</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group down-selectpic">
                                         <!-- <h4>Images</h4> -->
-                                        <select id="basic" class="selectpicker form-control" title="Images">
-					<option>1</option>
-					<option>2</option>
-					<option>4</option>
-					<option>10</option>
-					<option selected>20</option>
-					<option>50</option>
-					<option>100</option>
-					<option>250</option>
-					</select>
+                                        <select id="basic" class="selectpicker form-control img_no" title="Images">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="4">4</option>
+                                            <option value="10">10</option>
+                                            <option value="20" selected>20</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                            <option value="250">250</option>
+                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group down-selectpic">
                                         <!-- <h4>Size</h4> -->
                                         <select id="basic" class="selectpicker form-control" title="Size">
-					<option>Small</option>
-					<option>Medium</option>
-					<option selected>Large</option>
-					</select>
+                                            <option>Small</option>
+                                            <option>Medium</option>
+                                            <option selected>Large</option>
+                                        </select>
                                     </div>
                                 </div>
+                                </form>
                             </div>
 
                         </div>
@@ -1337,7 +1338,7 @@
 
                     </div>
                     <div class="modal-footer db_com">
-                        <button type="button" class="btn btn-default">Submit</button>
+                        <button type="submit" class="btn btn-default" id="view_setting" data-dismiss="modal">Submit</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -5149,10 +5150,18 @@
                                 `)
                                 flag = true;
                         }
+                        var defaultValue;
+                      var noofImages = localStorage.getItem("selectedNoOfImages");
+                      if(noofImages){
+                        defaultValue= noofImages;
+                      }
+                      else{
+                        defaultValue = 20;
+                      }
                         if(flag){
                             $('#easyPaginate').easyPaginate({
                                 paginateElement: '.img_div',
-                                  elementsPerPage: 20,
+                                  elementsPerPage: defaultValue,
                                  effect: 'climb',
                                  gridType: "main"
                             });
@@ -5236,10 +5245,18 @@
                               `);
                               flag = true;
                       }
+                      var defaultValue;
+                      var noofImages = localStorage.getItem("selectedNoOfImages");
+                      if(noofImages){
+                        defaultValue= noofImages;
+                      }
+                      else{
+                        defaultValue = 20;
+                      }
                       if(flag){
                             $('#albumEasyPaginate').easyPaginate({
                                 paginateElement: '.img_div',
-                                  elementsPerPage: 20,
+                                  elementsPerPage:defaultValue,
                                  effect: 'climb',
                                  gridType: "album"
                             });
@@ -5488,17 +5505,19 @@ $(function(){
     $('#rme').popover(opsr)
 });
 
+$("#view_setting").on("click",function() {
+    var numberOfImages =$(".img_no option:selected").val();
+    localStorage.setItem("selectedNoOfImages", numberOfImages);
+    window.location.href = "viewproject.html";
+        // alert(id);
+        // console.log(id);
+        // $(".easyPaginateNav").empty();
+        // $("#mainGrid").empty();
+      
+ });
+ 
+//  console.log(ide);
 
-/*$(function(){
-    // Enables popover
-    $("[data-toggle=popover]").popover();
-});*/
-    /*$("#cap_mod").on("mousedown",function() {
-        $("#imagecap").hide();
-    });
-    $("#cap_mod").on("mouseup",function() {
-        $("#imagecap").show();
-    }); */
     </script>
 
 

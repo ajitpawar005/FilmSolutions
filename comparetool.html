@@ -147,7 +147,7 @@
                                     <div id="slidecontainer">
                                         <div class="form-group rangee">
                                             <div class="col-lg-10 col-md-10 col-sm-10">
-                                            <input type="range" min="1" max="100" value="25" class="slider" id="myRange" title="" onchange="updateTextInput(this.value);">
+                                            <input type="range" min="1" max="100" value="25" class="slider" id="myRange" title="">
                                              </div>
                                              <div class="col-lg-2 col-md-2 col-sm-2">
                                             <input type="text" id="textInput" value="25" disabled>
@@ -369,9 +369,10 @@
                                                 <div class="img_div">
                                    
                                                     <div class="span3">
-                                                        <div class="imge">
-                                                                 <a href="javascript:void(0)" class="thumbnail img-check"><img src=`+image.url+`" 
-                                                                 data-index="`+i+`" id="`+image.id+`" assetName="`+image.name+`""></a>
+                                                        <div class="imge" >
+                                                                 <a href="javascript:void(0)" class="thumbnail img-check">
+                                                                    <img src=`+image.url+`" data-index="`+i+`" id="`+image.id+`" assetName="`+image.name+`"" class="imagee" width="300px" height="200px">
+                                                                 </a>
                                                         </div>
                                                     </div>
                                                     <div class="img_tile">
@@ -487,9 +488,33 @@
 
         $('.dropdown-toggle').dropdown();
 
-        function updateTextInput(val) {
-            document.getElementById('textInput').value = val;
-        }
+        var p = document.getElementById("myRange")
+            p.addEventListener("input", function() {
+                document.getElementById('textInput').value =  p.value;
+                // var v = p.value;
+                // v = v+"px";
+                document.getElementsByClassName('imagee').style.height =  p.value+"px";
+                document.getElementsByClassName('imagee').style.width = p.value+"px";
+            }, false); 
+      
+        // function updateTextInput(val) {
+        //     document.getElementById('textInput').value = val;
+        //     //console.log(val);
+        //     var ranger = document.getElementById('myRange');
+        // var image =  document.getElementsByClassName('imagee');
+        // var width = image.width;
+        // var height = image.height;
+     
+        //  image.width = width * (ranger.value / 100);
+        //  image.height = height * (ranger.value / 100);
+
+
+        // }
+
+
+    
+
+
 
     </script>
 
