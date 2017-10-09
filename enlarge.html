@@ -4751,6 +4751,16 @@
         $("#info1").fadeToggle();
     });
 
+    $(document).on('keydown', function(event){
+        var keycode = event.keyCode;
+        if(keycode== 38){
+            enlarge();
+        }
+        if(keycode == 40){
+            window.location.replace(' viewproject.html');
+        }
+    })
+
     function enlarge(){
         window.location.replace('eenlarge.html');
     }

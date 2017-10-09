@@ -16,8 +16,6 @@
     <link href="css/simple-sidebar1.css" rel="stylesheet">
     <link href="css/style3.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
-
-
      <style>
       .border{border: 1px solid #fff;}
     </style>
@@ -5024,13 +5022,6 @@
 
 
     <script>
-        /*$('#easyPaginate').easyPaginate({
-                paginateElement: '.img_div',
-                elementsPerPage: 10,
-                effect: 'climb'
-            });*/
-
-
         $(document).ready(function () {
             $('.db_carousel').carousel({
                 interval: false
@@ -5122,20 +5113,9 @@
                 $("#albums").append(html);
                 // Shiv Show Grid code
                 imageData = data.imageData;
-                var level1Images = [];
+               
                 var flag = false;
-                level1Images = imageData;
-                var arr = [];
-                level1Images.forEach(function(key,value){
-                    key.url = key.url.replace("300:300","700:700");
-                    var ob = {};
-                    ob.id = key.id;
-                    ob.name = key.name;
-                    ob.url = key.url;
-                    arr.push(ob);
-                })
-                
-                localStorage.setItem('allImages',JSON.stringify(arr));
+                var level1Images = [];
                 var imageDataLength = data.imageData.length;
                 for(var i = 0; i< imageDataLength; i++){
                     var image = data.imageData[i];
@@ -5177,17 +5157,25 @@
                                  gridType: "main"
                             });
                         }
+                    level1Images = data.imageData;
+                    var arr = [];
+                    level1Images.forEach(function(key,value){
+                    key.url = key.url.replace("300:300","700:700");
+                    var ob = {};
+                    ob.id = key.id;
+                    ob.name = key.name;
+                    ob.url = key.url;
+                    arr.push(ob);
+                })
+                localStorage.setItem('allImages',JSON.stringify(arr));
               },
               error:function(data){}
             });
             var storeIndexes =[];
             $(document).on('click','.enlargeImg',function(){
-                var id = $(this).attr('id');
-                localStorage.setItem("level1Image",id);
-                localStorage.setItem("level1ImageName",$(this).attr('name'));
-                localStorage.setItem("level1SelectedImageIndex",$(this).data('imgindex'))
-                window.location.replace('enlarge.html');
+                enlargeImagePage($(this));
             });
+
             $("#albums").on('click','.albumLink',function(){
                 function reload_js(src) {
                 $('script[src="' + src + '"]').remove();
@@ -5333,8 +5321,16 @@
               });
             });
         });
+
         /* Shiv */
-        
+        function enlargeImagePage(selectedImage){
+            localStorage.setItem("level1Image", selectedImage.attr('id'));
+            localStorage.setItem("level1ImageName", selectedImage.attr('name'));
+            localStorage.setItem("level1SelectedImageIndex",selectedImage.data('index'))
+            console.log(localStorage.getItem("level1SelectedImageIndex"));
+            window.location.replace('enlarge.html');
+        }
+
         var getFirstSelectedImageIndex;
         var getLastSelectedImageIndex;
         var getSelectedImagesIndex =[];
@@ -5342,6 +5338,16 @@
         var allSelectedImagesArray = [];
         $(document).on('keydown', function(e){
             keycode = e.keyCode || e.which;
+            if(e.keyCode == 88){
+                var getAllSelectedImageArray = [];
+                getAllSelectedImageArray =  $('.selectborder');
+                if(getAllSelectedImageArray.length >1){
+                    console.log("Please select only image!");
+                }
+                else{
+                    enlargeImagePage(getAllSelectedImageArray.find("img"));
+                }
+            }
         });
         $(document).on('keyup', function(e){
             keycode = null;
@@ -5401,21 +5407,7 @@
                 return false;
             }
         });
-
-        // var getAllSelectedImageArray = [];
-        //     allSelectedImagesArray = [];
-        //     getAllSelectedImageArray =  $('.selectborder');
-        //     getAllSelectedImageArray.each(function(key,value){
-        //         var obj = {};
-        //         obj.id = $(value).find("img").attr('id');
-        //         obj.name = $(value).find("img").attr('assetName');
-        //         obj.url = $(value).find("img").attr('src');
-
-        //         allSelectedImagesArray.push(obj);
-                
-        //     })
           
-
         function getSelectedImages(){
             var getAllSelectedImageArray = [];
             allSelectedImagesArray = [];

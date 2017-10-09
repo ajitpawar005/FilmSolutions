@@ -23,11 +23,6 @@
 </head>
 
 <body class="bgcolor">
-
-
-
-
-
     <!-- Navbar Html Start Here 27/03/2017 -->
     <div class="header-container-section db_com">
             <nav class="navbar navbar-default">
@@ -4742,7 +4737,11 @@
         $("#info1").fadeToggle();
     });
 
-    
+    $(document).on('keydown', function(event){
+        if(event.keyCode == 40){
+            close_eenlarge();
+        }
+    })
     
     $(".closebtn").click(function(){
         $("#info1").fadeToggle();
