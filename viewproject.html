@@ -173,20 +173,20 @@
 
                 <div class="sidebar-nav">
                     <div class="form-group customfilter-selectbox-container">
-                        <select id="basic" class="selectpicker show-tick form-control" data-live-search="true" title="Custom Filter...">
+                        <select id="basic" onchange="window.location.href=this.options[this.selectedIndex].value" class="selectpicker show-tick form-control" data-live-search="true" title="Custom Filter...">
 
-				<optgroup label="Select a Filter">
-					<option>Show All</option>
-					<option>Locked Approved</option>
+				<optgroup label="Select a Filter"> 
+					<option value="viewproject.html">Show All</option>
+					<option value="javascript:void(0)">Locked Approved</option>
 				</optgroup>
 
 				<optgroup label="General">
-					<option>Approved</option>
-					<option>Rejected</option>
-					<option>Solo</option>
-					<option>Group</option>
-					<option>Retouch Comment</option>
-					<option>Image notes</option>
+					<option value="javascript:void(0)">Approved</option>
+					<option value="javascript:void(0)">Rejected</option>
+					<option value="javascript:void(0)">Solo</option>
+					<option value="javascript:void(0)">Group</option>
+					<option value="javascript:void(0)">Retouch Comment</option>
+					<option value="javascript:void(0)"> Image notes</option>
 				</optgroup>
 
 				<optgroup label="Tagging">
@@ -5114,7 +5114,6 @@
                 $("#albums").append(html);
                 // Shiv Show Grid code
                 imageData = data.imageData;
-               
                 var flag = false;
                 var level1Images = [];
                 var imageDataLength = data.imageData.length;
@@ -5181,8 +5180,10 @@
               error:function(data){}
             });
             var storeIndexes =[];
+
             $(document).on('click','.enlargeImg',function(){
-                enlargeImagePage($(this));
+                var element = $(this).parent().closest('.tile').siblings('.imge').find('img');
+                enlargeImagePage(element);
             });
 
             $("#albums").on('click','.albumLink',function(){
@@ -5344,7 +5345,7 @@
             localStorage.setItem("level1Image", selectedImage.attr('id'));
             localStorage.setItem("level1ImageName", selectedImage.attr('name'));
             localStorage.setItem("level1SelectedImageIndex",selectedImage.data('index'))
-            console.log(localStorage.getItem("level1SelectedImageIndex"));
+            
             window.location.replace('enlarge.html');
         }
 
