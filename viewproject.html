@@ -440,9 +440,11 @@
                         </div>
                         <div id="albumGrid">
                                 <div class="db_container db_com rightside-gallerycontainer-panel">
+                                        
                                     <div class="st_subdiv db_com " id="albumEasyPaginate">
                                         <div id="albumImgList">
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -1288,7 +1290,7 @@
                                         <select id="basic" class="selectpicker form-control comn_sele" title="Columns">
                                             <option value="1">1</option>
 											<option value="2">2</option>
-											<option value="3" selected>3</option>
+											<option value="3">3</option>
 											<option value="4" >4</option>
 											<option value="5">5</option>
 											<option value="6">6</option>
@@ -1300,12 +1302,12 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group down-selectpic">
                                         <!-- <h4>Images</h4> -->
-                                        <select id="basic" class="selectpicker form-control img_no" title="Images">
+                                        <select  class="form-control img_no">
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="4">4</option>
                                             <option value="10">10</option>
-                                            <option value="20" selected>20</option>
+                                            <option value="20">20</option>
                                             <option value="50">50</option>
                                             <option value="100">100</option>
                                             <option value="250">250</option>
@@ -1315,10 +1317,10 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group down-selectpic">
                                         <!-- <h4>Size</h4> -->
-                                        <select id="basic" class="selectpicker form-control" title="Size">
-                                            <option>Small</option>
-                                            <option>Medium</option>
-                                            <option selected>Large</option>
+                                        <select id="basic" class="form-control img_size">
+                                            <option value="s">Small</option>
+                                            <option value="m">Medium</option>
+                                            <option value="l">Large</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1335,7 +1337,6 @@
                 Apply settings to all projects
                 </label>
                         </div>
-
                     </div>
                     <div class="modal-footer db_com">
                         <button type="submit" class="btn btn-default" id="view_setting" data-dismiss="modal">Submit</button>
@@ -5081,7 +5082,19 @@
 
 
         $(document).ready(function () {
+            var SizeOfImages;
+            var noofImages;
+            var no_of_img = localStorage.getItem("selectedNoOfImages");
+            var size_of_img = localStorage.getItem("selectedSize");
+            SizeOfImages = size_of_img ? size_of_img : "l";
+            noofImages = no_of_img? no_of_img:20;
+            
 
+            $(".img_size").val(SizeOfImages).change();
+            $(".img_no").val(noofImages).change();
+           // $(".img_size").val(SizeOfImages);
+            
+            //localStorage.setItem("selectedNoOfImages"
           userObj = JSON.parse(localStorage.getItem("userObj"));
           $("#user-name").html(userObj.firstName);
           var html = userObj.firstName+" "+userObj.lastName+" - EXEC";
@@ -5116,11 +5129,21 @@
                 imageData = data.imageData;
                 var flag = false;
                 var level1Images = [];
+                imageData.forEach(function(key,value){
+                    if(SizeOfImages == "m"){
+                        key.url = key.url.replace("300:300","200:200");
+                       
+                    }
+                    else if(SizeOfImages =="s"){
+                        key.url = key.url.replace("300:300","125:125");
+                        
+                    }
+                })
                 var imageDataLength = data.imageData.length;
                 for(var i = 0; i< imageDataLength; i++){
                     var image = data.imageData[i];
                         $("#imgList").append(`
-                                <div class="img_div" id="img_li_div">
+                                <div class="img_div col-sm-4 col-md-4 col-lg-4" id="img_li_div">
                                                     <div class="span3">
                                                         <div class="imge" assetName="`+image.name+`">
                                                         <a href="javascript:void(0)" class="thumbnail img-check">
@@ -5149,18 +5172,13 @@
                                 `)
                                 flag = true;
                         }
-                        var defaultValue;
-                      var noofImages = localStorage.getItem("selectedNoOfImages");
-                      if(noofImages){
-                        defaultValue= noofImages;
-                      }
-                      else{
-                        defaultValue = 20;
-                      }
+                        
+                      
+                      
                         if(flag){
                             $('#easyPaginate').easyPaginate({
                                 paginateElement: '.img_div',
-                                  elementsPerPage: defaultValue,
+                                  elementsPerPage: noofImages,
                                  effect: 'climb',
                                  gridType: "main"
                             });
@@ -5247,7 +5265,7 @@
                               flag = true;
                       }
                       var defaultValue;
-                      var noofImages = localStorage.getItem("selectedNoOfImages");
+                   
                       if(noofImages){
                         defaultValue= noofImages;
                       }
@@ -5506,9 +5524,15 @@ $(function(){
     $('#rme').popover(opsr)
 });
 
+// var numberOfImages=20;
+//var SizeOfImages = "l";
 $("#view_setting").on("click",function() {
-    var numberOfImages =$(".img_no option:selected").val();
+    numberOfImages=$(".img_no option:selected").val();
     localStorage.setItem("selectedNoOfImages", numberOfImages);
+    
+    SizeOfImages  =$(".img_size option:selected").val();
+    localStorage.setItem("selectedSize", SizeOfImages);
+
     window.location.href = "viewproject.html";
         // alert(id);
         // console.log(id);

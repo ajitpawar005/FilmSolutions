@@ -541,7 +541,7 @@ display: inline-block;width:25px;height:25px;border-radius: 100%;background-colo
 
 .img_div {
     float: left !important;
-    margin: 5px 10px  !important;
+    margin: 5px 0px  !important;
 }
 
 /*enlarge image*/
@@ -564,17 +564,17 @@ display: inline-block;width:25px;height:25px;border-radius: 100%;background-colo
 
 
 .imge {
-    width: 306px;
-    height:206px;
+    /* width: 306px;
+    height:206px; */
 	border: 3px solid transparent;
 }
-@-moz-document url-prefix()  {
+/* @-moz-document url-prefix()  {
     .imge {
         width: 303px;
         height:206px;
         border: 3px solid transparent;
     }
-}
+} */
 .selectborder {
     border: 3px solid #9c3127;
 }
@@ -628,13 +628,17 @@ display: inline-block;width:25px;height:25px;border-radius: 100%;background-colo
 .bgcolor{background-color: #666666;background-image:none;}
 .st_rmp{background-color:transparent !important;}
 .st_subdiv{
-    padding:0px 0px;
-    margin: 0px !important;}
+    /* padding:0px 0px;
+    margin: 0px !important;} */
+}
 .st_subdiv .sub_head{border-bottom:1px solid #f1f1f1;padding:0px 15px;margin-bottom:15px;}
 .st_subdiv .sub_head h2{color: #9c3127;margin:0px;font-size:20px;padding-bottom:15px;}
-.st_subdiv .span3{overflow:hidden;position: relative;box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);background-color:#292929;padding: 1px;}
+.st_subdiv .span3{overflow:hidden;/*position: relative;*/box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);background-color:#292929;padding: 1px;}
 .st_subdiv .span3 .thumbnail{padding:0px;margin-bottom:0px;border:none;background-color:transparent;}
-.st_subdiv .span3 .thumbnail img{display: block;transition: all 1s ease;
+.st_subdiv .span3 .thumbnail img{display: block;
+    /* width: 100% !important;
+    height: 100% !important; */
+    transition: all 1s ease;
 -moz-transition: all 1s ease;-ms-transition: all 1s ease;-webkit-transition: all 1s ease;
 -o-transition: all 1s ease; border:2x solid transparent;}
 /*enlarge image*/
@@ -1647,6 +1651,13 @@ padding: 2px !important;
 .selectborder1 {
     border: 3px solid #9c3127;
 }
+/* .msize{
+        width:200px;
+}
+
+.ssize{
+        width:125px;
+} */
 .comp1_img a{
 text-decoration: none;
 color: #fff;
