@@ -5374,13 +5374,13 @@
             //Single image select deselect
             if(keycode == null){
                 storeIndexes =[];
-                if($(this).hasClass("selectborder")){
-                    $('.imge').removeClass("selectborder");
-                    $(this).removeClass("selectborder"); 
-                    getSelectedImages();
-                    return false;
-                }
-                else{
+                // if($(this).hasClass("selectborder")){
+                //     $('.imge').removeClass("selectborder");
+                //     $(this).removeClass("selectborder"); 
+                //     getSelectedImages();
+                //     return false;
+                // }
+                // else{
                     $('.imge').removeClass("selectborder");
                     $(this).addClass("selectborder");
                     const ct = $(this).find( "img").data('index');
@@ -5388,7 +5388,7 @@
                     storeIndexes.push(ct);
                     getSelectedImages();
                     return false;
-                }
+                //}
             }
             // Ctrl key image selection
             if((keycode == 17 )|| (keycode == 224)){
