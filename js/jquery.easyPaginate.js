@@ -68,7 +68,7 @@
                     htmlNav += '<li><a href="" title="Previous" rel="" class="prev">'+plugin.settings.prevButtonText+'</a></li>';
                 }
                 
-                htmlNav += '<li><p>Page : 1 of <span class="pages">'+plugin.settings.pages+'</span></p></li>';
+                htmlNav += '<li><p>Page : <span id="updatedPage"> 1 </span> of <span class="pages">'+plugin.settings.pages+'</span></p></li>';
                /* for(i = 1;i <= plugin.settings.pages;i++) {
                     htmlNav += '<li><a href="#'+plugin.settings.hashPage+':'+i+'" title="Page '+i+'" rel="'+i+'" class="page">'+i+'</a>';
                 };*/
@@ -90,8 +90,20 @@
                 $(".rightside_menu_middlepanel ul").append(plugin.nav);
                 $(".rightside_menu_middlepanel1 ul").append(plugin.nav);
                 //var elSelector = '#' + plugin.el.get(0).id + ' + ';
-                $('.easyPaginateNav a.page,.easyPaginateNav a.first,.easyPaginateNav a.last').on('click', function(e) {
+                // $('.easyPaginateNav a.page,.easyPaginateNav a.first,.easyPaginateNav a.last').on('click', function(e) {
+                //     e.preventDefault();
+                //     displayPage($(this).attr('rel'));                
+                // });
+
+                $('.easyPaginateNav a.page,.easyPaginateNav a.first').on('click', function(e) {
                     e.preventDefault();
+                    $("#updatedPage").text(1);
+                    displayPage($(this).attr('rel'));                
+                });
+    
+                $('.easyPaginateNav a.last').on('click', function(e) {
+                    e.preventDefault();
+                    $("#updatedPage").text(plugin.settings.pages);
                     displayPage($(this).attr('rel'));                
                 });
     
@@ -99,15 +111,15 @@
                 $('.rightside_menu_middlepanel1 a.prev').on('click', function(e) {
                     e.preventDefault();
                     page = plugin.settings.currentPage > 1?parseInt(plugin.settings.currentPage) - 1:1;
+                    $("#updatedPage").text(page);
                     displayPage(page);
-                    localStorage.setItem("enlCurImgIndex",page);
                 });
 
                 $('.rightside_menu_middlepanel1 a.next').on('click', function(e) {
                     e.preventDefault();
                     page = plugin.settings.currentPage < plugin.settings.pages?parseInt(plugin.settings.currentPage) + 1:plugin.settings.pages;
+                    $("#updatedPage").text(page);
                     displayPage(page);
-                    localStorage.setItem("enlCurImgIndex", page);
                 });
             };
             

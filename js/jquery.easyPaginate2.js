@@ -22,11 +22,9 @@
 */
 
 (function($){
-    $.fn.easyPaginate = function (options) {
+    $.fn.easyPaginate1 = function (options) {
         var defaults = {
-            
             hashPage: 'page',
-            
             effect: 'default',
             slideOffset: 200,
             firstButton: true,
@@ -38,47 +36,44 @@
             nextButton: true,
             nextButtonText: '<i class="fa fa-forward"></i>'
         }
-            
-    
-        
         return this.each (function (instance) {        
             
             var plugin = {};
             plugin.el = $(this);
-            plugin.el.addClass('easyPaginateList');
+            plugin.el.addClass('easyPaginateList1');
     
-            plugin.settings = {
-                pages: 0,
+            plugin.settings1 = {
+                pages1: 0,
                 objElements: Object,
                 currentPage: 1
             }
             
             var getNbOfPages = function() {
-                return Math.ceil(plugin.settings.objElements.length / plugin.settings.elementsPerPage);         
+                return Math.ceil(plugin.settings1.objElements.length / plugin.settings1.elementsPerPage1);         
             };
             
             var displayNav = function() {
-                htmlNav = '<div class="easyPaginateNav">';
+                htmlNav = '<div class="easyPaginateNav1">';
                 
-                if(plugin.settings.firstButton) {
-                    htmlNav += '<li><a href="#'+plugin.settings.hashPage+':1" title="First page" rel="1" class="first">'+plugin.settings.firstButtonText+'</a></li>';
+                if(plugin.settings1.firstButton) {
+                    htmlNav += '<li><a href="#'+plugin.settings1.hashPage+':1" title="First page" rel="1" class="first">'+plugin.settings1.firstButtonText+'</a></li>';
                 }
                 
-                if(plugin.settings.prevButton) {
-                    htmlNav += '<li><a href="" title="Previous" rel="" class="prev">'+plugin.settings.prevButtonText+'</a></li>';
+                if(plugin.settings1.prevButton) {
+                    htmlNav += '<li><a href="" title="Previous" rel="" class="prev">'+plugin.settings1.prevButtonText+'</a></li>';
                 }
                 
-                htmlNav += '<li><p>Page : <span id="updatedPage"> 1 </span> of </span> <span class="pages">'+plugin.settings.pages+'</span></br><span id="sizee">0</span> (Image)s Selected</p></li>';
-               /* for(i = 1;i <= plugin.settings.pages;i++) {
-                    htmlNav += '<li><a href="#'+plugin.settings.hashPage+':'+i+'" title="Page '+i+'" rel="'+i+'" class="page">'+i+'</a>';
+                htmlNav += '<li><p>Page : <span id="updatedPage1"> 1 </span> of </span> <span class="pages">'+plugin.settings1.pages+'</span></br><span id="sizee">0</span> (Image)s Selected</p></li>';
+               /* for(i = 1;i <= plugin.settings1.pages;i++) {
+                    htmlNav += '<li><a href="#'+plugin.settings1.hashPage+':'+i+'" title="Page '+i+'" rel="'+i+'" class="page">'+i+'</a>';
                 };*/
                 
-                if(plugin.settings.nextButton) {
-                    htmlNav += '<li><a href="" title="Next" rel="" class="next">'+plugin.settings.nextButtonText+'</a></li>';
+                if(plugin.settings1.nextButton) {
+                    htmlNav += '<li><a href="" title="Next" rel="" class="next">'+plugin.settings1.nextButtonText+'</a></li>';
                 }
                 
-                if(plugin.settings.lastButton) {
-                    htmlNav += '<li><a href="#'+plugin.settings.hashPage+':'+plugin.settings.pages+'" title="Last page" rel="'+plugin.settings.pages+'" class="last">'+plugin.settings.lastButtonText+'</a></li>';
+                if(plugin.settings1.lastButton) {
+                    htmlNav += '<li><a href="#'+plugin.settings1.hashPage+':'+plugin.settings1.pages+'" title="Last page" rel="'+plugin.settings1.pages+'" class="last">'+plugin.settings1.lastButtonText+'</a></li>';
                 }
                 
                 htmlNav += '</div>';
@@ -87,59 +82,59 @@
                     'width': plugin.el.width()
                 });
                 //plugin.el.after(plugin.nav);
-                $(".rightside_menu_middlepanel ul").append(plugin.nav);
+                $(".rightside_menu_middlepanel1 ul").append(plugin.nav);
     
                 //var elSelector = '#' + plugin.el.get(0).id + ' + ';
                 $('.easyPaginateNav a.page,.easyPaginateNav a.first').on('click', function(e) {
                     e.preventDefault();
-                    $("#updatedPage").text(1);
+                    $("#updatedPage1").text(1);
                     displayPage($(this).attr('rel'));                
                 });
     
                 $('.easyPaginateNav a.last').on('click', function(e) {
                     e.preventDefault();
-                    $("#updatedPage").text(plugin.settings.pages);
+                    $("#updatedPage1").text(plugin.settings1.pages);
                     displayPage($(this).attr('rel'));                
                 });
                // rightside_menu_middlepanel2
-                $('.rightside_menu_middlepanel a.prev').on('click', function(e) {
+                $('.rightside_menu_middlepanel1 a.prev').on('click', function(e) {
                     e.preventDefault();
-                    page = plugin.settings.currentPage > 1?parseInt(plugin.settings.currentPage) - 1:1;
-                    $("#updatedPage").text(page);
+                    page = plugin.settings1.currentPage > 1?parseInt(plugin.settings1.currentPage) - 1:1;
+                    $("#updatedPage1").text(page);
                     displayPage(page);
                     
 
                 });
                 //$("#updatedPage").text(page);
-                $('.rightside_menu_middlepanel a.next').on('click', function(e) {
+                $('.rightside_menu_middlepanel1 a.next').on('click', function(e) {
                     e.preventDefault();
-                    page = plugin.settings.currentPage < plugin.settings.pages?parseInt(plugin.settings.currentPage) + 1:plugin.settings.pages;
-                    $("#updatedPage").text(page);
+                    page = plugin.settings1.currentPage < plugin.settings1.pages?parseInt(plugin.settings1.currentPage) + 1:plugin.settings1.pages;
+                    $("#updatedPage1").text(page);
                     displayPage(page);
                     
                 });
             };
 
             var displayPage = function(page, forceEffect) {
-                if(plugin.settings.currentPage != page) {
-                    plugin.settings.currentPage = parseInt(page);
-                    offsetStart = (page - 1) * plugin.settings.elementsPerPage;
-                    offsetEnd = page * plugin.settings.elementsPerPage;
+                if(plugin.settings1.currentPage != page) {
+                    plugin.settings1.currentPage = parseInt(page);
+                    offsetStart = (page - 1) * plugin.settings1.elementsPerPage1;
+                    offsetEnd = page * plugin.settings1.elementsPerPage1;
                     if(typeof(forceEffect) != 'undefined') {
                         eval("transition_"+forceEffect+"("+offsetStart+", "+offsetEnd+")");
                     }else {
-                        eval("transition_"+plugin.settings.effect+"("+offsetStart+", "+offsetEnd+")");
+                        eval("transition_"+plugin.settings1.effect+"("+offsetStart+", "+offsetEnd+")");
                     }
                     
                     plugin.nav.find('.current').removeClass('current');
                     plugin.nav.find('a.page:eq('+(page - 1)+')').addClass('current');
                     
-                    switch(plugin.settings.currentPage) {
+                    switch(plugin.settings1.currentPage) {
                         case 1:
                             $('.easyPaginateNav a', plugin).removeClass('disabled');
                             $('.easyPaginateNav a.first, .easyPaginateNav a.prev', plugin).addClass('disabled');
                             break;
-                        case plugin.settings.pages:
+                        case plugin.settings1.pages:
                             $('.easyPaginateNav a', plugin).removeClass('disabled');
                             $('.easyPaginateNav a.last, .easyPaginateNav a.next', plugin).addClass('disabled');
                             break;
@@ -152,14 +147,14 @@
             
             var transition_default = function(offsetStart, offsetEnd) {
                 plugin.currentElements.hide();
-                plugin.currentElements = plugin.settings.objElements.slice(offsetStart, offsetEnd).clone();
+                plugin.currentElements = plugin.settings1.objElements.slice(offsetStart, offsetEnd).clone();
                 plugin.el.html(plugin.currentElements);
                 plugin.currentElements.show();
             };
             
             var transition_fade = function(offsetStart, offsetEnd) {
                 plugin.currentElements.fadeOut();
-                plugin.currentElements = plugin.settings.objElements.slice(offsetStart, offsetEnd).clone();
+                plugin.currentElements = plugin.settings1.objElements.slice(offsetStart, offsetEnd).clone();
                 plugin.el.html(plugin.currentElements);
                 plugin.currentElements.fadeIn();
             };
@@ -171,7 +166,7 @@
                     $(this).remove();
                 });
                 
-                plugin.currentElements = plugin.settings.objElements.slice(offsetStart, offsetEnd).clone();
+                plugin.currentElements = plugin.settings1.objElements.slice(offsetStart, offsetEnd).clone();
                 plugin.currentElements.css({
                    
                 });
@@ -193,7 +188,7 @@
                     }, );
                 });
                 
-                plugin.currentElements = plugin.settings.objElements.slice(offsetStart, offsetEnd).clone();
+                plugin.currentElements = plugin.settings1.objElements.slice(offsetStart, offsetEnd).clone();
                 plugin.currentElements.css({
                   
                 });
@@ -206,21 +201,21 @@
                 });
             };
                     
-            plugin.settings = $.extend({}, defaults, options);
+            plugin.settings1 = $.extend({}, defaults, options);
             
             plugin.currentElements = $([]);
-            plugin.settings.objElements = plugin.el.find(plugin.settings.paginateElement);
-            plugin.settings.pages = getNbOfPages();
-            if(plugin.settings.pages > 1) {
+            plugin.settings1.objElements = plugin.el.find(plugin.settings1.paginateElement1);
+            plugin.settings1.pages = getNbOfPages();
+            if(plugin.settings1.pages > 1) {
                 plugin.el.html();
         
                 // Here we go
                 displayNav();
                 
                 page = 1;
-                if(document.location.hash.indexOf('#'+plugin.settings.hashPage+':') != -1) {
-                    page = parseInt(document.location.hash.replace('#'+plugin.settings.hashPage+':', ''));
-                    if(page.length <= 0 || page < 1 || page > plugin.settings.pages) {
+                if(document.location.hash.indexOf('#'+plugin.settings1.hashPage+':') != -1) {
+                    page = parseInt(document.location.hash.replace('#'+plugin.settings1.hashPage+':', ''));
+                    if(page.length <= 0 || page < 1 || page > plugin.settings1.pages) {
                         page = 1;
                     }
                 }

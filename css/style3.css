@@ -544,8 +544,10 @@ display: inline-block;width:25px;height:25px;border-radius: 100%;background-colo
     margin: 5px 0px  !important;
 }
 
-
-
+.img_div_album{
+    float: left !important;
+    margin: 5px 0px  !important;
+}
 /*enlarge image*/
 .compimg_div {
     float: left !important;

@@ -359,7 +359,6 @@
            
                 var getselectedimgs=[];
                 getselectedimgs= JSON.parse(localStorage.getItem('selectedimgs'));
-
                 getselectedimgs.forEach(function(key,value){
                     if(key.url.indexOf('125:125')>-1){
                         key.url = key.url.replace("125:125","300:300");
@@ -372,6 +371,7 @@
                     // }
                 })
                     console.log(getselectedimgs);
+                var  getselectedimgs= JSON.parse(localStorage.getItem('selectedimgs'));
                     var length = getselectedimgs.length;
                     var flag = false;
                     for(var i = 0; i< length; i++){

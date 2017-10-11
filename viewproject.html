@@ -424,17 +424,16 @@
                         <div class="preload"><img src="http://i.imgur.com/KUJoe.gif">
                         </div>
                     <div class="row">
-                        <div class="col-lg-12 rightside_menu_panel st_rmp">
-
-                            <div class="rightside_menu_middlepanel holder text-center">
-                                <ul>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
                         <div id="mainGrid">
+                                <div class="row">
+                                        <div class="col-lg-12 rightside_menu_panel st_rmp">
+                
+                                            <div class="rightside_menu_middlepanel holder text-center">
+                                                <ul>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                             <div class="db_container db_com rightside-gallerycontainer-panel">
                                 <div class="st_subdiv db_com " id="easyPaginate">
                                     <div id="imgList">
@@ -443,6 +442,17 @@
                             </div>
                         </div>
                         <div id="albumGrid">
+                                <div class="row">
+                                        <div class="col-lg-12 rightside_menu_panel st_rmp">
+                
+                                            <div class="rightside_menu_middlepanel1 holder text-center">
+                                                <ul>
+
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 <div class="db_container db_com rightside-gallerycontainer-panel">
                                         
                                     <div class="st_subdiv db_com " id="albumEasyPaginate">
@@ -451,7 +461,7 @@
 
                                     </div>
                                 </div>
-                            </div>
+                        </div>
                     </div>
 
 
@@ -5022,6 +5032,7 @@
 
 
     <script src="js/jquery.easyPaginate1.js"></script>
+    <script src="js/jquery.easyPaginate2.js"></script>
     <script src="js/jquery.jqpagination.js"></script>
     <script src="js/variable.js"></script>
 
@@ -5178,7 +5189,8 @@
                         }
                         
                       
-                      
+                        console.log("noofImages");
+                        console.log(noofImages);
                         if(flag){
                             $('#easyPaginate').easyPaginate({
                                 paginateElement: '.img_div',
@@ -5240,7 +5252,7 @@
                   for(var i = 0; i< data.imageData.length; i++){
                     var image = data.imageData[i];
                       $("#albumImgList").append(`
-                              <div class="img_div" id="img_li_div">
+                              <div class="img_div_album col-sm-4 col-md-4 col-lg-4" id="img_li_div">
                                                   <div class="span3">
                                                       <div class="imge" assetName="`+image.name+`">
                                                       <a href="javascript:void(0)" class="thumbnail img-check">
@@ -5268,20 +5280,17 @@
                               `);
                               flag = true;
                       }
-                      var defaultValue;
-                   
-                      if(noofImages){
-                        defaultValue= noofImages;
-                      }
-                      else{
-                        defaultValue = 20;
-                      }
+                      console.log("noofImages");
+                      console.log(noofImages);
+                      var imgDataLenght = data.imageData.length;
+                      var cnt = imgDataLenght >noofImages?noofImages:imgDataLenght;
+                      console.log(cnt);
                       if(flag){
-                            $('#albumEasyPaginate').easyPaginate({
-                                paginateElement: '.img_div',
-                                  elementsPerPage:defaultValue,
-                                 effect: 'climb',
-                                 gridType: "album"
+                            $('#albumEasyPaginate').easyPaginate1({
+                                paginateElement1: '.img_div_album',
+                                elementsPerPage1: cnt,
+                                effect: 'climb',
+                                gridType: "album"
                             });
                         }
                 },
@@ -5447,7 +5456,8 @@
                 return false;
             }
         });
-          
+
+
         function getSelectedImages(){
             var getAllSelectedImageArray = [];
             allSelectedImagesArray = [];
