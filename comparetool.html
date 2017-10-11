@@ -147,7 +147,7 @@
                                     <div id="slidecontainer">
                                         <div class="form-group rangee">
                                             <div class="col-lg-10 col-md-10 col-sm-10">
-                                            <input type="range" min="1" max="100" value="25" class="slider" id="myRange" title="">
+                                            <input type="range" min="1" max="100" value="100" class="slider" id="myRange" title="">
                                              </div>
                                              <div class="col-lg-2 col-md-2 col-sm-2">
                                             <input type="text" id="textInput" value="25" disabled>
@@ -357,8 +357,20 @@
                 $("#panel").slideToggle("slow");
             });
            
+                var getselectedimgs=[];
+                getselectedimgs= JSON.parse(localStorage.getItem('selectedimgs'));
 
-                    var  getselectedimgs= JSON.parse(localStorage.getItem('selectedimgs'));
+                getselectedimgs.forEach(function(key,value){
+                    if(key.url.indexOf('125:125')>-1){
+                        key.url = key.url.replace("125:125","300:300");
+                    }
+                    else if(key.url.indexOf('200:200')>-1){
+                        key.url = key.url.replace("200:200","300:300");
+                    }
+                    // else if(key.url.indexOf('125:125')>-1){
+                    //     key.url = key.url.replace("125:125","700:700");
+                    // }
+                })
                     console.log(getselectedimgs);
                     var length = getselectedimgs.length;
                     var flag = false;
@@ -366,18 +378,19 @@
                         var image = getselectedimgs[i];
                         $("#comparediv").append(`
                             
-                                                <div class="img_div">
+                                                <div class="compimg_div col-sm-4 col-md-4 col-lg-4"">
                                    
                                                     <div class="span3">
                                                         <div class="imge" >
                                                                  <a href="javascript:void(0)" class="thumbnail img-check">
-                                                                    <img src=`+image.url+`" data-index="`+i+`" id="`+image.id+`" assetName="`+image.name+`"" class="imagee" width="300px" height="200px">
+                                                                    <img src=`+image.url+`" data-index="`+i+`" id="`+image.id+`" assetName="`+image.name+`"" class="imagee">
                                                                  </a>
                                                         </div>
-                                                    </div>
-                                                    <div class="img_tile">
+                                                        <div class="img_tile">
                                                      <span class="ii"> `+image.name+` </span>
                                                     </div>
+                                                    </div>
+                                                   
                                                 </div>
                             
                                 `);
@@ -458,6 +471,9 @@
                     $(this).addClass("selectborder")
                     getSelectedImagesIndex.push(ct);
                     }
+                    else {
+                        alert("You have Already selected Two Images to Compare!");
+                    }
                 }
                 getSelectedImages();
                 return false;
@@ -493,8 +509,27 @@
                 document.getElementById('textInput').value =  p.value;
                 // var v = p.value;
                 // v = v+"px";
-                document.getElementsByClassName('imagee').style.height =  p.value+"px";
-                document.getElementsByClassName('imagee').style.width = p.value+"px";
+                //alert(p.value);
+                var img = $('.imagee')[0]; 
+                //or however you get a handle to the IMG
+                var cWidth = img.naturalWidth;
+                var cHeight = img.naturalHeight;
+
+                var width =  cWidth * (p.value / 100);
+                var height = cHeight * (p.value / 100);
+                $('.imagee').css('height',height+'px');
+                $('.imagee').css('width',width+'px');
+
+
+
+                $('.span3').addClass("addhb")
+                $('.addhb').css('height',(height+35)+'px');
+                $('.addhb').css('width',width+'px');
+
+                // target.style.height = "400px";
+                // target.style.width = "300px";
+                // target.style.width=width * (p.value/ 100);+'px';
+                // target.style.height=height * (p.value / 100)+'px';
             }, false); 
       
         // function updateTextInput(val) {

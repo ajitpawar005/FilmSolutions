@@ -544,11 +544,12 @@ display: inline-block;width:25px;height:25px;border-radius: 100%;background-colo
     margin: 5px 0px  !important;
 }
 
+
+
 /*enlarge image*/
-.img_dive {
-   
-    margin: 5px 170px !important;
-	
+.compimg_div {
+    float: left !important;
+    margin: 5px 0px  !important;
 }
 .eimg_dive {
      /* margin: 0px 0px !important; */
@@ -1638,7 +1639,10 @@ padding: 2px !important;
     float: left;
     text-align: center;
 }
-
+.preload{
+    text-align: center;
+    margin:100px 0px;
+}
 .img_tile h3 {
     color: #a9a9a9;
     display: inline-block;
