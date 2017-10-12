@@ -5527,7 +5527,14 @@
                             var imgname = allSelectedImagesArray[i];
                             $(".selected_imgs").append('<p> <span>'+ imgname.name + ' </span> </p>');
                         }
+
+                        if(allSelectedImagesArray.length>0)
+                        {
                         $('#sda_sfl').modal('show');
+                        }
+                        else{
+                            alert("Please select image!");
+                        }
                         
                     })
 
@@ -5537,16 +5544,14 @@
 
         $(".select_all").click(function () {
             $(".imge").addClass("selectborder");
-            // var cc = ($(".selectborder").length);
-            // $("#sizee").text(cc);
+           
             getSelectedImages();
         });
 
 
         $(".select_alle").click(function () {
             $(".imge").removeClass("selectborder");
-            // var cc = ($(".selectborder").length);
-            // $("#sizee").text(cc);
+          
             getSelectedImages();
         });
 
