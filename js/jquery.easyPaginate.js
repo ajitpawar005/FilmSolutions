@@ -50,7 +50,7 @@
             plugin.settings = {
                 pages: 0,
                 objElements: Object,
-                currentPage:1
+                currentPage:5
             }
             
             var getNbOfPages = function() {
@@ -67,8 +67,14 @@
                 if(plugin.settings.prevButton) {
                     htmlNav += '<li><a href="" title="Previous" rel="" class="prev">'+plugin.settings.prevButtonText+'</a></li>';
                 }
-                
-                htmlNav += '<li><p>Page : <span id="updatedPage"> 1 </span> of <span class="pages">'+plugin.settings.pages+'</span></p></li>';
+                var pp_img = parseInt(localStorage.getItem('perPageImage'));
+                var currentPageNumber = Math.ceil((parseInt(plugin.settings.imgid)+1)/ pp_img);
+                var toalPages = Math.ceil(plugin.settings.pages/pp_img);
+
+                htmlNav += '<li>'
+                    +'<p>Page: <span id="updatedPageCount"> '+currentPageNumber+' </span> of <span class="pages">'+ toalPages +'</span></p>'
+                    +'<p>Image: <span id="updatedPage"> '+(plugin.settings.imgid +1)+' </span> of <span class="pages">'+plugin.settings.pages+'</span></p>'
+                    +'</li>';
                /* for(i = 1;i <= plugin.settings.pages;i++) {
                     htmlNav += '<li><a href="#'+plugin.settings.hashPage+':'+i+'" title="Page '+i+'" rel="'+i+'" class="page">'+i+'</a>';
                 };*/
@@ -98,12 +104,14 @@
                 $('.easyPaginateNav a.page,.easyPaginateNav a.first').on('click', function(e) {
                     e.preventDefault();
                     $("#updatedPage").text(1);
+                    $("#updatedPageCount").text(1);
                     displayPage($(this).attr('rel'));                
                 });
     
                 $('.easyPaginateNav a.last').on('click', function(e) {
                     e.preventDefault();
                     $("#updatedPage").text(plugin.settings.pages);
+                    $("#updatedPageCount").text(toalPages);
                     displayPage($(this).attr('rel'));                
                 });
     
@@ -112,6 +120,8 @@
                     e.preventDefault();
                     page = plugin.settings.currentPage > 1?parseInt(plugin.settings.currentPage) - 1:1;
                     $("#updatedPage").text(page);
+                    var cur_page = (Math.ceil(page/pp_img));
+                    $("#updatedPageCount").text(cur_page);
                     displayPage(page);
                 });
 
@@ -119,6 +129,8 @@
                     e.preventDefault();
                     page = plugin.settings.currentPage < plugin.settings.pages?parseInt(plugin.settings.currentPage) + 1:plugin.settings.pages;
                     $("#updatedPage").text(page);
+                    var cur_page = (Math.ceil(page/pp_img));
+                    $("#updatedPageCount").text(cur_page);
                     displayPage(page);
                 });
             };

@@ -5209,13 +5209,9 @@
                                                     </div>
                                                 </div>
                                 `)
+
                         flag = true;
                     }
-
-
-
-                    console.log("noofImages");
-                    console.log(noofImages);
                     if (flag) {
                         $('#easyPaginate').easyPaginate({
                             paginateElement: '.img_div',
@@ -5224,40 +5220,37 @@
                             gridType: "main"
                         });
                     }
-                    // $(document).on('click', '#filimages', function () {
-                    // for (var i = 0; i < imageDataLength; i++) {
-                    //     var image = data.imageData[i];
-                    //     $("#div_list").append(`
-                    //         <p> <span>`+ image.name + ` </span> </p>
-                    //     `)
-                    // }
-                    // });
-
+                    localStorage.setItem('perPageImage',noofImages);
                     $("#filimages").click(function(){
                         for (var i = 0; i < imageDataLength; i++) {
                             var image = data.imageData[i];
                             $(".filter_imgs").append('<p> <span>'+ image.name + ' </span> </p>');
+
                         }
                         $('#sda_ffl').modal('toggle');
                     })
+                    
 
                     level1Images = data.imageData;
-                    var arr = [];
-                    level1Images.forEach(function (key, value) {
-                        key.url = key.url.replace("300:300", "700:700");
-                        var ob = {};
-                        ob.id = key.id;
-                        ob.name = key.name;
-                        ob.url = key.url;
-                        arr.push(ob);
-                    })
-                    localStorage.setItem('allImages', JSON.stringify(arr));
-                },
-                error: function (data) { }
-            });
-            var storeIndexes = [];
+                    setImagesForEnlarge(level1Images);
 
-            $(document).on('click', '.enlargeImg', function () {
+              },
+              error:function(data){}
+            });
+            var storeIndexes =[];
+            function setImagesForEnlarge(level1Images){
+                var arr = [];
+                    level1Images.forEach(function(key,value){
+                    key.url = key.url.replace("300:300","700:700");
+                    var ob = {};
+                    ob.id = key.id;
+                    ob.name = key.name;
+                    ob.url = key.url;
+                    arr.push(ob);
+                })
+                localStorage.setItem('allImages',JSON.stringify(arr));
+            }
+            $(document).on('click','.enlargeImg',function(){
                 var element = $(this).parent().closest('.tile').siblings('.imge').find('img');
                 enlargeImagePage(element);
             });
@@ -5272,28 +5265,29 @@
                 storeIndexes = [];
                 $('.imge').removeClass("selectborder");
                 getSelectedImages();
-                var id = $(this).attr("id");
-                var projectId = localStorage.getItem("projectId");
-                $.ajax({
-                    type: "GET",
-                    url: apiurl + "albums/images/" + projectId + "/" + id,
-                    dataType: "json",
-                    headers: {
-                        "X-API-KEY": localStorage.getItem("id_token")
-                    },
-                    beforeSend: function () { },
-                    success: function (data) {
-                        if (data.imageData.length == 0) {
-                            alert("No assets found");
-                            return false;
-                        }
-                        var flag = false;
-                        // $(".easyPaginateNav").empty();
-                        $("#mainGrid").html("");
-                        $("#albumImgList").empty();
-                        for (var i = 0; i < data.imageData.length; i++) {
-                            var image = data.imageData[i];
-                            $("#albumImgList").append(`
+              var id = $(this).attr("id");
+              var projectId = localStorage.getItem("projectId");
+              $.ajax({
+                type:"GET",
+                url:apiurl+"albums/images/"+projectId+"/"+id,
+                dataType:"json",
+                headers: {
+                  "X-API-KEY":localStorage.getItem("id_token")
+                },
+                beforeSend:function(){},
+                success:function(data){
+                  if(data.imageData.length == 0){
+                    alert("No assets found");
+                    return false;
+                  }
+                  var flag=false;
+                  var level1Images = [];
+                 // $(".easyPaginateNav").empty();
+                  $("#mainGrid").html("");
+                  $("#albumImgList").empty();
+                  for(var i = 0; i< data.imageData.length; i++){
+                    var image = data.imageData[i];
+                      $("#albumImgList").append(`
                               <div class="img_div_album col-sm-4 col-md-4 col-lg-4" id="img_li_div">
                                                   <div class="span3">
                                                       <div class="imge" assetName="`+ image.name + `">
@@ -5320,14 +5314,12 @@
                                                   </div>
                                               </div>
                               `);
-                            flag = true;
-                        }
-                        console.log("noofImages");
-                        console.log(noofImages);
-                        var imgDataLenght = data.imageData.length;
-                        var cnt = imgDataLenght > noofImages ? noofImages : imgDataLenght;
-                        console.log(cnt);
-                        if (flag) {
+                        flag = true;
+                      }
+                      var imgDataLenght = data.imageData.length;
+                      var cnt = imgDataLenght >noofImages?noofImages:imgDataLenght;
+                      localStorage.setItem('perPageImage',cnt);
+                      if(flag){
                             $('#albumEasyPaginate').easyPaginate1({
                                 paginateElement1: '.img_div_album',
                                 elementsPerPage1: cnt,
@@ -5335,9 +5327,11 @@
                                 gridType: "album"
                             });
                         }
-                    },
-                    error: function () { }
-                });
+                        level1Images = data.imageData;
+                        setImagesForEnlarge(level1Images);
+                },
+                error:function() {}
+              });
             });
 
             $("#albums").on('click', '.albumSelect', function () {
@@ -5455,13 +5449,14 @@
                 //     return false;
                 // }
                 // else{
-                $('.imge').removeClass("selectborder");
-                $(this).addClass("selectborder");
-                const ct = $(this).find("img").data('index');
-                getFirstSelectedImageIndex = ct;
-                storeIndexes.push(ct);
-                getSelectedImages();
-                return false;
+
+                    //$('.imge').removeClass("selectborder");
+                    $(this).addClass("selectborder");
+                    const ct = $(this).find( "img").data('index');
+                    getFirstSelectedImageIndex = ct;
+                    storeIndexes.push(ct);
+                    getSelectedImages();
+                    return false;
                 //}
             }
             // Ctrl key image selection
@@ -5527,7 +5522,6 @@
                             var imgname = allSelectedImagesArray[i];
                             $(".selected_imgs").append('<p> <span>'+ imgname.name + ' </span> </p>');
                         }
-
                         if(allSelectedImagesArray.length>0)
                         {
                         $('#sda_sfl').modal('show');
@@ -5536,12 +5530,7 @@
                             alert("Please select image!");
                         }
                         
-                    })
-
-
-
-
-
+         })
         $(".select_all").click(function () {
             $(".imge").addClass("selectborder");
            
