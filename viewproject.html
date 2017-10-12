@@ -16,8 +16,10 @@
     <link href="css/simple-sidebar1.css" rel="stylesheet">
     <link href="css/style3.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
-     <style>
-      .border{border: 1px solid #fff;}
+    <style>
+        .border {
+            border: 1px solid #fff;
+        }
     </style>
     <!-- Select Dropdown Css Start Here 27/03/2017 -->
     <link href="css/bootstrap-select.css" rel="stylesheet">
@@ -127,27 +129,27 @@
                     <ol class="breadcrumb st_breadcrumb">
                         <!--<li class="breadcrumb-item"><a href="javascript:void(0)">Gallery</a></li> -->
                         <li class="breadcrumb-item"><a href="viewproject.html">FS-DEMO-EXEC</a></li>
-                       <!-- <li class="breadcrumb-item active">Images</li> -->
+                        <!-- <li class="breadcrumb-item active">Images</li> -->
                     </ol>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="db_com st_headicon">
                         <ul class="header_menu">
-                                <li><button title="Image Toolbar" class="img_toolbar"><i class="fa fa-text-width" aria-hidden="true"></i></button></li>
+                            <li><button title="Image Toolbar" class="img_toolbar"><i class="fa fa-text-width" aria-hidden="true"></i></button></li>
                             <li><button title="I'M DONE" data-toggle="modal" data-target="#imdone"><i class="fa fa-hand-paper-o" aria-hidden="true"></i></button></li>
-                            <li><button title="Select All"  class="select_all"><i class="fa fa-check" aria-hidden="true"></i></button></li>
+                            <li><button title="Select All" class="select_all"><i class="fa fa-check" aria-hidden="true"></i></button></li>
                             <li><button title="Deselect All" class="select_alle"><i class="fa fa-window-close" aria-hidden="true"></i></button></li>
                             <li><button title="Go To" data-toggle="modal" data-target="#goto"><i class="fa fa-share" aria-hidden="true"></i></button></li>
                             <!-- <li><button title="Make Cover" ><i class="fa fa-window-restore" aria-hidden="true"></i></button></li> -->
-                            <li><button title="Email Selected Images"  data-toggle="modal" data-target="#email"><i class="fa fa-envelope" aria-hidden="true"></i></button></li>
-                            <li><button title="Download Selected Images"  data-toggle="modal" data-target="#fs_download"><i class="fa fa-download" aria-hidden="true"></i></button></li>
+                            <li><button title="Email Selected Images" data-toggle="modal" data-target="#email"><i class="fa fa-envelope" aria-hidden="true"></i></button></li>
+                            <li><button title="Download Selected Images" data-toggle="modal" data-target="#fs_download"><i class="fa fa-download" aria-hidden="true"></i></button></li>
                             <li><a title="Select Images to Compare" href="comparetool.html"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
-                            <li><button title="Print Selected Images"  data-toggle="modal" data-target="#printtool"><i class="fa fa-print" aria-hidden="true"></i></button></li>
+                            <li><button title="Print Selected Images" data-toggle="modal" data-target="#printtool"><i class="fa fa-print" aria-hidden="true"></i></button></li>
                             <li><button title="Change View Settings" data-toggle="modal" data-target="#fs_view"><i class="fa fa-desktop" aria-hidden="true"></i></button></li>
                             <li><button title="Delete Selected Asset(s)" data-toggle="modal" data-target="#fs_dele"><i class="fa fa-trash-o" aria-hidden="true"></i></button></li>
                             <li>
                                 <button title="Image Info" class="button1"><i class="fa fa-info"></i></button>
-                              </li>
+                            </li>
 
                         </ul>
                     </div>
@@ -173,9 +175,11 @@
 
                 <div class="sidebar-nav">
                     <div class="form-group customfilter-selectbox-container">
-                        <select id="basic" onchange="window.location.href=this.options[this.selectedIndex].value" class="selectpicker show-tick form-control" data-live-search="true" title="Custom Filter...">
+                        <select id="filtered_data" class="selectpicker show-tick form-control filter_data"
+                            data-live-search="true" >
 
 				<optgroup label="Select a Filter"> 
+                   
 					<option value="viewproject.html">Show All</option>
 					<option value="javascript:void(0)">Locked Approved</option>
 				</optgroup>
@@ -224,7 +228,7 @@
                     <div class="tab_div">
                         <ul class="tab_ul" role="tablist">
                             <li role="presentation" class="active"><a href="#sb_menu" aria-controls="sb_menu" role="tab" data-toggle="tab"><i class="fa fa-th-large" aria-hidden="true"></i></a></li>
-                            <li role="presentation" ><a href="#pinfo" aria-controls="pinfo" role="tab" data-toggle="tab" title="Project Info">
+                            <li role="presentation"><a href="#pinfo" aria-controls="pinfo" role="tab" data-toggle="tab" title="Project Info">
             <i class="fa fa-info-circle" aria-hidden="true"></i>
             </a>
                             </li>
@@ -244,11 +248,11 @@
                                     <ul class="submenuItems child_menu" id="albums">
                                         <li class="items">
                                             <i class="fa fa-plus-square-o dp_i" title="Add Album" data-toggle="modal" data-target="#AddAlbum" aria-hidden="true"></i>
-                                            <i class="fa fa-minus-square-o dp_i" title="Delete Album"  data-toggle="modal" data-target="#DelAlbum" aria-hidden="true"></i>
-                                            <i class="fa fa-language dp_i" title="Rename Album"  data-toggle="modal" data-target="#RnmAlbum" aria-hidden="true"></i>
-                                            <i class="fa fa-pencil-square-o dp_i" title="Edit Album Permissions"  data-toggle="modal" data-target="#EdiAlbum" aria-hidden="true"></i>
-                                            <i class="fa fa-sort dp_i" title="Sort Images in Selected Album"  data-toggle="modal" data-target="" aria-hidden="true"></i>
-                                            <i class="fa fa-trash-o dp_i" title="Drag Image to remove from Album"   data-toggle="modal" data-target="" aria-hidden="true"></i>
+                                            <i class="fa fa-minus-square-o dp_i" title="Delete Album" data-toggle="modal" data-target="#DelAlbum" aria-hidden="true"></i>
+                                            <i class="fa fa-language dp_i" title="Rename Album" data-toggle="modal" data-target="#RnmAlbum" aria-hidden="true"></i>
+                                            <i class="fa fa-pencil-square-o dp_i" title="Edit Album Permissions" data-toggle="modal" data-target="#EdiAlbum" aria-hidden="true"></i>
+                                            <i class="fa fa-sort dp_i" title="Sort Images in Selected Album" data-toggle="modal" data-target="" aria-hidden="true"></i>
+                                            <i class="fa fa-trash-o dp_i" title="Drag Image to remove from Album" data-toggle="modal" data-target="" aria-hidden="true"></i>
                                         </li>
                                         <li>
                                             <p>Custom Album</p>
@@ -256,7 +260,7 @@
                                         <!-- <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true">&nbsp;&nbsp;</i>MyAlbum</a></li> -->
                                     </ul>
                                 </li>
-                               <!-- <li>
+                                <!-- <li>
                                     <div class="dropdownlink"><i class="fa fa-picture-o dp_i" aria-hidden="true"></i><span>Image Info</span>
                                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                     </div>
@@ -320,12 +324,12 @@
                                     <ul class="submenuItems child_menu">
                                         <!-- <li><a href="#">Actor Approval Report</a></li> -->
                                         <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#sda_aar">Actor Approval Report</button></li>
-                                        <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#sda_ffl">Filtered FileName List</button></li>
-                                        <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#sda_sfl">Selected FileName List</button></li>
+                                        <li><button class="btn btn-block btn_admin"  id="filimages">Filtered FileName List</button></li>
+                                        <li><button class="btn btn-block btn_admin" id="selimages">Selected FileName List</button></li>
                                         <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#sda_iex">Image Exclusives</button></li>
                                         <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#psreport">Project Summary Report</button></li>
                                         <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#imreport">Image Notes Report</button></li>
-                                        <li><button class="btn btn-block btn_admin"data-toggle="modal" data-target="#icreport">Image Caption Report</button></li>
+                                        <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#icreport">Image Caption Report</button></li>
                                         <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#taggview1">Tagging View #1</button></li>
                                         <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#taggview2">Tagging View #2</button></li>
                                         <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#curreport">Current Activity Report</button></li>
@@ -340,7 +344,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                  <!--  <div class="dropdownlink"><i class="fa fa-users dp_i" aria-hidden="true"></i><span>Wide Edit Administration</span>
+                                    <!--  <div class="dropdownlink"><i class="fa fa-users dp_i" aria-hidden="true"></i><span>Wide Edit Administration</span>
                                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                     </div>
                                     <ul class="submenuItems child_menu">
@@ -352,41 +356,41 @@
                                     </ul>
                                 </li> -->
 
-                                <li>
-                                    <div class="dropdownlink"><i class="fa fa-pencil-square-o dp_i" aria-hidden="true"></i><span>Wide Edit Album</span>
-                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                    </div>
-                                    <ul class="submenuItems">
-                                        <li class="itemss">
-                                            <i class="fa fa-plus-square-o dp_i" title="Add Album" data-toggle="modal" data-target="#AddAlbum1" aria-hidden="true"></i>
-                                            <i class="fa fa-minus-square-o dp_i" title="Delete Album" data-toggle="modal" data-target="#DelAlbum1" aria-hidden="true"></i>
-                                            <i class="fa fa-language dp_i" title="Rename Album" data-toggle="modal" data-target="#RnmAlbum1" aria-hidden="true"></i>
-                                            <i class="fa fa-pencil-square-o dp_i"title="Edit Album"  data-toggle="modal" data-target="#EdiAlbum1" aria-hidden="true"></i>
-                                            <i class="fa fa-tag dp_i" title="Tagging Album" data-toggle="modal" data-target="#Taggimg" aria-hidden="true"></i>
-                                            <i class="fa fa-envelope dp_i" title="Email" data-toggle="modal" data-target="#Emailnote" aria-hidden="true"></i>
-                                            <i class="fa fa-sign-out dp_i" title="Album Sign-off" data-toggle="modal" data-target="#album-sign-off" aria-hidden="true"></i>
+                                    <li>
+                                        <div class="dropdownlink"><i class="fa fa-pencil-square-o dp_i" aria-hidden="true"></i><span>Wide Edit Album</span>
+                                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                        </div>
+                                        <ul class="submenuItems">
+                                            <li class="itemss">
+                                                <i class="fa fa-plus-square-o dp_i" title="Add Album" data-toggle="modal" data-target="#AddAlbum1" aria-hidden="true"></i>
+                                                <i class="fa fa-minus-square-o dp_i" title="Delete Album" data-toggle="modal" data-target="#DelAlbum1" aria-hidden="true"></i>
+                                                <i class="fa fa-language dp_i" title="Rename Album" data-toggle="modal" data-target="#RnmAlbum1" aria-hidden="true"></i>
+                                                <i class="fa fa-pencil-square-o dp_i" title="Edit Album" data-toggle="modal" data-target="#EdiAlbum1" aria-hidden="true"></i>
+                                                <i class="fa fa-tag dp_i" title="Tagging Album" data-toggle="modal" data-target="#Taggimg" aria-hidden="true"></i>
+                                                <i class="fa fa-envelope dp_i" title="Email" data-toggle="modal" data-target="#Emailnote" aria-hidden="true"></i>
+                                                <i class="fa fa-sign-out dp_i" title="Album Sign-off" data-toggle="modal" data-target="#album-sign-off" aria-hidden="true"></i>
 
-                                        </li>
-                                        <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true"> &nbsp;&nbsp;</i>Album1</a></li>
-                                        <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true">&nbsp;&nbsp;</i>MyAlbum</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <div class="dropdownlink"><i class="fa fa-file-text-o dp_i" aria-hidden="true"></i><span>Audit</span>
-                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                    </div>
-                                    <ul class="submenuItems child_menu">
-                                        <li><a href="#">Conflicts</a></li>
-                                        <li><a href="#">No Conflicts</a></li>
-                                        <li><a href="#">Bypass 2nd Tagger</a></li>
-                                        <li class="aud_btn"> <button class="btn">Publish Image(s)</button></li>
-                                        <li class="aud_btn"> <button class="btn">Hide Image(s)</button></li>
-                                        <li class="aud_btn"> <button class="btn">UnhideImage(s)</button></li>
-                                        <li class="aud_btn"> <button class="btn">Clear Tagg(s)</button></li>
-                                        <li class="aud_btn"> <button class="btn">Clear Single Tag</button></li>
-                                    </ul>
-                                </li>
-                               <!--  <li>
+                                            </li>
+                                            <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true"> &nbsp;&nbsp;</i>Album1</a></li>
+                                            <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true">&nbsp;&nbsp;</i>MyAlbum</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="dropdownlink"><i class="fa fa-file-text-o dp_i" aria-hidden="true"></i><span>Audit</span>
+                                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                        </div>
+                                        <ul class="submenuItems child_menu">
+                                            <li><a href="#">Conflicts</a></li>
+                                            <li><a href="#">No Conflicts</a></li>
+                                            <li><a href="#">Bypass 2nd Tagger</a></li>
+                                            <li class="aud_btn"> <button class="btn">Publish Image(s)</button></li>
+                                            <li class="aud_btn"> <button class="btn">Hide Image(s)</button></li>
+                                            <li class="aud_btn"> <button class="btn">UnhideImage(s)</button></li>
+                                            <li class="aud_btn"> <button class="btn">Clear Tagg(s)</button></li>
+                                            <li class="aud_btn"> <button class="btn">Clear Single Tag</button></li>
+                                        </ul>
+                                    </li>
+                                    <!--  <li>
                                     <div class="dropdownlink"><i class="fa fa-sign-out dp_i" aria-hidden="true"></i><span>Logout</span></div>
                                 </li> -->
                             </ul>
@@ -417,23 +421,23 @@
             <!-- /#sidebar-wrapper -->
 
             <!-- Page Content -->
-         
+
 
             <div id="page-content-wrapper" class="db_com pcw">
                 <div class="container-fluid">
-                        <div class="preload"><img src="http://i.imgur.com/KUJoe.gif">
-                        </div>
+                    <div class="preload"><img src="http://i.imgur.com/KUJoe.gif">
+                    </div>
                     <div class="row">
                         <div id="mainGrid">
-                                <div class="row">
-                                        <div class="col-lg-12 rightside_menu_panel st_rmp">
-                
-                                            <div class="rightside_menu_middlepanel holder text-center">
-                                                <ul>
-                                                </ul>
-                                            </div>
-                                        </div>
+                            <div class="row">
+                                <div class="col-lg-12 rightside_menu_panel st_rmp">
+
+                                    <div class="rightside_menu_middlepanel holder text-center">
+                                        <ul>
+                                        </ul>
                                     </div>
+                                </div>
+                            </div>
                             <div class="db_container db_com rightside-gallerycontainer-panel">
                                 <div class="st_subdiv db_com " id="easyPaginate">
                                     <div id="imgList">
@@ -442,25 +446,25 @@
                             </div>
                         </div>
                         <div id="albumGrid">
-                                <div class="row">
-                                        <div class="col-lg-12 rightside_menu_panel st_rmp">
-                
-                                            <div class="rightside_menu_middlepanel1 holder text-center">
-                                                <ul>
+                            <div class="row">
+                                <div class="col-lg-12 rightside_menu_panel st_rmp">
 
-                                                    
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <div class="db_container db_com rightside-gallerycontainer-panel">
-                                        
-                                    <div class="st_subdiv db_com " id="albumEasyPaginate">
-                                        <div id="albumImgList">
-                                        </div>
+                                    <div class="rightside_menu_middlepanel1 holder text-center">
+                                        <ul>
 
+
+                                        </ul>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="db_container db_com rightside-gallerycontainer-panel">
+
+                                <div class="st_subdiv db_com " id="albumEasyPaginate">
+                                    <div id="albumImgList">
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -1298,10 +1302,10 @@
                         <div class="row">
                             <div class="db_com viewtool-cont ">
                                 <form>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group down-selectpic">
-                                        <!-- <h4>Columns</h4> -->
-                                        <select id="basic" class="selectpicker form-control comn_sele" title="Columns">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="form-group down-selectpic">
+                                            <!-- <h4>Columns</h4> -->
+                                            <select id="basic" class="selectpicker form-control comn_sele" title="Columns">
                                             <option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -1311,12 +1315,12 @@
 											<option value="7">7</option>
 											<option value="3">Auto</option>
                                         </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group down-selectpic">
-                                        <!-- <h4>Images</h4> -->
-                                        <select  class="form-control img_no">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="form-group down-selectpic" >
+                                            <!-- <h4>Images</h4> -->
+                                            <select class="form-control img_no" >
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="4">4</option>
@@ -1326,18 +1330,18 @@
                                             <option value="100">100</option>
                                             <option value="250">250</option>
                                          </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group down-selectpic">
-                                        <!-- <h4>Size</h4> -->
-                                        <select id="basic" class="form-control img_size">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="form-group down-selectpic">
+                                            <!-- <h4>Size</h4> -->
+                                            <select id="basic" class="form-control img_size">
                                             <option value="s">Small</option>
                                             <option value="m">Medium</option>
                                             <option value="l">Large</option>
                                         </select>
+                                        </div>
                                     </div>
-                                </div>
                                 </form>
                             </div>
 
@@ -1864,7 +1868,9 @@
                     </div>
                     <div class="modal-body db_com">
                         <div class="div_flist">
-                            <div class="div_list">
+                            <div class="filter_imgs">
+                                <!-- <p>B24-2270.jpg</p> -->
+                                <!-- <p>B24-2270.jpg</p>
                                 <p>B24-2270.jpg</p>
                                 <p>B24-2270.jpg</p>
                                 <p>B24-2270.jpg</p>
@@ -1942,9 +1948,7 @@
                                 <p>B24-2270.jpg</p>
                                 <p>B24-2270.jpg</p>
                                 <p>B24-2270.jpg</p>
-                                <p>B24-2270.jpg</p>
-                                <p>B24-2270.jpg</p>
-                                <p>B24-2270.jpg</p>
+                                <p>B24-2270.jpg</p> -->
                             </div>
                         </div>
                         <div class="div_btn row">
@@ -1973,12 +1977,12 @@
                     </div>
                     <div class="modal-body db_com">
                         <div class="div_slist">
-                            <div class="div_lists">
+                            <div class="selected_imgs">
+                                <!-- <p>B24-2270.jpg</p>
                                 <p>B24-2270.jpg</p>
                                 <p>B24-2270.jpg</p>
                                 <p>B24-2270.jpg</p>
-                                <p>B24-2270.jpg</p>
-                                <p>B24-2270.jpg</p>
+                                <p>B24-2270.jpg</p> -->
                             </div>
                         </div>
                         <div class="div_btn row">
@@ -4355,41 +4359,41 @@
     </div>
 
 
-<!--Image Toolbar -->
+    <!--Image Toolbar -->
 
 
     <!-- image info -->
 
-	<!-- Control Sidebar -->
+    <!-- Control Sidebar -->
     <aside id="info1" class="control-sidebar control-sidebar-dark" style="display:none">
         <!-- Create the tabs -->
         <div class="heading">
-        <div class="form-group imginfo1">
-            <div class="col-lg-9 col-sm-9 col-md-9">
-                <p>Image Info</p>
-            </div>
-            <div class="col-lg-3 col-sm-3 col-md-3">
+            <div class="form-group imginfo1">
+                <div class="col-lg-9 col-sm-9 col-md-9">
+                    <p>Image Info</p>
+                </div>
+                <div class="col-lg-3 col-sm-3 col-md-3">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 </div>
 
 
-        </div>
-        <!-- <div class="col-sm-12 col-md-12 col-sm-offset-1 col-md-offset-1  divider1">
+            </div>
+            <!-- <div class="col-sm-12 col-md-12 col-sm-offset-1 col-md-offset-1  divider1">
 
                             </div>  -->
         </div>
         <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-          <li role="presentation" ><a href="#control-sidebar-home-tab"  aria-controls="control-sidebar-home-tab"  data-toggle="tab">Data</a></li>
-          <li role="presentation" class="active"><a href="#control-sidebar-settings-tab"aria-controls="control-sidebar-settings-tab" role="tab"  data-toggle="tab">Note</a></li>
+            <li role="presentation"><a href="#control-sidebar-home-tab" aria-controls="control-sidebar-home-tab" data-toggle="tab">Data</a></li>
+            <li role="presentation" class="active"><a href="#control-sidebar-settings-tab" aria-controls="control-sidebar-settings-tab" role="tab" data-toggle="tab">Note</a></li>
         </ul>
         <!-- Tab panes -->
         <div class="tab-content">
 
 
-          <!-- /.tab-pane -->
+            <!-- /.tab-pane -->
 
-          <!-- Settings tab content -->
-          <div class="tab-pane active" id="control-sidebar-settings-tab">
+            <!-- Settings tab content -->
+            <div class="tab-pane active" id="control-sidebar-settings-tab">
 
                 <div class="form-group">
                     <textarea class="form-control" id="body" rows="3" placeholder="Write Note Here"></textarea>
@@ -4422,394 +4426,395 @@
                 </div>
 
 
-          <!-- /.tab-pane -->
+                <!-- /.tab-pane -->
             </div>
 
             <div class="tab-pane" id="control-sidebar-home-tab">
 
-                     <p><strong>Released:</strong> 2011-11-22 17:33:27</p>
-                     <p><strong>Batch:</strong> B23_01198-01303_D012</p>
-                     <p><strong>Image:</strong> B23_01297.jpg</p>
-                     <p><strong>Image Status:</strong> Locked</p>
-                     <p><strong>Tagged with:</strong> Daniel Craig</p>
-                     <p> <strong>Approved By:</strong> Daniel Craig </p>
-                     <p><strong> Rejected By:</strong> </p>
-                     <p><strong> In General Albums:</strong> </p>
-                     <p><strong>Photographer:</strong></p>
-                     <p><strong>Caption:</strong> Bond (Daniel Craig) meets Q for the first time in the National
-                         Portrait Gallery.</p>
+                <p><strong>Released:</strong> 2011-11-22 17:33:27</p>
+                <p><strong>Batch:</strong> B23_01198-01303_D012</p>
+                <p><strong>Image:</strong> B23_01297.jpg</p>
+                <p><strong>Image Status:</strong> Locked</p>
+                <p><strong>Tagged with:</strong> Daniel Craig</p>
+                <p> <strong>Approved By:</strong> Daniel Craig </p>
+                <p><strong> Rejected By:</strong> </p>
+                <p><strong> In General Albums:</strong> </p>
+                <p><strong>Photographer:</strong></p>
+                <p><strong>Caption:</strong> Bond (Daniel Craig) meets Q for the first time in the National Portrait Gallery.</p>
 
-                 <!-- /.control-sidebar-menu -->
-
+                <!-- /.control-sidebar-menu -->
 
 
-               </div>
+
+            </div>
         </div>
 
-      </aside>
-      <!-- /.control-sidebar -->
+    </aside>
+    <!-- /.control-sidebar -->
 
-      <!-- Image Toolbar-->
-         <!-- ========= Image Transaction Report ========  -->
+    <!-- Image Toolbar-->
+    <!-- ========= Image Transaction Report ========  -->
     <div class="modal fade" id="imagetransreport" tabindex="-1" role="dialog" aria-labelledby="imgtransreport" aria-hidden="true">
 
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="db_com trareport_div modal-com">
-                            <div class="modal-header db_com">
-                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                <h4 class="modal-title" id="imgtransreport">Transaction Report</span>
-                                </h4>
-                            </div>
-                            <div class="modal-body db_com">
-
-
-                                <div class="db_com trareport-divtable">
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
-                                                    <th>Transaction Type</th>
-                                                    <th>Transaction Time</th>
-                                                    <th>IP</th>
-                                                    <th>Username</th>
-                                                    <th>Project</th>
-                                                    <th>Image Name</th>
-                                                    <th>Image Size</th>
-                                                </tr>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Download</td>
-                                                    <td>2015-04-16 02:58:12:0</td>
-                                                    <td>193.12.25.68</td>
-                                                    <td>Rousie Moustrie</td>
-                                                    <td>FS_PKO_DEMO</td>
-                                                    <td>sarvaya001.jpg</td>
-                                                    <td>FS_PKO_DEMO</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Download</td>
-                                                    <td>2015-05-16 02:58:12:0</td>
-                                                    <td>10.12.25.68</td>
-                                                    <td>John Pierce/td>
-                                                    <td>FS_PKO_DEMO</td>
-                                                    <td>sarvaya001.jpg</td>
-                                                    <td>FS_PKO_DEMO</td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="modal-footer db_com mf-btn">
-                                <button type="button">Export</button>
-                            </div>
-                        </div>
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="db_com trareport_div modal-com">
+                    <div class="modal-header db_com">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="imgtransreport">Transaction Report</span>
+                        </h4>
                     </div>
-                </div>
-
-            </div>
-
- <!-- ========= Image History ========  -->
- <div class="modal fade" id="imagehistory" tabindex="-1" role="dialog" aria-labelledby="imghistory" aria-hidden="true">
-
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="db_com trareport_div modal-com">
-                        <div class="modal-header db_com">
-                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <h4 class="modal-title" id="imghistory">Image History</span>
-                            </h4>
-                        </div>
-                        <div class="modal-body db_com">
+                    <div class="modal-body db_com">
 
 
-                            <div class="db_com trareport-divtable">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>Action Taken</th>
-                                                <th>Transaction DateTime</th>
-                                                <th>Details</th>
-                                                <th>User Performing Action</th>
+                        <div class="db_com trareport-divtable">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Transaction Type</th>
+                                            <th>Transaction Time</th>
+                                            <th>IP</th>
+                                            <th>Username</th>
+                                            <th>Project</th>
+                                            <th>Image Name</th>
+                                            <th>Image Size</th>
+                                        </tr>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Download</td>
+                                            <td>2015-04-16 02:58:12:0</td>
+                                            <td>193.12.25.68</td>
+                                            <td>Rousie Moustrie</td>
+                                            <td>FS_PKO_DEMO</td>
+                                            <td>sarvaya001.jpg</td>
+                                            <td>FS_PKO_DEMO</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Download</td>
+                                            <td>2015-05-16 02:58:12:0</td>
+                                            <td>10.12.25.68</td>
+                                            <td>John Pierce/td>
+                                                <td>FS_PKO_DEMO</td>
+                                                <td>sarvaya001.jpg</td>
+                                                <td>FS_PKO_DEMO</td>
+                                        </tr>
 
-                                            </tr>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Tagger #1 - tag added	</td>
-                                                <td>2015-04-16 02:58:12:0</td>
-                                                <td>Crew</td>
-                                                <td>ekim2</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tagger #1 - tag added</td>
-                                                <td>2015-04-16 02:58:12:0</td>
-                                                <td>Dean Cain</td>
-                                                <td>ekim2</td>
-                                           </tr>
-                                            <tr>
-                                                <td>Tagger #1 - submitted for review</td>
-                                                <td>2015-04-16 02:58:12:0</td>
-                                                <td>Dean Cain</td>
-                                                <td>ekim2</td>
-                                           </tr>
-                                            <tr>
-                                                <td>Tagger #2 - tag added	</td>
-                                                <td>2015-04-16 02:58:12:0</td>
-                                                <td>Dean Cain</td>
-                                                <td>cmartinez</td>
-                                            </tr>
-
-
-                                        </tbody>
-                                    </table>
-                                </div>
+                                    </tbody>
+                                </table>
                             </div>
-
-
                         </div>
-                        <!-- <div class="modal-footer db_com mf-btn">
-                            <button type="button">Export</button>
-                        </div> -->
+
+
+                    </div>
+                    <div class="modal-footer db_com mf-btn">
+                        <button type="button">Export</button>
                     </div>
                 </div>
             </div>
-
         </div>
 
-   <!-- ================== Group/Solo  =================== -->
+    </div>
 
-<div class="modal fade" id="imagesg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="vertical-alignment-helper">
-        <div class="modal-dialog vertical-align-center modal-sm">
+    <!-- ========= Image History ========  -->
+    <div class="modal fade" id="imagehistory" tabindex="-1" role="dialog" aria-labelledby="imghistory" aria-hidden="true">
+
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
-            <div class="db_com goto_div modal-com">
-                <div class="modal-header db_com">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                <div class="db_com trareport_div modal-com">
+                    <div class="modal-header db_com">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="imghistory">Image History</span>
+                        </h4>
+                    </div>
+                    <div class="modal-body db_com">
+
+
+                        <div class="db_com trareport-divtable">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Action Taken</th>
+                                            <th>Transaction DateTime</th>
+                                            <th>Details</th>
+                                            <th>User Performing Action</th>
+
+                                        </tr>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tagger #1 - tag added </td>
+                                            <td>2015-04-16 02:58:12:0</td>
+                                            <td>Crew</td>
+                                            <td>ekim2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tagger #1 - tag added</td>
+                                            <td>2015-04-16 02:58:12:0</td>
+                                            <td>Dean Cain</td>
+                                            <td>ekim2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tagger #1 - submitted for review</td>
+                                            <td>2015-04-16 02:58:12:0</td>
+                                            <td>Dean Cain</td>
+                                            <td>ekim2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tagger #2 - tag added </td>
+                                            <td>2015-04-16 02:58:12:0</td>
+                                            <td>Dean Cain</td>
+                                            <td>cmartinez</td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- <div class="modal-footer db_com mf-btn">
+                            <button type="button">Export</button>
+                        </div> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ================== Group/Solo  =================== -->
+
+    <div class="modal fade" id="imagesg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center modal-sm">
+                <div class="modal-content">
+                    <div class="db_com goto_div modal-com">
+                        <div class="modal-header db_com">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 
                     </button>
-                     <h4 class="modal-title" id="myModalLabel">Exclude/Include 1 Image(s).</h4>
+                            <h4 class="modal-title" id="myModalLabel">Exclude/Include 1 Image(s).</h4>
 
-                </div>
-                <div class="modal-body db_com">
-                <div class="row">
-                <div class="db_com sgpage">
-                <div class="col-lg-8 col-md-8 col-sm-8 col-md-offset-2 col-lg-offset-2  col-sm-offset-2  col-xs-12">
-                <h5><i class="fa fa-user-o" aria-hidden="true">&nbsp;&nbsp;</i><label>Dean Cain</label></h5>
-                <h5><i class="fa fa-user-o" aria-hidden="true">&nbsp;&nbsp;</i><label>Justin Henry</label></h5>
-                </div>
-                </div>
-                </div>
-                </div>
-                <!-- <div class="modal-footer db_com">
+                        </div>
+                        <div class="modal-body db_com">
+                            <div class="row">
+                                <div class="db_com sgpage">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-md-offset-2 col-lg-offset-2  col-sm-offset-2  col-xs-12">
+                                        <h5><i class="fa fa-user-o" aria-hidden="true">&nbsp;&nbsp;</i><label>Dean Cain</label></h5>
+                                        <h5><i class="fa fa-user-o" aria-hidden="true">&nbsp;&nbsp;</i><label>Justin Henry</label></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="modal-footer db_com">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 </div> -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
- <!-- ================== Image Caption =================== -->
- <div class="modal fade" id="imagecap" tabindex="-1" role="dialog" aria-labelledby="imgcaption" aria-hidden="true">
-    <div class="modal-dialog ">
-        <div class="modal-content">
-            <div class="db_com imgcap_div modal-com">
-                <div class="modal-header div_imgcap">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+    <!-- ================== Image Caption =================== -->
+    <div class="modal fade" id="imagecap" tabindex="-1" role="dialog" aria-labelledby="imgcaption" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="db_com imgcap_div modal-com">
+                    <div class="modal-header div_imgcap">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 
                 </button>
-                    <h4 class="modal-title" id="imgcaption">Image Caption:&nbsp;<span>Sarvaya001.jpg</span></h4>
+                        <h4 class="modal-title" id="imgcaption">Image Caption:&nbsp;<span>Sarvaya001.jpg</span></h4>
 
-                </div>
-                <div class="modal-body db_com">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="row">
-                            <div class="cap_cont db_com"     style="border-bottom: 1px solid;">
+                    </div>
+                    <div class="modal-body db_com">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="cap_cont db_com" style="border-bottom: 1px solid;">
                                     <div class="row">
 
-                                <div class="col-sm-6">
+                                        <div class="col-sm-6">
 
-                                       <button id="cap_mod" title="">Press to Hide Caption Box</button>
+                                            <button id="cap_mod" title="">Press to Hide Caption Box</button>
+
+                                        </div>
+                                        <div class="col-sm-6  nav_img ">
+
+                                            <p> <i class="fa fa-caret-square-o-left fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;<label>Navigate ALL Images:</label>                                                &nbsp;&nbsp;<i class="fa fa-caret-square-o-right fa-lg" aria-hidden="true"></i></p>
+
+                                        </div>
+                                    </div>
 
                                 </div>
-                                <div class="col-sm-6  nav_img ">
 
-                                       <p> <i class="fa fa-caret-square-o-left fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;<label>Navigate ALL Images:</label> &nbsp;&nbsp;<i class="fa fa-caret-square-o-right fa-lg" aria-hidden="true"></i></p>
-
-                                </div>
-                            </div>
-
-                            </div>
-
-                            <div class="cap_cont db_com" style=" border-bottom: 1px solid;">
+                                <div class="cap_cont db_com" style=" border-bottom: 1px solid;">
                                     <div class="row">
-                                <div class="col-sm-12">
-                                    <h5 style="color:#ddd; text-align:left;">Actors:</h5>
-                                    <div class="table-responsive" style="color:#ddd; font-size:12px;">
-                                            <table class="col-sm-12">
-                                                <tbody>
-                                                <tr>
-                                                <td class="col-sm-6">N/A (Dean Cain)</td>
-                                                <td class="col-sm-6">N/A (Dean Cain) </td>
+                                        <div class="col-sm-12">
+                                            <h5 style="color:#ddd; text-align:left;">Actors:</h5>
+                                            <div class="table-responsive" style="color:#ddd; font-size:12px;">
+                                                <table class="col-sm-12">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="col-sm-6">N/A (Dean Cain)</td>
+                                                            <td class="col-sm-6">N/A (Dean Cain) </td>
 
-                                                </tr>
-                                                <!-- <tr>
+                                                        </tr>
+                                                        <!-- <tr>
 
                                                         <td class="col-sm-6">EE-eeeeeeee</td>
                                                         <td class="col-sm-6">II-iiiiiiii</td>
 
                                                         </tr> -->
-                                                </tbody>
-                                            </table>
-                                   <!-- <label style="color:#A9A9A9; font-size:12px;">N/A (Dean Cain)
+                                                    </tbody>
+                                                </table>
+                                                <!-- <label style="color:#A9A9A9; font-size:12px;">N/A (Dean Cain)
                                     </label></br>
                                     <label style="color:#A9A9A9; font-size:12px;">N/A (Dean Cain) </label> -->
+                                            </div>
+                                            </br>
+                                        </div>
+                                    </div>
                                 </div>
-                            </br>
-                                </div>
-                            </div>
-                            </div>
-                                    <div class="cap_cont db_com"    >
-                                            <div class="row">
+                                <div class="cap_cont db_com">
+                                    <div class="row">
                                         <div class="col-sm-6">
-                                                <h5 style="color:#ddd; text-align:left;">Shortcut Keys (Press CTRL to activate) :</h5>
+                                            <h5 style="color:#ddd; text-align:left;">Shortcut Keys (Press CTRL to activate) :</h5>
                                         </div>
 
                                         <div class="col-sm-6">
-                                                <div class="div_shots">
+                                            <div class="div_shots">
 
 
 
-                                                    <button id="rme" class="pull-right" data-toggle="popover" data-placement="bottom"> Remove Key </button>
-                                                          <div id="remekey" class="hide reme_key">
-                                                            <div class="titlee">
-                                                                    <h5>If you would like to delete Shortcut(s)..! Please Check the Box.</h5>
-                                                            </div>
-                                                               <div class="db_com reshorts">
-                                                                <div class="table-responsive">
-                                                                <table class="col-sm-12 " >
+                                                <button id="rme" class="pull-right" data-toggle="popover" data-placement="bottom"> Remove Key </button>
+                                                <div id="remekey" class="hide reme_key">
+                                                    <div class="titlee">
+                                                        <h5>If you would like to delete Shortcut(s)..! Please Check the Box.</h5>
+                                                    </div>
+                                                    <div class="db_com reshorts">
+                                                        <div class="table-responsive">
+                                                            <table class="col-sm-12 ">
 
-                                                                        <tr>
-                                                                                <th ></th>
-                                                                                <th >Key</th>
-                                                                                <th >Description</th>
+                                                                <tr>
+                                                                    <th></th>
+                                                                    <th>Key</th>
+                                                                    <th>Description</th>
 
-                                                                        </tr>
+                                                                </tr>
 
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="checkbox check_r">
-                                                                                    <label class="chek-label"><input type="checkbox" value=""><span class="cr"><i class="cr-icon fa fa-check"></i></span></label>
-                                                                                </div>
-                                                                            </td>
-                                                                    <td >AA</td>
-                                                                    <td >aaaaaa</td>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox check_r">
+                                                                            <label class="chek-label"><input type="checkbox" value=""><span class="cr"><i class="cr-icon fa fa-check"></i></span></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>AA</td>
+                                                                    <td>aaaaaa</td>
 
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="checkbox check_r">
-                                                                                    <label class="chek-label"><input type="checkbox" value=""><span class="cr"><i class="cr-icon fa fa-check"></i></span></label>
-                                                                                </div>
-                                                                            </td>
-                                                                        <td >CC</td>
-                                                                        <td >cccccc</td>
-                                                                    </tr>
-                                                                    <tr >
-                                                                        <td>
-                                                                            <div class="checkbox check_r">
-                                                                                    <label class="chek-label"><input type="checkbox" value=""><span class="cr"><i class="cr-icon fa fa-check"></i></span></label>
-                                                                                </div>
-                                                                            </td>
-                                                                         <td >EE</td>
-                                                                         <td >eeeeee</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox check_r">
+                                                                            <label class="chek-label"><input type="checkbox" value=""><span class="cr"><i class="cr-icon fa fa-check"></i></span></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>CC</td>
+                                                                    <td>cccccc</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox check_r">
+                                                                            <label class="chek-label"><input type="checkbox" value=""><span class="cr"><i class="cr-icon fa fa-check"></i></span></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>EE</td>
+                                                                    <td>eeeeee</td>
 
-                                                                    </tr>
-                                                                    <tr >
-                                                                        <td>
-                                                                            <div class="checkbox check_r">
-                                                                                    <label class="chek-label"><input type="checkbox" value=""><span class="cr"><i class="cr-icon fa fa-check"></i></span></label>
-                                                                                </div>
-                                                                            </td>
-                                                                        <td >II</td>
-                                                                         <td >iiiiii</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="checkbox check_r">
+                                                                            <label class="chek-label"><input type="checkbox" value=""><span class="cr"><i class="cr-icon fa fa-check"></i></span></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>II</td>
+                                                                    <td>iiiiii</td>
 
-                                                                    </tr>
+                                                                </tr>
 
 
-                                                                </table>
-                                                            </div>
+                                                            </table>
                                                         </div>
+                                                    </div>
 
 
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                         <div class="rme_bte">
+                                                        <div class="rme_bte">
                                                             <button type="button" class="pull-right">REMOVE!</button>
                                                         </div>
-                                                        </div>
+                                                    </div>
 
                                                 </div>
-                                                   <!--<a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">Bottom</a> -->
-                                                   <button id="ede" class="pull-right"  data-toggle="popover" data-placement="bottom"> Edit Key</button>
-                                                   <div id="edikey" class="hide edi_key">
-                                                       <div class="titlee">
-                                                               <h5>Modify the Shortcut Key(s) and/or Value</h6>
-                                                       </div>
-                                                       <div class="db_com edpage">
-                                                           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                               <h6>Key</h6>
-                                                           </div>
-                                                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                                                   <h6>Description</h6>
-                                                           </div>
-                                                           <div class="db_com edshorts">
-                                                           <div class="table-responsive">
+                                                <!--<a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">Bottom</a> -->
+                                                <button id="ede" class="pull-right" data-toggle="popover" data-placement="bottom"> Edit Key</button>
+                                                <div id="edikey" class="hide edi_key">
+                                                    <div class="titlee">
+                                                        <h5>Modify the Shortcut Key(s) and/or Value</h6>
+                                                    </div>
+                                                    <div class="db_com edpage">
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                            <h6>Key</h6>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                                            <h6>Description</h6>
+                                                        </div>
+                                                        <div class="db_com edshorts">
+                                                            <div class="table-responsive">
 
-                                                           <table class="col-sm-12">
-                                                               <tbody>
-                                                               <tr>
-                                                               <td class="col-sm-4"><input type="text" class="form-control" id="usr" value="AA"></td>
-                                                               <td class="col-sm-8"><input type="text" class="form-control" id="usr" value="aaaaaa"></td>
+                                                                <table class="col-sm-12">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="col-sm-4"><input type="text" class="form-control" id="usr"
+                                                                                    value="AA"></td>
+                                                                            <td class="col-sm-8"><input type="text" class="form-control" id="usr"
+                                                                                    value="aaaaaa"></td>
 
-                                                               </tr>
+                                                                        </tr>
 
-                                                               </tbody>
-                                                           </table>
-                                                           </div>
-                                                           </div>
-                                                       </div>
-                                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                               <div class="ede_bte">
-                                                                  <button type="button" class="pull-right">UPDATE!</button>
-                                                              </div>
-                                                       </div>
-                                               </div>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="ede_bte">
+                                                            <button type="button" class="pull-right">UPDATE!</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                                                <button id="adde"class="pull-right"  data-toggle="popover" data-placement="bottom" >Add Key  </button>
+                                                <button id="adde" class="pull-right" data-toggle="popover" data-placement="bottom">Add Key  </button>
                                                 <div id="addkey" class="hide add_key">
                                                     <div class="titlee">
-                                                            <h5>Enter New Shortcut Keys & Value</h5>
+                                                        <h5>Enter New Shortcut Keys & Value</h5>
                                                     </div>
                                                     <div class="db_com adpage">
                                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                                             <h6>Keys:</h6>
                                                         </div>
                                                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                                                <h6>Description:</h6>
+                                                            <h6>Description:</h6>
                                                         </div>
 
                                                     </div>
                                                     <div class="db_com adpage">
                                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="form-group">
+                                                            <div class="form-group">
                                                                 <input type="text" class="form-control" id="usr">
                                                             </div>
                                                         </div>
@@ -4819,125 +4824,125 @@
                                                             </div>
                                                         </div>
 
-                                                     </div>
+                                                    </div>
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                         <div class="add_bte">
-                                                        <button type="button" class="pull-right">ADD!</button>
+                                                            <button type="button" class="pull-right">ADD!</button>
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    </div>
-                                   </div>
-                                   <div class="cap_cont db_com ">
+                                    <div class="cap_cont db_com ">
                                         <div class="row"></div>
-                                    <div class="table-responsive" style="color:#ddd; font-size:12px;">
-                                        <table class="col-sm-8">
-                                            <tbody>
-                                            <tr>
-                                            <td class="col-sm-6">AA-aaaaaaaa</td>
-                                            <td class="col-sm-6">CC-cccccccc</td>
+                                        <div class="table-responsive" style="color:#ddd; font-size:12px;">
+                                            <table class="col-sm-8">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="col-sm-6">AA-aaaaaaaa</td>
+                                                        <td class="col-sm-6">CC-cccccccc</td>
 
-                                            </tr>
-                                            <tr>
-                                                <td class="col-sm-6">EE-eeeeeeee</td>
-                                                <td class="col-sm-6">II-iiiiiiii</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-sm-6">EE-eeeeeeee</td>
+                                                        <td class="col-sm-6">II-iiiiiiii</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
-                                   </div>
-                                </div>
                                 </div>
                             </div>
+                        </div>
 
-                    <div class="col-sm-12">
+                        <div class="col-sm-12">
 
-                        <div class="to_div db_com">
-                               <!-- <h5 style="color:#ddd; text-align:left;">Shortcut Keys :<p><span style="color:#A9A9A9; font-size:12px;" >Add Key</span><span style="color:#A9A9A9; font-size:12px;"> Remove Key</span><span style="color:#A9A9A9; font-size:12px;"> Edit Key</span></p></h5> -->
-                               <div class="form-group">
-                                <textarea class="form-control" id="body" rows="7"></textarea>
-                               </div>
+                            <div class="to_div db_com">
+                                <!-- <h5 style="color:#ddd; text-align:left;">Shortcut Keys :<p><span style="color:#A9A9A9; font-size:12px;" >Add Key</span><span style="color:#A9A9A9; font-size:12px;"> Remove Key</span><span style="color:#A9A9A9; font-size:12px;"> Edit Key</span></p></h5> -->
+                                <div class="form-group">
+                                    <textarea class="form-control" id="body" rows="7"></textarea>
+                                </div>
 
-                    </div>
-                    </div>
+                            </div>
+                        </div>
 
 
-                    <div class="save_cap db_com">
+                        <div class="save_cap db_com">
                             <div class="col-sm-6">
-                                    <div class="checkbox down-input di-check">
-                                            <label class="chek-label">
+                                <div class="checkbox down-input di-check">
+                                    <label class="chek-label">
                             <input type="checkbox" value="" checked>
                             <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                             Autosave when paging
                             </label>
-                                        </div>
                                 </div>
+                            </div>
                             <div class="col-sm-6">
-                            <button title="Save Caption"type="button" class="pull-right">SAVE</button>
+                                <button title="Save Caption" type="button" class="pull-right">SAVE</button>
+                            </div>
                         </div>
-                    </div>
 
 
-                   <div class="sel_cap db_com">
+                        <div class="sel_cap db_com">
 
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
-                                    <div class="form-group">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
 
-                                        <select class=" form-control" title="Select Existing Caption">
+                                    <select class=" form-control" title="Select Existing Caption">
                                               <option>Select Existing Caption</option>
                                         </select>
-                                    </div>
                                 </div>
+                            </div>
                         </div>
 
-                   <div class="option_cap db_com">
+                        <div class="option_cap db_com">
 
                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                             <div class="cap_reporte">
-                               <div class="imreport-cont">
-                                  <h5>Image Caption Report:</h5>
+                                <div class="cap_reporte">
+                                    <div class="imreport-cont">
+                                        <h5>Image Caption Report:</h5>
 
-                                   <div class="radio down-input">
-                                         <label><input type="radio" name="o1" value="" checked><span class="cr"><i class="cr-icon fa fa-circle"></i></span>All</label>
-                                   </div>
-                                   <div class="radio down-input">
-                                         <label><input type="radio" name="o1" value=""><span class="cr"><i class="cr-icon fa fa-circle"></i></span>Current Filter</label>
+                                        <div class="radio down-input">
+                                            <label><input type="radio" name="o1" value="" checked><span class="cr"><i class="cr-icon fa fa-circle"></i></span>All</label>
+                                        </div>
+                                        <div class="radio down-input">
+                                            <label><input type="radio" name="o1" value=""><span class="cr"><i class="cr-icon fa fa-circle"></i></span>Current Filter</label>
+                                        </div>
+
                                     </div>
-
-                               </div>
-                             <div class=" cap_btns">
-                                   <div class="row">
-                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                               <button type="button" data-toggle="modal" data-target="#generate_imgcreport">Generate New</button>
-                                         </div>
-                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                               <button type="button" class="mbody-btn">Return To Previous</button>
-                                         </div>
-                                   </div>
-                             </div>
+                                    <div class=" cap_btns">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <button type="button" data-toggle="modal" data-target="#generate_imgcreport">Generate New</button>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <button type="button" class="mbody-btn">Return To Previous</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                           </div>
 
-                           <div class="zoome">
-                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                        <button title=""type="button" class="pull-right">Super Zoom</button>
-                             </div>
-                          </div>
-                  </div>
-            </div>
-            </div>
-            <!--<div class="modal-footer db_com">
+                            <div class="zoome">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <button title="" type="button" class="pull-right">Super Zoom</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="modal-footer db_com">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
             </div> -->
+            </div>
         </div>
     </div>
-</div>
-</div>
+    </div>
 
 
-<!-- Generate Image Caption Report  -->
-<div class="modal fade" id="generate_imgcreport" tabindex="-1" role="dialog" aria-labelledby="genimgcreport" aria-hidden="true">
+    <!-- Generate Image Caption Report  -->
+    <div class="modal fade" id="generate_imgcreport" tabindex="-1" role="dialog" aria-labelledby="genimgcreport" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="db_com genimreport_div genicreport_div modal-com">
@@ -5039,10 +5044,22 @@
 
 
     <script>
+        var selectCount = 1;
         $(document).ready(function () {
             $('.db_carousel').carousel({
                 interval: false
             })
+                    
+            $(document).on("change", "#filtered_data", function () {
+                
+                    
+                selected_filtered = $("#filtered_data option:selected").val();
+                localStorage.setItem("selectedfilter", selected_filtered);
+            
+                window.location.href=selected_filtered;
+                // if(selected_filter.indexOf('viewproject.html')>-1){
+                //     window.location.href=selected_filter;
+            });
         });
         $('.modal-dialog').draggable();
 
@@ -5050,7 +5067,7 @@
         $(document).ready(function () {
             var $mainButton = $(".tile .float"),
                 $zoommenu = $(".tile .soc");
-            $(document).on("click",".tile .float", function () {
+            $(document).on("click", ".tile .float", function () {
                 var id = ($(this).attr('id'));
                 $zoommenu = $(".ts" + id);
                 $(".soc").not($zoommenu).removeClass("pad");
@@ -5059,10 +5076,10 @@
             });
         });
 
-        $(".img_toolbar").on("click",function() {
+        $(".img_toolbar").on("click", function () {
             $(".float").html($(".float").html() == '<i class="fa fa-times my-float"></i>' ? '<i class="fa fa-plus my-float"></i>' : '<i class="fa fa-times my-float"></i>');
-         $(".soc").toggleClass("pad");
-         });
+            $(".soc").toggleClass("pad");
+        });
 
         $(function () {
             var Accordion = function (el, multiple) {
@@ -5099,25 +5116,32 @@
         $(document).ready(function () {
             var SizeOfImages;
             var noofImages;
+
+            
+
             var no_of_img = localStorage.getItem("selectedNoOfImages");
             var size_of_img = localStorage.getItem("selectedSize");
-            SizeOfImages = size_of_img ? size_of_img : "l";
-            noofImages = no_of_img? no_of_img:20;
-            
 
+            var selected_filter= localStorage.getItem("selectedfilter");
+
+            SizeOfImages = size_of_img ? size_of_img : "l";
+            noofImages = no_of_img ? no_of_img : 20;
+
+            filterselected=selected_filter?selected_filter:"Custom Filter";
             $(".img_size").val(SizeOfImages).change();
             $(".img_no").val(noofImages).change();
-           // $(".img_size").val(SizeOfImages);
-            
-            //localStorage.setItem("selectedNoOfImages"
-          userObj = JSON.parse(localStorage.getItem("userObj"));
-          $("#user-name").html(userObj.firstName);
-          var html = userObj.firstName+" "+userObj.lastName+" - EXEC";
-          $("#user-info").html(html);
+            //$(".filter_data").val(filterselected).change();
+            // $(".img_size").val(SizeOfImages);
 
-            var imageData =  [];
-            var imageUrlsArrayLevel1 =  [];
-            var imageUrlsArrayLevel2 =  [];
+            //localStorage.setItem("selectedNoOfImages"
+            userObj = JSON.parse(localStorage.getItem("userObj"));
+            $("#user-name").html(userObj.firstName);
+            var html = userObj.firstName + " " + userObj.lastName + " - EXEC";
+            $("#user-info").html(html);
+
+            var imageData = [];
+            var imageUrlsArrayLevel1 = [];
+            var imageUrlsArrayLevel2 = [];
 
             $("button").click(function () {
                 $("#panel").slideToggle("slow");
@@ -5126,52 +5150,52 @@
             //Abhi
             projectId = localStorage.getItem("projectId");
             $.ajax({
-              type:"GET",
-              url:apiurl+"projects/"+projectId,
-              dataType:"json",
-              headers: {
-                "X-API-KEY":localStorage.getItem("id_token")
-              },
-              beforeSend:function(){},
-              success:function(data){
-                var html = "";
-                for(var i=0;i<data.albumData.length; i++){
-                  html +='<li><a href="javascript:void(0);"><i class="fa fa-file-image-o albumSelect" aria-hidden="true" id="'+data.albumData[i].id+'">&nbsp;&nbsp;</i>'+
-                  '<span id="'+data.albumData[i].id+'" class="albumLink">'+data.albumData[i].name+'</span><span id="count_'+data.albumData[i].id+'"> ('+data.albumData[i].imageCount+')<span></a></li>';
-                }
-                $("#albums").append(html);
-                // Shiv Show Grid code
-                imageData = data.imageData;
-                var flag = false;
-                var level1Images = [];
-                imageData.forEach(function(key,value){
-                    if(SizeOfImages == "m"){
-                        key.url = key.url.replace("300:300","200:200");
-                       
+                type: "GET",
+                url: apiurl + "projects/" + projectId,
+                dataType: "json",
+                headers: {
+                    "X-API-KEY": localStorage.getItem("id_token")
+                },
+                beforeSend: function () { },
+                success: function (data) {
+                    var html = "";
+                    for (var i = 0; i < data.albumData.length; i++) {
+                        html += '<li><a href="javascript:void(0);"><i class="fa fa-file-image-o albumSelect" aria-hidden="true" id="' + data.albumData[i].id + '">&nbsp;&nbsp;</i>' +
+                            '<span id="' + data.albumData[i].id + '" class="albumLink">' + data.albumData[i].name + '</span><span id="count_' + data.albumData[i].id + '"> (' + data.albumData[i].imageCount + ')<span></a></li>';
                     }
-                    else if(SizeOfImages =="s"){
-                        key.url = key.url.replace("300:300","125:125");
-                        
-                    }
-                })
-                var imageDataLength = data.imageData.length;
-                for(var i = 0; i< imageDataLength; i++){
-                    var image = data.imageData[i];
+                    $("#albums").append(html);
+                    // Shiv Show Grid code
+                    imageData = data.imageData;
+                    var flag = false;
+                    var level1Images = [];
+                    imageData.forEach(function (key, value) {
+                        if (SizeOfImages == "m") {
+                            key.url = key.url.replace("300:300", "200:200");
+
+                        }
+                        else if (SizeOfImages == "s") {
+                            key.url = key.url.replace("300:300", "125:125");
+
+                        }
+                    })
+                    var imageDataLength = data.imageData.length;
+                    for (var i = 0; i < imageDataLength; i++) {
+                        var image = data.imageData[i];
                         $("#imgList").append(`
                                 <div class="img_div col-sm-4 col-md-4 col-lg-4" id="img_li_div">
                                                     <div class="span3">
-                                                        <div class="imge" assetName="`+image.name+`">
+                                                        <div class="imge" assetName="`+ image.name + `">
                                                         <a href="javascript:void(0)" class="thumbnail img-check">
-                                                            <img class="getindex" src="`+image.url+`" name="`+image.name+`"  id="`+image.id+`"
-                                                            data-index="`+i+`" assetName="`+image.name+`"">
+                                                            <img class="getindex" src="`+ image.url + `" name="` + image.name + `"  id="` + image.id + `"
+                                                            data-index="`+ i + `" assetName="` + image.name + `"">
                                                         </a>
                                                         </div>
                                                         <div class="tile">
-                                                            <h3> <span>`+image.name+` </span> </h3>
-                                                            <div class="float menu-share" id="`+i+`">
+                                                            <h3> <span>`+ image.name + ` </span> </h3>
+                                                            <div class="float menu-share" id="`+ i + `">
                                                                 <i class="fa fa-plus my-float"></i>
                                                             </div>
-                                                            <div class="soc ts`+i+`">
+                                                            <div class="soc ts`+ i + `">
                                                                 <a href="retouch.html" title="Retouch Comment"><i class="fa fa-paint-brush"></i></a>
                                                                 <button class="btn btn_image" title="Image Transaction"  data-toggle="modal" data-target="#imagetransreport">T</button>
                                                                 <button class="btn btn_image" title="Image History"  data-toggle="modal" data-target="#imagehistory">H</button>
@@ -5179,92 +5203,110 @@
                                                                 <button class="btn btn_image" title="Image Captions"  data-toggle="modal" data-target="#imagecap"><i class="fa fa-comment-o"></i></button>
 
                                                                 <a href="#" title="Image Notes" class="button1" ><i class="fa fa-pencil-square-o"></i></a>
-                                                                <button type="button" id="`+image.id+`" data-imgindex="`+i+`"  name="`+image.name+`"  data-url="`+image.url+`" class="btn btn_image enlargeImg" data title="Enlarge Image"><i class="fa fa-search-plus"></i></button>
+                                                                <button type="button" id="`+ image.id + `" data-imgindex="` + i + `"  name="` + image.name + `"  data-url="` + image.url + `" class="btn btn_image enlargeImg" data title="Enlarge Image"><i class="fa fa-search-plus"></i></button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                 `)
-                                flag = true;
+                        flag = true;
+                    }
+
+
+
+                    console.log("noofImages");
+                    console.log(noofImages);
+                    if (flag) {
+                        $('#easyPaginate').easyPaginate({
+                            paginateElement: '.img_div',
+                            elementsPerPage: noofImages,
+                            effect: 'climb',
+                            gridType: "main"
+                        });
+                    }
+                    // $(document).on('click', '#filimages', function () {
+                    // for (var i = 0; i < imageDataLength; i++) {
+                    //     var image = data.imageData[i];
+                    //     $("#div_list").append(`
+                    //         <p> <span>`+ image.name + ` </span> </p>
+                    //     `)
+                    // }
+                    // });
+
+                    $("#filimages").click(function(){
+                        for (var i = 0; i < imageDataLength; i++) {
+                            var image = data.imageData[i];
+                            $(".filter_imgs").append('<p> <span>'+ image.name + ' </span> </p>');
                         }
-                        
-                      
-                        console.log("noofImages");
-                        console.log(noofImages);
-                        if(flag){
-                            $('#easyPaginate').easyPaginate({
-                                paginateElement: '.img_div',
-                                  elementsPerPage: noofImages,
-                                 effect: 'climb',
-                                 gridType: "main"
-                            });
-                        }
+                        $('#sda_ffl').modal('toggle');
+                    })
+
                     level1Images = data.imageData;
                     var arr = [];
-                    level1Images.forEach(function(key,value){
-                    key.url = key.url.replace("300:300","700:700");
-                    var ob = {};
-                    ob.id = key.id;
-                    ob.name = key.name;
-                    ob.url = key.url;
-                    arr.push(ob);
-                })
-                localStorage.setItem('allImages',JSON.stringify(arr));
-              },
-              error:function(data){}
+                    level1Images.forEach(function (key, value) {
+                        key.url = key.url.replace("300:300", "700:700");
+                        var ob = {};
+                        ob.id = key.id;
+                        ob.name = key.name;
+                        ob.url = key.url;
+                        arr.push(ob);
+                    })
+                    localStorage.setItem('allImages', JSON.stringify(arr));
+                },
+                error: function (data) { }
             });
-            var storeIndexes =[];
+            var storeIndexes = [];
 
-            $(document).on('click','.enlargeImg',function(){
+            $(document).on('click', '.enlargeImg', function () {
                 var element = $(this).parent().closest('.tile').siblings('.imge').find('img');
                 enlargeImagePage(element);
             });
 
-            $("#albums").on('click','.albumLink',function(){
+            $("#albums").on('click', '.albumLink', function () {
                 function reload_js(src) {
-                $('script[src="' + src + '"]').remove();
+                    $('script[src="' + src + '"]').remove();
                     $('<script>').attr('src', src).appendTo('head');
-                        console.log("Reloaded");
-                    }
+                    console.log("Reloaded");
+                }
                 reload_js('js/jquery.easyPaginate1.js');
                 storeIndexes = [];
                 $('.imge').removeClass("selectborder");
                 getSelectedImages();
-              var id = $(this).attr("id");
-              var projectId = localStorage.getItem("projectId");
-              $.ajax({
-                type:"GET",
-                url:apiurl+"albums/images/"+projectId+"/"+id,
-                dataType:"json",
-                headers: {
-                  "X-API-KEY":localStorage.getItem("id_token")
-                },
-                beforeSend:function(){},
-                success:function(data){
-                  if(data.imageData.length == 0){
-                    alert("No assets found");
-                    return false;
-                  }
-                  var flag=false;
-                 // $(".easyPaginateNav").empty();
-                  $("#mainGrid").html("");
-                  $("#albumImgList").empty();
-                  for(var i = 0; i< data.imageData.length; i++){
-                    var image = data.imageData[i];
-                      $("#albumImgList").append(`
+                var id = $(this).attr("id");
+                var projectId = localStorage.getItem("projectId");
+                $.ajax({
+                    type: "GET",
+                    url: apiurl + "albums/images/" + projectId + "/" + id,
+                    dataType: "json",
+                    headers: {
+                        "X-API-KEY": localStorage.getItem("id_token")
+                    },
+                    beforeSend: function () { },
+                    success: function (data) {
+                        if (data.imageData.length == 0) {
+                            alert("No assets found");
+                            return false;
+                        }
+                        var flag = false;
+                        // $(".easyPaginateNav").empty();
+                        $("#mainGrid").html("");
+                        $("#albumImgList").empty();
+                        for (var i = 0; i < data.imageData.length; i++) {
+                            var image = data.imageData[i];
+                            $("#albumImgList").append(`
                               <div class="img_div_album col-sm-4 col-md-4 col-lg-4" id="img_li_div">
                                                   <div class="span3">
-                                                      <div class="imge" assetName="`+image.name+`">
+                                                      <div class="imge" assetName="`+ image.name + `">
                                                       <a href="javascript:void(0)" class="thumbnail img-check">
-                                                          <img class="getindex" src=`+image.url+`" data-index="`+i+`" assetName="`+image.name+`">
+                                                          <img class="getindex" src=`+ image.url + `" data-index="` + i + `" assetName="` + image.name + `">
                                                       </a>
                                                       </div>
                                                       <div class="tile">
-                                                          <h3> <span>`+image.name+` </span> </h3>
-                                                          <div class="float menu-share" id="`+i+`">
+                                                          <h3> <span>`+ image.name + ` </span> </h3>
+                                                          <div class="float menu-share" id="`+ i + `">
                                                               <i class="fa fa-plus my-float"></i>
                                                           </div>
-                                                          <div class="soc ts`+i+`">
+                                                          <div class="soc ts`+ i + `">
                                                               <a href="retouch.html" title="Retouch Comment"><i class="fa fa-paint-brush"></i></a>
                                                               <button class="btn btn_image" title="Image Transaction"  data-toggle="modal" data-target="#imagetransreport">T</button>
                                                               <button class="btn btn_image" title="Image History"  data-toggle="modal" data-target="#imagehistory">H</button>
@@ -5278,14 +5320,14 @@
                                                   </div>
                                               </div>
                               `);
-                              flag = true;
-                      }
-                      console.log("noofImages");
-                      console.log(noofImages);
-                      var imgDataLenght = data.imageData.length;
-                      var cnt = imgDataLenght >noofImages?noofImages:imgDataLenght;
-                      console.log(cnt);
-                      if(flag){
+                            flag = true;
+                        }
+                        console.log("noofImages");
+                        console.log(noofImages);
+                        var imgDataLenght = data.imageData.length;
+                        var cnt = imgDataLenght > noofImages ? noofImages : imgDataLenght;
+                        console.log(cnt);
+                        if (flag) {
                             $('#albumEasyPaginate').easyPaginate1({
                                 paginateElement1: '.img_div_album',
                                 elementsPerPage1: cnt,
@@ -5293,119 +5335,119 @@
                                 gridType: "album"
                             });
                         }
-                },
-                error:function() {}
-              });
+                    },
+                    error: function () { }
+                });
             });
 
-            $("#albums").on('click','.albumSelect',function(){
-              var id = $(this).attr("id");
-              if(selectedAlbum == ""){
-                selectedAlbum = id;
-                localStorage.setItem("selectedAlbum",id);
-                $(this).addClass("border");
-              }else if(selectedAlbum == id){
-                selectedAlbum = "";
-                localStorage.setItem("selectedAlbum","");
-                $(this).removeClass("border");
-              }else{
-                selectedAlbum = id;
-                localStorage.setItem("selectedAlbum",id);
-                $("#albums li i").removeClass("border");
-                $(this).addClass("border");
-              }
-            });
-
-            $('body').on('keydown', function(event) {
-                if(selectedAlbum != "" && event.keyCode == 84){
-                  $.ajax({
-                    type:"POST",
-                    //url: apiurl+"albums/images",
-                    url:"http://local.api.fs.com/api/albums/images",
-                    dataType:"json",
-
-                    data:{id:selectedAlbum,imageData:getFirstSelectedImageIndex},
-                    headers: {
-                      "X-API-KEY":localStorage.getItem("id_token")
-                    },
-                    beforeSend:function(){},
-                    success:function(data){
-                      if(data.action == 0){
-                        alert("Something went wrong");
-                      }else{
-                        var html = ' ('+data.imageCount+')';
-                        $("#count_"+selectedAlbum).html(html);
-                      }
-                    },
-                    error:function() {}
-                  });
+            $("#albums").on('click', '.albumSelect', function () {
+                var id = $(this).attr("id");
+                if (selectedAlbum == "") {
+                    selectedAlbum = id;
+                    localStorage.setItem("selectedAlbum", id);
+                    $(this).addClass("border");
+                } else if (selectedAlbum == id) {
+                    selectedAlbum = "";
+                    localStorage.setItem("selectedAlbum", "");
+                    $(this).removeClass("border");
+                } else {
+                    selectedAlbum = id;
+                    localStorage.setItem("selectedAlbum", id);
+                    $("#albums li i").removeClass("border");
+                    $(this).addClass("border");
                 }
-          	});
+            });
 
-            $("#addAlbumSubmit").click(function(){
-              var albumName = $("#albumName").val();
-              var projectId = localStorage.getItem("projectId");
-              $.ajax({
-                type:"POST",
-                url:apiurl+"albums",
-                dataType:"json",
-                data:{name:albumName,projectId:projectId},
-                headers: {
-                  "X-API-KEY":localStorage.getItem("id_token")
-                },
-                beforeSend:function(){},
-                success:function(data){
-                  if(data.status){
-                    $("#albumName").val("");
-                    var html ='<li><a href="javascript:void(0);"><i class="fa fa-file-image-o albumSelect" aria-hidden="true" id="'+data.id+'">&nbsp;&nbsp;</i>'+
-                    '<span id="'+data.id+'" class="albumLink">'+data.name+'</span><span id="count_'+data.id+'"><span></a></li>';
-                    $("#AddAlbum").modal('hide');
-                    $("#albums").append(html);
+            $('body').on('keydown', function (event) {
+                if (selectedAlbum != "" && event.keyCode == 84) {
+                    $.ajax({
+                        type: "POST",
+                        //url: apiurl+"albums/images",
+                        url: "http://local.api.fs.com/api/albums/images",
+                        dataType: "json",
 
-                  }else{
-                    alert(data.message);
-                  }
-                },
-                error:function() {}
-              });
+                        data: { id: selectedAlbum, imageData: getFirstSelectedImageIndex },
+                        headers: {
+                            "X-API-KEY": localStorage.getItem("id_token")
+                        },
+                        beforeSend: function () { },
+                        success: function (data) {
+                            if (data.action == 0) {
+                                alert("Something went wrong");
+                            } else {
+                                var html = ' (' + data.imageCount + ')';
+                                $("#count_" + selectedAlbum).html(html);
+                            }
+                        },
+                        error: function () { }
+                    });
+                }
+            });
+
+            $("#addAlbumSubmit").click(function () {
+                var albumName = $("#albumName").val();
+                var projectId = localStorage.getItem("projectId");
+                $.ajax({
+                    type: "POST",
+                    url: apiurl + "albums",
+                    dataType: "json",
+                    data: { name: albumName, projectId: projectId },
+                    headers: {
+                        "X-API-KEY": localStorage.getItem("id_token")
+                    },
+                    beforeSend: function () { },
+                    success: function (data) {
+                        if (data.status) {
+                            $("#albumName").val("");
+                            var html = '<li><a href="javascript:void(0);"><i class="fa fa-file-image-o albumSelect" aria-hidden="true" id="' + data.id + '">&nbsp;&nbsp;</i>' +
+                                '<span id="' + data.id + '" class="albumLink">' + data.name + '</span><span id="count_' + data.id + '"><span></a></li>';
+                            $("#AddAlbum").modal('hide');
+                            $("#albums").append(html);
+
+                        } else {
+                            alert(data.message);
+                        }
+                    },
+                    error: function () { }
+                });
             });
         });
 
         /* Shiv */
-        function enlargeImagePage(selectedImage){
+        function enlargeImagePage(selectedImage) {
             localStorage.setItem("level1Image", selectedImage.attr('id'));
             localStorage.setItem("level1ImageName", selectedImage.attr('name'));
-            localStorage.setItem("level1SelectedImageIndex",selectedImage.data('index'))
-            
+            localStorage.setItem("level1SelectedImageIndex", selectedImage.data('index'))
+
             window.location.replace('enlarge.html');
         }
 
         var getFirstSelectedImageIndex;
         var getLastSelectedImageIndex;
-        var getSelectedImagesIndex =[];
+        var getSelectedImagesIndex = [];
         var keycode = null;
         var allSelectedImagesArray = [];
-        $(document).on('keydown', function(e){
+        $(document).on('keydown', function (e) {
             keycode = e.keyCode || e.which;
-            if(e.keyCode == 88){
+            if (e.keyCode == 90) {
                 var getAllSelectedImageArray = [];
-                getAllSelectedImageArray =  $('.selectborder');
-                if(getAllSelectedImageArray.length >1){
+                getAllSelectedImageArray = $('.selectborder');
+                if (getAllSelectedImageArray.length > 1) {
                     console.log("Please select only image!");
                 }
-                else{
+                else {
                     enlargeImagePage(getAllSelectedImageArray.find("img"));
                 }
             }
         });
-        $(document).on('keyup', function(e){
+        $(document).on('keyup', function (e) {
             keycode = null;
-        }); 
+        });
 
-        $(document).on("click",".imge",function(event){
+        $(document).on("click", ".imge", function (event) {
             //Single image select deselect
-            if(keycode == null){
-                storeIndexes =[];
+            if (keycode == null) {
+                storeIndexes = [];
                 // if($(this).hasClass("selectborder")){
                 //     $('.imge').removeClass("selectborder");
                 //     $(this).removeClass("selectborder"); 
@@ -5413,24 +5455,24 @@
                 //     return false;
                 // }
                 // else{
-                    $('.imge').removeClass("selectborder");
-                    $(this).addClass("selectborder");
-                    const ct = $(this).find( "img").data('index');
-                    getFirstSelectedImageIndex = ct;
-                    storeIndexes.push(ct);
-                    getSelectedImages();
-                    return false;
+                $('.imge').removeClass("selectborder");
+                $(this).addClass("selectborder");
+                const ct = $(this).find("img").data('index');
+                getFirstSelectedImageIndex = ct;
+                storeIndexes.push(ct);
+                getSelectedImages();
+                return false;
                 //}
             }
             // Ctrl key image selection
-            if((keycode == 17 )|| (keycode == 224)){
-                const ct = $(this).find( "img").data('index');
-                if($(this).hasClass("selectborder")){
-                    $(this).removeClass("selectborder"); 
+            if ((keycode == 17) || (keycode == 224)) {
+                const ct = $(this).find("img").data('index');
+                if ($(this).hasClass("selectborder")) {
+                    $(this).removeClass("selectborder");
                     var index = getSelectedImagesIndex.indexOf(ct);
-                    getSelectedImagesIndex.splice(index,1);
+                    getSelectedImagesIndex.splice(index, 1);
                 }
-                else{
+                else {
                     $(this).addClass("selectborder")
                     getSelectedImagesIndex.push(ct);
                 }
@@ -5438,17 +5480,17 @@
                 return false;
             }
             // Shift key image selection
-            if(keycode == 16){
+            if (keycode == 16) {
                 storeIndexes[0] = getFirstSelectedImageIndex;
                 getLastSelectedImageIndex = $(this).find("img").data('index');
                 storeIndexes.push(getLastSelectedImageIndex);
-                if(storeIndexes[0]> storeIndexes[1]){
+                if (storeIndexes[0] > storeIndexes[1]) {
                     var temp = storeIndexes[0];
                     storeIndexes[0] = storeIndexes[1];
                     storeIndexes[1] = temp;
                 }
-                for(var i=storeIndexes[0]; i<=storeIndexes[1]; i++){
-                    $('img[data-index="'+i+'"]').parent().closest('div').addClass('selectborder');
+                for (var i = storeIndexes[0]; i <= storeIndexes[1]; i++) {
+                    $('img[data-index="' + i + '"]').parent().closest('div').addClass('selectborder');
                 }
                 storeIndexes[0] = getFirstSelectedImageIndex;
                 storeIndexes = [];
@@ -5458,11 +5500,11 @@
         });
 
 
-        function getSelectedImages(){
+        function getSelectedImages() {
             var getAllSelectedImageArray = [];
             allSelectedImagesArray = [];
-            getAllSelectedImageArray =  $('.selectborder');
-            getAllSelectedImageArray.each(function(key,value){
+            getAllSelectedImageArray = $('.selectborder');
+            getAllSelectedImageArray.each(function (key, value) {
                 var obj = {};
                 obj.id = $(value).find("img").attr('id');
                 obj.name = $(value).find("img").attr('assetName');
@@ -5470,99 +5512,112 @@
                 allSelectedImagesArray.push(obj);
             })
             localStorage.setItem("selectedimgs", JSON.stringify(allSelectedImagesArray));
-            var cc=($(".selectborder").length);
+            var cc = ($(".selectborder").length);
             $("#sizee").text(cc);
             console.log("Slected all images index");
             console.log(allSelectedImagesArray);
             return true;
         }
 
-	   $(".select_all").click(function(){
-		  $(".imge").addClass("selectborder");
-          var cc=($(".selectborder").length);
-          $("#sizee").text(cc);
-          getSelectedImages();
-       });
+        $("#selimages").click(function(){
+                        for (var i = 0; i < allSelectedImagesArray.length; i++) {
+                            var imgname = allSelectedImagesArray[i];
+                            $(".selected_imgs").append('<p> <span>'+ imgname.name + ' </span> </p>');
+                        }
+                        $('#sda_sfl').modal('toggle');
+                    })
 
 
-        $(".select_alle").click(function(){
+
+
+
+
+        $(".select_all").click(function () {
+            $(".imge").addClass("selectborder");
+            var cc = ($(".selectborder").length);
+            $("#sizee").text(cc);
+            getSelectedImages();
+        });
+
+
+        $(".select_alle").click(function () {
             $(".imge").removeClass("selectborder");
-            var ccc=($(".selectborder").length);
+            var ccc = ($(".selectborder").length);
             $("#sizee").text(ccc);
             getSelectedImages();
         });
 
 
-        $(".button1").on("click",function() {
+        $(".button1").on("click", function () {
             $("#info1").fadeToggle();
         });
 
-        $(".closebtn").click(function(){
+        $(".closebtn").click(function () {
             $("#info1").fadeToggle();
         });
 
         $('select').selectpicker();
 
         $('.dropdown-toggle').dropdown();
-var ops = {
-    'html':true,
-    content: function(){
-        return $('#addkey').html();
-    }
-};
+        var ops = {
+            'html': true,
+            content: function () {
+                return $('#addkey').html();
+            }
+        };
 
-$(function(){
-    $('#adde').popover(ops)
-});
+        $(function () {
+            $('#adde').popover(ops)
+        });
 
-var opse = {
-    'html':true,
-    content: function(){
-        return $('#edikey').html();
-    }
-};
+        var opse = {
+            'html': true,
+            content: function () {
+                return $('#edikey').html();
+            }
+        };
 
-$(function(){
-    $('#ede').popover(opse)
-});
+        $(function () {
+            $('#ede').popover(opse)
+        });
 
 
-var opsr = {
-    'html':true,
-    content: function(){
-        return $('#remekey').html();
-    }
-};
+        var opsr = {
+            'html': true,
+            content: function () {
+                return $('#remekey').html();
+            }
+        };
 
-$(function(){
-    $('#rme').popover(opsr)
-});
+        $(function () {
+            $('#rme').popover(opsr)
+        });
 
-$(function() {
+        $(function () {
             $(".preload").fadeOut(1000);
-                       
-            
-});
 
-// var numberOfImages=20;
-//var SizeOfImages = "l";
-$("#view_setting").on("click",function() {
-    numberOfImages=$(".img_no option:selected").val();
-    localStorage.setItem("selectedNoOfImages", numberOfImages);
-    
-    SizeOfImages  =$(".img_size option:selected").val();
-    localStorage.setItem("selectedSize", SizeOfImages);
 
-    window.location.href = "viewproject.html";
-        // alert(id);
-        // console.log(id);
-        // $(".easyPaginateNav").empty();
-        // $("#mainGrid").empty();
-      
- });
- 
-//  console.log(ide);
+        });
 
+        // var numberOfImages=20;
+        //var SizeOfImages = "l";
+        $("#view_setting").on("click", function () {
+            numberOfImages = $(".img_no option:selected").val();
+            localStorage.setItem("selectedNoOfImages", numberOfImages);
+
+            SizeOfImages = $(".img_size option:selected").val();
+            localStorage.setItem("selectedSize", SizeOfImages);
+
+            window.location.href = "viewproject.html";
+            // alert(id);
+            // console.log(id);
+            // $(".easyPaginateNav").empty();
+            // $("#mainGrid").empty();
+
+        });
+
+       
+        
     </script>
 
 

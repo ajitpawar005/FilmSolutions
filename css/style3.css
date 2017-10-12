@@ -898,16 +898,23 @@ float:left;
 /* Filtered FileName List Modal Popup */
 .ffl_div{/*width: 59%;*/margin:10px 0px}
 .ffl_div .div_flist{overflow-y:auto; background-color: #444;box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);}
-.ffl_div .div_flist .div_list{height: 460px;}
-.ffl_div .div_flist .div_list p{text-align:center;color:#ddd;}
+/* .ffl_div .div_flist .div_list{height: 460px;}
+.ffl_div .div_flist .div_list p{text-align:center;color:#ddd;} */
+
+.ffl_div .div_flist .filter_imgs{height: 420px;}
+.ffl_div .div_flist .filter_imgs p{text-align:center;color:#ddd;}
+
 .div_btn {float: left;margin-left: 15px!important;margin-top: 18px !important;}
 .div_btn button{margin-right:5px;width:75px !important;padding: 7px 5px !important;}
 
 /* Selected FileName List Modal Popup */
 .sfl_div{/*width: 59%;*/margin:10px 0px}
 .sfl_div .div_slist{overflow-y:auto;background-color: #444;box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);}
-.sfl_div .div_slist .div_lists{height: 460px;}
-.sfl_div .div_slist .div_lists p{text-align:center;color:#ddd;}
+/* .sfl_div .div_slist .div_lists{height: 460px;}
+.sfl_div .div_slist .div_lists p{text-align:center;color:#ddd;} */
+
+.sfl_div .div_slist .selected_imgs{min-height: 420px;}
+.sfl_div .div_slist .selected_imgs p{text-align:center;color:#ddd;}
 .div_btn {float: left;    margin-top: 18px !important;margin-left:15px !important;}
 .div_btn button{margin-right:5px;width:75px !important;padding: 7px 5px !important;}
 /*.div_btn button{margin-right: 18px !important;}*/
