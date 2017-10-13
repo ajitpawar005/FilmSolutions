@@ -425,7 +425,7 @@
 
             <div id="page-content-wrapper" class="db_com pcw">
                 <div class="container-fluid">
-                    <div class="preload"><img src="http://i.imgur.com/KUJoe.gif">
+                    <div class="preload"><img src="images/loader.gif">
                     </div>
                     <div class="row">
                         <div id="mainGrid">
@@ -5225,7 +5225,6 @@
                         for (var i = 0; i < imageDataLength; i++) {
                             var image = data.imageData[i];
                             $(".filter_imgs").append('<p> <span>'+ image.name + ' </span> </p>');
-
                         }
                         $('#sda_ffl').modal('toggle');
                     })
@@ -5316,8 +5315,8 @@
                               `);
                         flag = true;
                       }
-                      var imgDataLenght = data.imageData.length;
-                      var cnt = imgDataLenght >noofImages?noofImages:imgDataLenght;
+                      var imgDataLength = data.imageData.length;
+                      var cnt = imgDataLength >noofImages?noofImages:imgDataLength;
                       localStorage.setItem('perPageImage',cnt);
                       if(flag){
                             $('#albumEasyPaginate').easyPaginate1({
@@ -5327,8 +5326,17 @@
                                 gridType: "album"
                             });
                         }
+
                         level1Images = data.imageData;
                         setImagesForEnlarge(level1Images);
+                        $("#filimages").click(function(){
+                        for (var i = 0; i < imgDataLength; i++) {
+                            var image = data.imageData[i];
+                            $(".filter_imgs").append('<p> <span>'+ image.name + ' </span> </p>');
+
+                        }
+                        $('#sda_ffl').modal('toggle');
+                    })
                 },
                 error:function() {}
               });
@@ -5450,7 +5458,7 @@
                 // }
                 // else{
 
-                    //$('.imge').removeClass("selectborder");
+                    $('.imge').removeClass("selectborder");
                     $(this).addClass("selectborder");
                     const ct = $(this).find( "img").data('index');
                     getFirstSelectedImageIndex = ct;
