@@ -107,8 +107,10 @@
                     page = plugin.settings.currentPage > 1?parseInt(plugin.settings.currentPage) - 1:1;
                     $("#updatedPage").text(page);
                     displayPage(page);
+                    
+
                 });
-                
+                //$("#updatedPage").text(page);
                 $('.rightside_menu_middlepanel a.next').on('click', function(e) {
                     e.preventDefault();
                     page = plugin.settings.currentPage < plugin.settings.pages?parseInt(plugin.settings.currentPage) + 1:plugin.settings.pages;

@@ -788,9 +788,7 @@ transition: all .1s ease-in;}
 .modal-content .modal-com .modal-header h4 span{color: #9c3127;font-size: 14px;}
 .modal-content .modal-header .close{width: 25px;height: 25px;border-radius: 100%;background-color: #afb2b3;text-shadow:none;opacity:1;}
 .modal-content .modal-header .close:focus{box-shadow:none; outline:none;}
-.modal-content .modal-body{    
-    max-height: 520px;
-    overflow-y: auto;}
+.modal-content .modal-body{}
 .modal-content .modal-body .form-group{margin: 0px;}
 .modal-content .modal-body .form-group input{box-shadow: inset 0px 0px 0px 1px #292929;background-color: #666;border: none;color:#ddd;}
 .modal-content .modal-body .form-group input:focus{box-shadow:inset 0px 0px 0px 1px #292929;border-color:#292929;}

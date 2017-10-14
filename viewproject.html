@@ -62,8 +62,6 @@
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu info">
-
-
                                         <li>
                                             <a href="#">
                            5 new members joined
@@ -143,7 +141,7 @@
                             <!-- <li><button title="Make Cover" ><i class="fa fa-window-restore" aria-hidden="true"></i></button></li> -->
                             <li><button title="Email Selected Images" data-toggle="modal" data-target="#email"><i class="fa fa-envelope" aria-hidden="true"></i></button></li>
                             <li><button title="Download Selected Images" data-toggle="modal" data-target="#fs_download"><i class="fa fa-download" aria-hidden="true"></i></button></li>
-                            <li><button title="Select Images to Compare" class="compare_tool"><i class="fa fa-compress" aria-hidden="true"></i></button></li>
+                            <li><a title="Select Images to Compare" href="comparetool.html"><i class="fa fa-compress" aria-hidden="true"></i></a></li>
                             <li><button title="Print Selected Images" data-toggle="modal" data-target="#printtool"><i class="fa fa-print" aria-hidden="true"></i></button></li>
                             <li><button title="Change View Settings" data-toggle="modal" data-target="#fs_view"><i class="fa fa-desktop" aria-hidden="true"></i></button></li>
                             <li><button title="Delete Selected Asset(s)" data-toggle="modal" data-target="#fs_dele"><i class="fa fa-trash-o" aria-hidden="true"></i></button></li>
@@ -201,8 +199,6 @@
 
                                     <div class="rightside_menu_middlepanel1 holder text-center">
                                         <ul>
-
-
                                         </ul>
                                     </div>
                                 </div>
@@ -4123,7 +4119,7 @@
                     <p>Image Info</p>
                 </div>
                 <div class="col-lg-3 col-sm-3 col-md-3">
-                    <a href="javascript:void(0)" class="closebtn" >&times;</a>
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 </div>
 
 
@@ -4785,91 +4781,12 @@
     <script src="js/bootstrap-select.js"></script>
     <!-- Select Dropdown Js End Here 27/03/2017 -->
 
-
+    <script src="js/view.js"></script>
     <script src="js/jquery.easyPaginate1.js"></script>
     <script src="js/jquery.easyPaginate2.js"></script>
     <script src="js/jquery.jqpagination.js"></script>
     <script src="js/variable.js"></script>
 
-
-
-
-<script>
-    $(document).ready(function () {
-
-    
-    /* ======== sidebar height calculate =========== */
-	$('.pcw').css('min-height',($(window).height()-($('.header-container-section').height()+$('.bcs').height()+$('.fcs').height()))+'px');
-	$('.sidebar-wrapper, .sidebar-nav').css('min-height',($('.pcw').height())+'px');
-
-    /* ======== Toggle Function =========== */
-	$("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-	$('.pinfo').removeClass('active');
-	$('.side_dropdown').addClass('active');	
-	if($("#wrapper").hasClass("toggled"))
-	{
-		$('.pcw').css('min-height',($(window).height()-($('.header-container-section').height()+$('.bcs').height()+$('.fcs').height()))+'px');
-	$('.sidebar-wrapper, .sidebar-nav').css('min-height',($('.pcw').height()+11)+'px');
-	}
-	else
-	{
-		$('.pcw').css('min-height',($(window).height()-($('.header-container-section').height()+$('.bcs').height()+$('.fcs').height()))+'px');
-	$('.sidebar-wrapper, .sidebar-nav').css('min-height',($('.pcw').height())+'px');
-	}
-	
-    });
-
-	$(".menu-toggle-button").on("click", function(){
-	if ( $(document).width() < 767 ) 
-	{
-    $('.menu-toggle-button i').toggleClass('fa-close fa-bars');
-	}            
-	});	
-
-
-
-
-
-
-        var $mainButton = $(".tile .float"),
-			$zoommenu = $(".tile .soc");
-		$(document).on("click", ".tile .float", function () {
-			var id = ($(this).attr('id'));
-			$zoommenu = $(".ts" + id);
-			$(".soc").not($zoommenu).removeClass("pad");
-			$(this).html($(this).html() == '<i class="fa fa-times my-float"></i>' ? '<i class="fa fa-plus my-float"></i>' : '<i class="fa fa-times my-float"></i>');
-			$zoommenu.toggleClass("pad");
-		});
-
-	$(".img_toolbar").on("click", function () {
-		$(".float").html($(".float").html() == '<i class="fa fa-times my-float"></i>' ? '<i class="fa fa-plus my-float"></i>' : '<i class="fa fa-times my-float"></i>');
-		$(".soc").toggleClass("pad");
-	});
-
-
-
-	$(".button1").on("click", function () {
-		$("#info1").show();
-    });
-    $(".img_data0").on("click", function () {
-		$("#info1").show();
-	});
-
-	$(".closebtn").click(function () {
-		$("#info1").hide();
-    });
-    // $(".compare_tool").on("click", function(){
-    //     if()
-    //         window.location.replace('comparetool.html');
-    //         else{
-    //             alert("Please Select to compare!");
-    //         }
-    //     })
-    $("#includedSidebar").load("Sidebar.html");
-    })
-</script>
 
 </body>
 

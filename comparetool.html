@@ -12,7 +12,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link href="css/font-awesome.min.css" rel="stylesheet"> -->
     <link href="css/simple-sidebar1.css" rel="stylesheet">
     <link href="css/style3.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
@@ -156,7 +156,7 @@
                                     </div>
                             </li>    
                             <li class="comp1_img">
-                                <button title="compare Selected Images" class="compare_imgs"><i class="fa fa-compress" aria-hidden="true"></i></button>
+                                <a title="compare Selected Images" class="compare_imgs"><i class="fa fa-compress" aria-hidden="true"></i></a>
                             </li>
                                       
                             <li>
@@ -178,69 +178,7 @@
         <div id="wrapper" class="db_com">
 
             <a href="javascript:void(0)" class="menu-toggle-button1" id="menu-toggle"><i class="fa fa-bars"></i></a>
-            <!-- Sidebar -->
-            <div id="sidebar-wrapper" class="sidebar-wrapper">
-                <div class="sidebar-nav">
-                    <div class="tab_divv">
-                        <ul class="tab_ul" role="tablist">
-                            <li role="presentation" class="active"><a href="#sb_menu" aria-controls="sb_menu" role="tab" data-toggle="tab"><i class="fa fa-th-large" aria-hidden="true"></i></a></li>
-                            <li role="presentation"><a href="#pinfo" aria-controls="pinfo" role="tab" data-toggle="tab" title="Project Info">
-                                <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                </a>
-                            </li>
-                            <!-- <li><a href="javascript:void(0)" title="Advance Search" data-toggle="modal" data-target="#search"><i class="fa fa-search" aria-hidden="true"></i></a></li> -->
-                        </ul>
-                    </div>
-                    <div class="tab-content db_com">
-                        <div role="tabpanel" class="tab-pane active db_com side_dropdown" id="sb_menu">
-                            <ul class="accordion-menu side-menu">
-                               
-                                <div class="dropdownlink"><i class="fa fa-file-text-o dp_i" aria-hidden="true"></i><span>Audit</span>
-                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                </div>
-                                <ul class="submenuItemsss child_menu">
-                                    <li><a href="#">Conflicts</a></li>
-                                    <li><a href="#">No Conflicts</a></li>
-                                    <li><a href="#">Bypass 2nd Tagger</a></li>
-                                    <li class="aud_btn"> <button class="btn">Publish Image(s)</button></li>
-                                    <li class="aud_btn"> <button class="btn">Hide Image(s)</button></li>
-                                    <li class="aud_btn"> <button class="btn">UnhideImage(s)</button></li>
-                                    <li class="aud_btn"> <button class="btn">Clear Tagg(s)</button></li>
-                                    <li class="aud_btn"> <button class="btn">Clear Single Tag</button></li>
-                                </ul>
-                                </li>
-                               
-                            </ul>
-                        </div>
-                        <div role="tabpanel" class="tab-pane pinfo db_com" id="pinfo">
-                            <h1>Project Info</h1>
-
-                            <div class="db_com info_div">
-                                <div class="info-up indigo lighten-1"></div>
-                                <div class="info_avatar"><img src="images/agents_of_shield.png" class="rounded-circle"></div>
-                                <div class="info-body">
-                                    <h4 class="info-title">Photo : 102</h4>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                            <p><i class="fa fa-camera" aria-hidden="true"></i> <span>Bob D'Amico</span></p>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                            <p><i class="fa fa-calendar" aria-hidden="true"></i> <span>03/17/2017</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-            <!-- /#sidebar-wrapper -->
+            <div id="includedSidebar"></div>
             <!-- Page Content -->
             <div id="page-content-wrapper" class="db_com pcw">
                     <div class="container-fluid">
@@ -291,191 +229,14 @@
     <script src="js/custom-script.js"></script>
     <!-- Custom Script Js End Here 27/03/2017 -->
     <!-- Select Dropdown Js Start Here 27/03/2017 -->
+
+    <script src="js/comparetool.js"></script>
+
     <script src="js/bootstrap-select.js"></script>
     <!-- Select Dropdown Js End Here 27/03/2017 -->
     <script src="js/jquery.easyPaginate1.js"></script>
-
-    <script>
-        $(document).ready(function () {
-         
-
-
-        
-            var imageUrlsArrayDefault =  [];
-
-         
-            // $("button").click(function () {
-            //     $("#panel").slideToggle("slow");
-            // });
-           
-                var getselectedimgs=[];
-                getselectedimgs= JSON.parse(localStorage.getItem('selectedimgs'));
-                getselectedimgs.forEach(function(key,value){
-                    if(key.url.indexOf('125:125')>-1){
-                        key.url = key.url.replace("125:125","300:300");
-                    }
-                    else if(key.url.indexOf('200:200')>-1){
-                        key.url = key.url.replace("200:200","300:300");
-                    }
-                    // else if(key.url.indexOf('125:125')>-1){
-                    //     key.url = key.url.replace("125:125","700:700");
-                    // }
-                })
-                    console.log(getselectedimgs);
-                var  getselectedimgs= JSON.parse(localStorage.getItem('selectedimgs'));
-                    var length = getselectedimgs.length;
-                    var flag = false;
-                    for(var i = 0; i< length; i++){
-                        var image = getselectedimgs[i];
-                        $("#comparediv").append(`
-                            
-                                                <div class="compimg_div col-sm-4 col-md-4 col-lg-4"">
-                                   
-                                                    <div class="span3">
-                                                        <div class="imge" >
-                                                                 <a href="javascript:void(0)" class="thumbnail img-check">
-                                                                    <img src=`+image.url+`" data-index="`+i+`" id="`+image.id+`" assetName="`+image.name+`"" class="imagee">
-                                                                 </a>
-                                                        </div>
-                                                        <div class="img_tile">
-                                                     <span class="ii"> `+image.name+` </span>
-                                                    </div>
-                                                    </div>
-                                                   
-                                                </div>
-                            
-                                `);
-                                        
-                                /*for(var i = 0; i< length; i++){
-                                    console.log(length);
-                                $(".imgliste").append(`
-                                               
-                                                    
-                                        <div class=" rightside_menu_panel st_rmp">
-
-                                            <div class="rightside_menu_middlepanel holder text-center">
-                                                <ul>
-                                                    
-                                                </ul>
-                                            </div>
-                                        </div>
-                                   
-                                           
-                                `); */
-
-                                
-                                    
-                                flag = true;
-                            }
-                            if(flag){
-                                  $('#easyPaginate').easyPaginate({
-                                      paginateElement: '.span3',
-                                        elementsPerPage: 20,
-                                       effect: 'climb',
-                                       gridType: "album"
-                                  });
-                              }
-           
-
-            var getFirstSelectedImageIndex;
-            var getLastSelectedImageIndex;
-            var getSelectedImagesIndex =[];
-            var keycode = null;
-            var allSelectedImagesArray = [];
-            $(document).on('keydown', function(e){
-                keycode = e.keyCode || e.which;
-            });
-            $(document).on('keyup', function(e){
-                keycode = null;
-            }); 
-
-            $(document).on("click",".imge",function(event){
-            // Ctrl key image selection
-            if((keycode == 17 )|| (keycode == 224)){
-                const ct = $(this).find("img").data('index');
-                if($(this).hasClass("selectborder")){
-                    $(this).removeClass("selectborder"); 
-                    var index = getSelectedImagesIndex.indexOf(ct);
-                    getSelectedImagesIndex.splice(index,1);
-                }
-                else{
-                    if(getSelectedImagesIndex.length <2){
-                    $(this).addClass("selectborder")
-                    getSelectedImagesIndex.push(ct);
-                    }
-                    else {
-                        alert("You have Already selected Two Images to Compare!");
-                    }
-                }
-                getSelectedImages();
-                return false;
-            }
-        });
-
-
-           function getSelectedImages(){
-            var getAllSelectedImageArray = [];
-            allSelectedImagesArraylevel = [];
-            getAllSelectedImageArray =  $('.selectborder');
-            getAllSelectedImageArray.each(function(key,value){
-                var obj = {};
-                obj.id = $(value).find("img").attr('id');
-                obj.name = $(value).find("img").attr('assetName');
-                obj.url = $(value).find("img").attr('src');
-                allSelectedImagesArraylevel.push(obj);
-            })
-            localStorage.setItem("selectedimgslevel", JSON.stringify(allSelectedImagesArraylevel));
-            //var cc=($(".selectborder").length);
-            //$("#sizee").text(cc);
-            console.log("Slected all images index");
-            console.log(allSelectedImagesArraylevel);
-            return true;
-        }
-
-        $('select').selectpicker();
-
-        $('.dropdown-toggle').dropdown();
-
-        var p = document.getElementById("myRange");
-            p.addEventListener("input", function() {
-                document.getElementById('textInput').value =  p.value;
-                // var v = p.value;
-                // v = v+"px";
-                //alert(p.value);
-                var img = $('.imagee')[0]; 
-                //or however you get a handle to the IMG
-                var cWidth = img.naturalWidth;
-                var cHeight = img.naturalHeight;
-
-                var width =  cWidth * (p.value / 100);
-                var height = cHeight * (p.value / 100);
-                $('.imagee').css('height',height+'px');
-                $('.imagee').css('width',width+'px');
-
-
-
-                $('.span3').addClass("addhb")
-                $('.addhb').css('height',(height+35)+'px');
-                $('.addhb').css('width',width+'px');
-
-                $('.addhb').css('margin-top',(p.val)+'px');
-                $('.addhb').css('margin-left',(p.value)+'px');
-            }, false); 
-
-            $(".compare_imgs").on("click", function(){
-                if(getSelectedImagesIndex.length==2)
-                {
-                    window.location.replace('compareimg.html');
-                }
-                    else{
-                        alert("Please Select  Only two Image(s)  to compare!");
-                    }
-                })
-       
-      
-
-        });
-    </script>
+    
+   
 </body>
 
 </html>
