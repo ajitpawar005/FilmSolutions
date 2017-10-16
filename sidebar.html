@@ -67,15 +67,20 @@
                 </div>
                 <div class="tab-content db_com">
                     <div role="tabpanel" class="tab-pane active db_com side_dropdown" id="sb_menu">
-                        <ul class="accordion-menu side-menu">
-                            <li class="search_li" title="Advance Search" data-toggle="modal" data-target="#search">
+                        <ul>
+                            <li class="search_li" title="Advance Search" data-toggle="modal" data-target="#search" style="display:none;">
                                 <div class="dropdownlink"><i class="fa fa-search dp_i" aria-hidden="true"></i></div>
                             </li>
                             <li>
-                                <div class="dropdownlink"><i class="fa fa-address-book-o dp_i" aria-hidden="true"></i><span>Albums</span>
+                                <div class="dropdownlink" data-action="click-trigger"><i class="fa fa-address-book-o dp_i" aria-hidden="true"></i><span>Albums</span>
                                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                 </div>
-                                <ul class="submenuItems child_menu" id="albums">
+                                <!-- <button data-action="click-trigger">
+                                        <i class="fa fa-address-book-o dp_i" aria-hidden="true"></i><span>Albums</span>
+                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                    </button> -->
+
+                                <ul class="submenuItems child_menu" id="albums" data-action="click-target">
                                     <li class="items">
                                         <i class="fa fa-plus-square-o dp_i" title="Add Album" data-toggle="modal" data-target="#AddAlbum" aria-hidden="true"></i>
                                         <i class="fa fa-minus-square-o dp_i" title="Delete Album" data-toggle="modal" data-target="#DelAlbum" aria-hidden="true"></i>
@@ -89,69 +94,19 @@
                                     </li>
                                     <!-- <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true">&nbsp;&nbsp;</i>MyAlbum</a></li> -->
                                 </ul>
+                                
                             </li>
-                            <!-- <li>
-                                <div class="dropdownlink"><i class="fa fa-picture-o dp_i" aria-hidden="true"></i><span>Image Info</span>
-                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                </div>
-                                <ul class="submenuItems child_menu">
-                                    <div class="img_infi">
-                                        <ul class="nav nav-tabs">
-                                            <li class="active img_data"><a data-toggle="tab" href="#home">Data</a></li>
-                                            <li class="img_note"><a data-toggle="tab" href="#menu1">Note</a></li>
-
-                                        </ul>
-
-                                        <div class="tab-content">
-                                            <div id="home" class="tab-pane fade in active">
-                                                <p>Released: 2011-11-22 17:33:27</p>
-                                                <p>Batch: B23_01198-01303_D012</p>
-                                                <p>Image: B23_01297.jpg</p>
-                                                <p>Image Status: Locked</p>
-                                                <p>Tagged with: Daniel Craig</p>
-                                                <p> Approved By: Daniel Craig </p>
-                                                <p> Rejected By: </p>
-                                                <p> In General Albums: </p>
-                                                <p>Final approved DC</p>
-                                                <p>batch 2</p>
-                                                <p>James Album</p>
-                                                <p>Photographer:</p>
-                                                <p>Caption: Bond (Daniel Craig) meets Q for the first time in the National
-                                                    Portrait Gallery.</p>
-                                            </div>
-                                            <div id="menu1" class="tab-pane fade">
-                                                <div class="form-group">
-                                                    <textarea class="form-control" id="body" rows="3" placeholder="Write Note Here"></textarea>
-                                                </div>
-                                                <div class=" form-group db_com">
-                                                    <div class="radio down-input">
-                                                        <label>
-                                            <input type="radio" name="o1" value="">
-                                            <span class="cr"><i class="cr-icon fa fa-circle"></i></span>
-                                           Private Note
-                                            </label>
-                                                    </div>
-                                                    <div class="radio down-input">
-                                                        <label>
-                                            <input type="radio" name="o1" value="">
-                                            <span class="cr"><i class="cr-icon fa fa-circle"></i></span>
-                                           Public Note
-                                            </label>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group save_note">
-                                                    <button class="btn btn-block">Save Note</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </ul>
-                            </li> -->
+                           
                             <li>
-                                <div class="dropdownlink"><i class="fa fa-users dp_i" aria-hidden="true"></i><span>Administration</span>
+                                <div class="dropdownlink" data-action="click-trigger"><i class="fa fa-users dp_i" aria-hidden="true"></i><span>Administration</span>
                                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                 </div>
-                                <ul class="submenuItems child_menu">
+                                <!-- <button data-action="click-trigger">
+                                        <i class="fa fa-users dp_i" aria-hidden="true"></i><span>Administration</span>
+                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                    </button>
+                                 -->
+                                <ul class="submenuItems child_menu" data-action="click-target">
                                     <!-- <li><a href="#">Actor Approval Report</a></li> -->
                                     <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#sda_aar">Actor Approval Report</button></li>
                                     <li><button class="btn btn-block btn_admin"  id="filimages">Filtered FileName List</button></li>
@@ -172,25 +127,20 @@
                                     <li><button class="btn btn-block btn_admin" data-toggle="modal" data-target="#rejtoggle">Rejection Toggle</button></li>
 
                                 </ul>
+                           
                             </li>
-                            <li>
-                                <!--  <div class="dropdownlink"><i class="fa fa-users dp_i" aria-hidden="true"></i><span>Wide Edit Administration</span>
-                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                </div>
-                                <ul class="submenuItems child_menu">
-                                    <li><button class="btn btn-block btn_wedit" data-toggle="modal" data-target="#wea_sda_ffl">Filtered FileName List</button></li>
-                                    <li><button class="btn btn-block btn_wedit" data-toggle="modal" data-target="#wea_sda_sfl">Selected FileName List</button></li>
-                                    <li><button class="btn btn-block btn_wedit"data-toggle="modal" data-target="#sendemailnoti">Send Email Notification</button></li>
-                                    <li><button class="btn btn-block btn_wedit"data-toggle="modal" data-target="#wea_imreport">Image Notes Report</button></li>
-                                    <li><button class="btn btn-block btn_wedit" data-toggle="modal" data-target="#uploadimages">Upload Images</button></li>
-                                </ul>
-                            </li> -->
+                           
 
                                 <li>
-                                    <div class="dropdownlink"><i class="fa fa-pencil-square-o dp_i" aria-hidden="true"></i><span>Wide Edit Album</span>
+                                    <div class="dropdownlink" data-action="click-trigger"><i class="fa fa-pencil-square-o dp_i" aria-hidden="true"></i><span>Wide Edit Album</span>
                                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                     </div>
-                                    <ul class="submenuItems">
+                                    <!-- <button data-action="click-trigger">
+                                            <i class="fa fa-pencil-square-o dp_i" aria-hidden="true"></i><span>Wide Edit Album</span>
+                                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                        </button> -->
+                                      
+                                    <ul class="submenuItems child-menu" data-action="click-target">
                                         <li class="itemss">
                                             <i class="fa fa-plus-square-o dp_i" title="Add Album" data-toggle="modal" data-target="#AddAlbum1" aria-hidden="true"></i>
                                             <i class="fa fa-minus-square-o dp_i" title="Delete Album" data-toggle="modal" data-target="#DelAlbum1" aria-hidden="true"></i>
@@ -204,12 +154,18 @@
                                         <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true"> &nbsp;&nbsp;</i>Album1</a></li>
                                         <li><a href="#"><i class="fa fa-file-image-o" aria-hidden="true">&nbsp;&nbsp;</i>MyAlbum</a></li>
                                     </ul>
+                                
                                 </li>
                                 <li>
-                                    <div class="dropdownlink"><i class="fa fa-file-text-o dp_i" aria-hidden="true"></i><span>Audit</span>
+                                    <div class="dropdownlink" data-action="click-trigger"><i class="fa fa-file-text-o dp_i" aria-hidden="true"></i><span>Audit</span>
                                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                     </div>
-                                    <ul class="submenuItems child_menu">
+                                    <!-- <button data-action="click-trigger">
+                                            <i class="fa fa-file-text-o dp_i" aria-hidden="true"></i><span>Audit</span>
+                                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                        </button> -->
+                                       
+                                    <ul class="submenuItems child_menu" data-action="click-target">
                                         <li><a href="#">Conflicts</a></li>
                                         <li><a href="#">No Conflicts</a></li>
                                         <li><a href="#">Bypass 2nd Tagger</a></li>
@@ -219,6 +175,7 @@
                                         <li class="aud_btn"> <button class="btn">Clear Tagg(s)</button></li>
                                         <li class="aud_btn"> <button class="btn">Clear Single Tag</button></li>
                                     </ul>
+                                
                                 </li>
                                 <!--  <li>
                                 <div class="dropdownlink"><i class="fa fa-sign-out dp_i" aria-hidden="true"></i><span>Logout</span></div>
@@ -250,5 +207,72 @@
         </div>
         <!-- /#sidebar-wrapper -->
    
-        <script src="js/sidebar.js"></script>
-     
+        <!-- <script src="js/sidebar.js"></script> -->
+        <script>
+                $(document).ready(function() 
+          {
+          /* Open Menu Trigger
+                     Used: < data-action="click-trigger" >
+                           < data-action="click-target" >		   
+                  */			
+                  $('[data-action^="click-trigger"]').click(function(e) {
+                      e.preventDefault();
+                      if ($(this).parent().hasClass("hover-trigger") && $(this).siblings().hasClass("hover-target")){
+                          return(0);
+                      }			
+                      // check if not children of click-target then slideup
+                      if ( $(this).parent().parent().parent().data("action") != "click-target" && $(this).parent().parent().parent().parent().parent().data("action") != "click-target"    )  {
+                          $('[data-action^="click-target"]').slideUp('fast',  function(){ //calculateContentHeight();														
+                              });				
+                      } else{
+                      // check if children of click-target then slideup all the parent kids
+                          $(this).parent().siblings().children('[data-action^="click-trigger"]').removeClass('open');	
+                          $(this).parent().siblings().children('[data-action^="click-target"]').slideUp('fast',  function(){//calculateContentHeight(); 
+                              
+                              });
+                                  
+                      }
+                      // if this is close
+                      if (! $(this).hasClass('open')){
+          
+          
+                          if ($(this).parent().parent().parent().data("action") != "click-target"){
+                              $('[data-action^="click-trigger"]').removeClass('open');
+                          };
+                          $(this).addClass('open');
+                          $(this).parent().children('[data-action^="click-target"]').slideDown('fast',  function(){    if ($('.navbar-menu').outerHeight() < $('.navbar-menu .vd_menu').outerHeight() + $('.navbar-spacing ').outerHeight()){calculateContentHeight()};
+                      
+                          });	
+                          
+                          
+                      // if this is open			
+                      } else {
+                          $(this).removeClass('open');
+                          // check if children of click-target then slideup				
+                          //if ($(this).parent().parent().parent().data("action") == "click-target"){
+                              $(this).parent().children('[data-action^="click-target"]').slideUp('fast',  function(){
+                                  
+                              });				
+                          //}				
+                      }
+                      // $('body').removeClass('expand-all');
+                                                  
+                  });		
+                                          
+                //   // Click outside click-target			
+                //   $(document).click(function(event) {
+                //        if (( $(event.target).closest('[data-action^="click-trigger"]').get(0) == null ) && ( $(event.target).closest('[data-action^="click-target"]').get(0) == null ) && ( $(event.target).closest('[data-action^="expand-all"]').get(0) == null)) { 
+                //            $('[data-action^="click-target"]').hide();
+                //            $('[data-action^="click-trigger"]').removeClass('open');	
+                //            //  $('body').removeClass('expand-all');				 			 
+                //           // //  calculateContentHeight();
+                //       }			
+                //   });
+                  
+                  
+          $('select').selectpicker();
+          
+          $('.dropdown-toggle').dropdown();
+          })
+                
+                </script>

@@ -640,6 +640,34 @@ $("#view_setting").on("click", function () {
     // $("#mainGrid").empty();
 
 });
-
+		function checkStickyMenu(){
+			if ( !$("body").hasClass("bgcolor")) return(false);
+		
+			if($(window).scrollTop() > headerHeight-submenuHeight   &&  $(window).width() >= desktop_width){
+				// #Back-Top visible
+				
+				if($("body").hasClass("sticky-menu-active"))
+					return false;
+				$("body").addClass("sticky-menu-active");
+			
+				$('header').css({
+							top: -headerHeight,
+							opacity:'.5',
+							transition: 'none',
+						}).stop(true, true).animate({
+							top: 0,
+							opacity: '1'
+					}, 1000, function(){
+						$('header').removeAttr('style');
+						// Animation complete.
+				});			
+			} else if( $(window).scrollTop() <= 0||  $(window).width() < desktop_width){
+				if ($("body").hasClass("sticky-menu-active")){
+					$("body").css('padding-top',0);
+					$("body").removeClass("sticky-menu-active");
+					$("body").removeAttr('style');
+				}
+			}
+		}	
 });
 

@@ -3,36 +3,65 @@
 
 $(document).ready(function() 
 {
-$(function () {
-    var Accordion = function (el, multiple) {
-        this.el = el || {};
-        // more then one submenu open?
-        this.multiple = multiple || false;
+/* Open Menu Trigger
+		   Used: < data-action="click-trigger" >
+		         < data-action="click-target" >		   
+		*/			
+		$('[data-action^="click-trigger"]').click(function(e) {
+			e.preventDefault();
+			if ($(this).parent().hasClass("hover-trigger") && $(this).siblings().hasClass("hover-target")){
+				return(0);
+			}			
+			// check if not children of click-target then slideup
+			if ( $(this).parent().parent().parent().data("action") != "click-target" && $(this).parent().parent().parent().parent().parent().data("action") != "click-target"    )  {
+				$('[data-action^="click-target"]').slideUp('fast',  function(){ //calculateContentHeight();														
+					});				
+			} else{
+			// check if children of click-target then slideup all the parent kids
+				$(this).parent().siblings().children('[data-action^="click-trigger"]').removeClass('open');	
+				$(this).parent().siblings().children('[data-action^="click-target"]').slideUp('fast',  function(){//calculateContentHeight(); 
+				    
+					});
+						
+			}
+			// if this is close
+			if (! $(this).hasClass('open')){
 
-        var dropdownlink = this.el.find('.dropdownlink');
-        dropdownlink.on('click',
-            { el: this.el, multiple: this.multiple },
-            this.dropdown);
-    };
 
-    Accordion.prototype.dropdown = function (e) {
-        var $el = e.data.el,
-            $this = $(this),
-            //this is the ul.submenuItems
-            $next = $this.next();
-
-        $next.slideToggle();
-        $this.parent().toggleClass('open');
-
-        if (!e.data.multiple) {
-            //show only one menu at the same time
-            $el.find('.submenuItems').not($next).slideUp().parent().removeClass('open');
-        }
-    }
-
-    var accordion = new Accordion($('.accordion-menu'), false);
-});
-
+				if ($(this).parent().parent().parent().data("action") != "click-target"){
+					$('[data-action^="click-trigger"]').removeClass('open');
+				};
+				$(this).addClass('open');
+				$(this).parent().children('[data-action^="click-target"]').slideDown('fast',  function(){    if ($('.navbar-menu').outerHeight() < $('.navbar-menu .vd_menu').outerHeight() + $('.navbar-spacing ').outerHeight()){calculateContentHeight()};
+			
+				});	
+				
+				
+			// if this is open			
+			} else {
+				$(this).removeClass('open');
+				// check if children of click-target then slideup				
+				//if ($(this).parent().parent().parent().data("action") == "click-target"){
+					$(this).parent().children('[data-action^="click-target"]').slideUp('fast',  function(){
+						
+					});				
+				//}				
+			}
+			// $('body').removeClass('expand-all');
+										
+		});		
+								
+		// Click outside click-target			
+		$(document).click(function(event) {
+			 if (( $(event.target).closest('[data-action^="click-trigger"]').get(0) == null ) && ( $(event.target).closest('[data-action^="click-target"]').get(0) == null ) && ( $(event.target).closest('[data-action^="expand-all"]').get(0) == null)) { 
+				 $('[data-action^="click-target"]').hide();
+				 $('[data-action^="click-trigger"]').removeClass('open');	
+	 			//  $('body').removeClass('expand-all');				 			 
+				// //  calculateContentHeight();
+			}			
+		});
+		
+		
 $('select').selectpicker();
 
 $('.dropdown-toggle').dropdown();
