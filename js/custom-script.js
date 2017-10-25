@@ -3,10 +3,11 @@
 
 $(document).ready(function() 
 {
+	/*24.10.2017 starts here*/
     /* ======== sidebar height calculate =========== */
-	$('.pcw').css('min-height',($(window).height()-($('.header-container-section').height()+$('.bcs').height()+$('.fcs').height()))+'px');
-	$('.sidebar-wrapper, .sidebar-nav').css('min-height',($('.pcw').height())+'px');
-
+	// $('.pcw').css('min-height',($(window).height()-($('.header-container-section').height()+$('.bcs').height()+$('.fcs').height()))+'px');
+	// $('.sidebar-wrapper, .sidebar-nav').css('min-height',($('.pcw').height())+'px');
+    /*24.10.2017 end here*/
     /* ======== Toggle Function =========== */
 	$("#menu-toggle").click(function(e) {
     e.preventDefault();

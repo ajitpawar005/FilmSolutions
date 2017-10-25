@@ -161,6 +161,11 @@ var allAvailableImages = [];
 
                 flag = true;
             }
+
+            /*24.10.2017 starts here*/
+            $('.pcw').css('min-height',($(window).height()-($('.header-container-section').height()+$('.bcs').height()+$('.fcs').height()))+'px');
+            $('.sidebar-wrapper, .sidebar-nav').css('min-height',($('.pcw').height())+'px');
+            /*24.10.2017 end here*/
             if (flag) {
                 $('#easyPaginate').easyPaginate({
                     paginateElement: '.img_div',
@@ -178,7 +183,9 @@ var allAvailableImages = [];
                 }
                 $('#sda_ffl').modal('toggle');
             })
-            
+            /*24.10.2017 starts here*/
+            $(".preload").fadeOut(0);
+            /*24.10.2017 end here*/
 
             level1Images = data.imageData;
             setImagesForEnlarge(level1Images);
@@ -618,11 +625,8 @@ $(function () {
     $('#rme').popover(opsr)
 });
 
-$(function () {
-    $(".preload").fadeOut(1000);
-
-
-});
+// $(function () {
+// });
 
 // var numberOfImages=20;
 //var SizeOfImages = "l";
@@ -640,34 +644,9 @@ $("#view_setting").on("click", function () {
     // $("#mainGrid").empty();
 
 });
-		function checkStickyMenu(){
-			if ( !$("body").hasClass("bgcolor")) return(false);
+
+// $('.pcw').css('min-height',($(window).height()-($('.header-container-section').height()+$('.bcs').height()+$('.fcs').height()))+'px');
+// $('.sidebar-wrapper, .sidebar-nav').css('min-height',($('.pcw').height())+'px');
 		
-			if($(window).scrollTop() > headerHeight-submenuHeight   &&  $(window).width() >= desktop_width){
-				// #Back-Top visible
-				
-				if($("body").hasClass("sticky-menu-active"))
-					return false;
-				$("body").addClass("sticky-menu-active");
-			
-				$('header').css({
-							top: -headerHeight,
-							opacity:'.5',
-							transition: 'none',
-						}).stop(true, true).animate({
-							top: 0,
-							opacity: '1'
-					}, 1000, function(){
-						$('header').removeAttr('style');
-						// Animation complete.
-				});			
-			} else if( $(window).scrollTop() <= 0||  $(window).width() < desktop_width){
-				if ($("body").hasClass("sticky-menu-active")){
-					$("body").css('padding-top',0);
-					$("body").removeClass("sticky-menu-active");
-					$("body").removeAttr('style');
-				}
-			}
-		}	
 });
 

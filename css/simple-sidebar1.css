@@ -66,7 +66,8 @@
 	margin: 0;
     padding: 0;
     list-style: none;
-	border-right: 2px solid #292929;
+    border-right: 2px solid #292929;
+    background-color: #535353;
 }
 
 .sidebar-nav li {
@@ -135,7 +136,7 @@
 }
 .galley-page-container .menu-toggle-button i{color:#9c3127;}
 .galley-page-container .menu-toggle-button1 i{color:#9c3127;}
-.galley-page-container .toggled .menu-toggle-button{background-color:transparent;width:auto;height:auto;left:1%;-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;
+.galley-page-container .toggled .menu-toggle-button{background-color:transparent;width:auto;height:auto;left: 0.7%;;-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;
 -o-transition: all 0.5s ease;transition: all 0.5s ease;line-height:0px;font-size:25px; box-shadow:none;top:10px;}
 .galley-page-container .toggled .menu-toggle-button1{background-color:transparent;width:auto;height:auto;left:1%;-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;transition: all 0.5s ease;line-height:0px;font-size:25px; box-shadow:none;top:10px;}
@@ -163,12 +164,20 @@
         padding:0px;
         position: relative;
     }
-
+    /*24.10.2017 starts here*/
     #wrapper.toggled #page-content-wrapper {
-		width:82%;
+		width:97%;
         position: relative;
         margin-right: 0;
     }
+    /*24.10.2017 ends here*/
+    /*24.10.2017 starts here*/
+    #wrapper.toggled  .contentwindow{
+        width:82% !important;
+        position: relative;
+        margin-right: 0;
+    }
+    /*24.10.2017 ends here*/
     #wrapper.toggled #page-content-wrapper .rightside_menu_panel .rightside_menu_middlepanel ul li  a#last   {
         margin-right: 84px;
 	
