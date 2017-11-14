@@ -1,7 +1,7 @@
 
  
  $(document).ready(function () {
-     $("#includedSidebar").load("Sidebar.html");
+ 
  var selectCount = 1;
 
     $('.db_carousel').carousel({
@@ -645,6 +645,65 @@ $("#view_setting").on("click", function () {
 
 });
 
+
+$('[data-action^="click-trigger"]').click(function(e) {
+    // $("#page-content-wrapper").css("width", "82%");
+
+      e.preventDefault();
+      if ($(this).parent().hasClass("hover-trigger") && $(this).siblings().hasClass("hover-target")){
+          return(0);
+      }			
+      // check if not children of click-target then slideup
+      if ( $(this).parent().parent().parent().data("action") != "click-target" && $(this).parent().parent().parent().parent().parent().data("action") != "click-target"    )  {
+          $('[data-action^="click-target"]').slideUp('fast',  function(){ //calculateContentHeight();														
+              });				
+      } else{
+      // check if children of click-target then slideup all the parent kids
+          $(this).parent().siblings().children('[data-action^="click-trigger"]').removeClass('open');
+        //   $("#page-content-wrapper").css("width", "97%");
+        /*24.10.2017 starts here*/
+        $("#page-content-wrapper").removeClass("contentwindow");
+        /*24.10.2017 end here*/	
+          $(this).parent().siblings().children('[data-action^="click-target"]').slideUp('fast',  function(){//calculateContentHeight(); 
+              
+              });
+                  
+      }
+      // if this is close
+      if (! $(this).hasClass('open')){
+
+
+          if ($(this).parent().parent().parent().data("action") != "click-target"){
+              $('[data-action^="click-trigger"]').removeClass('open');
+              /*24.10.2017 starts here*/
+              $("#page-content-wrapper").removeClass("contentwindow");
+              /*24.10.2017 end here*/
+            //   $("#page-content-wrapper").css("width", "97%");
+          };
+          $(this).addClass('open');
+          /*24.10.2017 starts here*/
+          $("#page-content-wrapper").addClass("contentwindow");
+          /*24.10.2017 end here*/
+          $(this).parent().children('[data-action^="click-target"]').slideDown('fast');	
+          
+          
+      // if this is open			
+      } else {
+          $(this).removeClass('open');
+          /*24.10.2017 starts here*/
+          $("#page-content-wrapper").removeClass("contentwindow");
+          /*24.10.2017 end here*/
+        //   $("#page-content-wrapper").css("width", "97%");
+          // check if children of click-target then slideup				
+          //if ($(this).parent().parent().parent().data("action") == "click-target"){
+              $(this).parent().children('[data-action^="click-target"]').slideUp('fast',  function(){
+                  
+              });				
+          //}				
+      }
+      // $('body').removeClass('expand-all');
+                                  
+  });	
 // $('.pcw').css('min-height',($(window).height()-($('.header-container-section').height()+$('.bcs').height()+$('.fcs').height()))+'px');
 // $('.sidebar-wrapper, .sidebar-nav').css('min-height',($('.pcw').height())+'px');
 		
